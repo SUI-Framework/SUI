@@ -1,8 +1,8 @@
 {
-  "name": "sui-framework",
+  "name": "sui-settings",
   "version": "0.1.0",
-  "description": "Open source Frontend Framework",
-  "main": "dist/sui.css",
+  "description": "Set the settings for SUI Framework",
+  "main": "./src/_settings.scss",
   "scripts": {
     "lint": "npm run lint:sass",
     "lint:sass": "scss-lint src/"
@@ -15,9 +15,8 @@
   "keywords": [
     "sui",
     "suiengineers",
-    "css",
-    "framework",
-    "component",
+    "css-utils",
+    "settings",
     "styles"
   ],
   "repository": {
@@ -27,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/SUI-Framework/SUI/issues"
   },
-  "homepage": "https://github.com/SUI-Framework/SUI#readme"
+  "homepage": "https://github.com/SUI-Framework/SUI#readme",
+  "devDependencies": {
+    "sui-pre-commit-rules": "^0.5.0"
+  }
 }

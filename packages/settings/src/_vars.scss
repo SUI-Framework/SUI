@@ -1,0 +1,73 @@
+$is-theme: false !default;
+
+// # Theme Variables
+// -----------------------------------------------------------------------------
+// The naming convention used for variables is the
+// [ZenCSSProperties](https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn)
+//
+// Some of the prefixes used:
+// * c = color
+// * ff = font-family
+// * fz = font-size
+// * m = margin
+// * p = padding
+// * lh = line-height
+// * b = border
+
+
+// Brand Colors
+// -----------------------------------------------------------------------------
+$c-primary:                 #999999 !default;
+$c-primary-variant:         #666666 !default;
+$c-secondary:               #e6e6e6 !default;
+$c-secondary-variant:       #cccccc !default;
+$c-text:                    #666666 !default;
+$c-text-variant:            #999999 !default;
+$c-contrast:                #ffffff !default;
+$c-dark-soft:               #cccccc !default;
+$c-dark-light:              #f2f2f2 !default;
+
+// Font families
+// -----------------------------------------------------------------------------
+$ff-base:                   "latoregular", Helvetica, Arial, sans-serif !default;
+$ff-base-bold:              "latobold", Helvetica, Arial, sans-serif !default;
+$ff-base-bold-italic:       "latobold_italic", Helvetica, Arial, sans-serif !default;
+$ff-base-italic:            "latoitalic", Helvetica, Arial, sans-serif !default;
+
+$ff-base-heading:           $ff-base-bold;
+
+// Font sizes
+// -----------------------------------------------------------------------------
+$fz-xsmall:                 12px !default;
+$fz-small:                  14px !default;
+$fz-base:                   16px !default;
+
+$lh-base-headings:          1.16 !default;
+$lh-base-body:              1.25 !default;
+
+$fz-medium:                 18px !default;
+$fz-medium-desktop:         16px !default;
+$fz-large:                  20px !default;
+$fz-large-desktop:          18px !default;
+$fz-xlarge:                 21px !default;
+$fz-xlarge-desktop:         25px !default;
+$fz-xxlarge:                23px !default;
+$fz-xxlarge-desktop:        30px !default;
+$fz-xxxlarge:               25px !default;
+$fz-xxxlarge-desktop:       36px !default;
+
+// Paddings
+// -----------------------------------------------------------------------------
+$p-base:                    10px !default;
+$p-medium:                  ($p-base * 2) !default;
+$p-large:                   ($p-base * 4) !default;
+
+// Borders
+// -----------------------------------------------------------------------------
+$b-radius-base:             0 !default;
+
+// Mediaqueries
+// -----------------------------------------------------------------------------
+$mq-mobile:                 480px !default;
+$mq-tablet:                 768px !default;
+$mq-desktop:                1024px !default;
