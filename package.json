@@ -1,0 +1,29 @@
+{
+  "name": "sui-framework",
+  "version": "0.1.0",
+  "description": "Open source Frontend Framework",
+  "main": "dist/sui.css",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SUI-Framework/SUI.git"
+  },
+  "keywords": [
+    "sui",
+    "suiengineers",
+    "css",
+    "framework",
+    "component",
+    "styles"
+  ],
+  "devDependencies": {
+    "sui-pre-commit-rules": "latest"
+  },
+  "author": "SUI Engineers | @suiengineers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SUI-Framework/SUI/issues"
+  },
+  "homepage": "https://github.com/SUI-Framework/SUI#readme"
+}
