@@ -1,0 +1,54 @@
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+
+// Index
+// 1. clearfix
+// 2. font-size
+// 3. media queries
+
+
+// clearfix
+// -----------------------------------------------------------------------------
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: ' ';
+    display: table;
+  }
+}
+
+
+// font-size
+// -----------------------------------------------------------------------------
+
+@mixin font-size($fz-default, $lh-default: normal) {
+  font-size: $fz-default;
+
+  @if $lh-default == normal {
+    @if $fz-default > $fz-base {
+      line-height: ceil($fz-base * $lh-base-headings) - ($fz-base - $fz-default);
+    } @else {
+      line-height: ceil($fz-base * $lh-base-body) - ($fz-base - $fz-default);
+    }
+  } @else {
+    @if (type-of($lh-default) == number or $lh-default == inherit or $lh-default == normal) {
+      line-height: $lh-default;
+    } @else {
+      @warn "D'oh! '#{$lh-default}' is not a valid value for `line-height`.";
+    }
+  }
+}
+
+// media queries
+// -----------------------------------------------------------------------------
+
+// $breakpoint = $mq-tablet, $mq-desktop or specific
+// $query1     = min or max
+// $query2     = width, device-width
+
+@mixin mediaquery ($breakpoint, $query1: min, $query2: width) {
+  @media only screen and (#{$query1}-#{$query2}: $breakpoint) {
+    @content;
+  }
+}
