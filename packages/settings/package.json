@@ -1,6 +1,6 @@
 {
   "name": "sui-settings",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Set the settings for SUI Framework",
   "main": "./src/_settings.scss",
   "scripts": {
@@ -21,7 +21,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/SUI-Framework/SUI.git"
+    "url": "https://github.com/SUI-Framework/SUI/tree/master/packages/settings"
   },
   "bugs": {
     "url": "https://github.com/SUI-Framework/SUI/issues"
