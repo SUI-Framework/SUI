@@ -1,0 +1,55 @@
+{
+  "name": "sui-typography",
+  "version": "0.1.0",
+  "description": "Set the typography for SUI Framework",
+  "main": "./src/_typography.scss",
+  "scripts": {
+    "lint": "npm run lint:sass",
+    "lint:sass": "scss-lint src/",
+    "dist": "node-sass --output-style compressed src/_typography.scss dist/typography.css",
+    "postdist": "npm run postdist:postcss && npm run postdist:copy",
+    "postdist:postcss": "postcss --use autoprefixer dist/typography.css -d dist/",
+    "postdist:copy": "cp -R src/fonts/ dist/fonts",
+    "server": "live-server --open=docs/ --ignore=src/",
+    "predev": "npm run kss",
+    "dev": "concurrent --kill-others \"npm run dev:sass\" \"npm run server\"",
+    "dev:sass": "nodemon --watch src/ -e scss --exec npm run dist",
+    "prekss": "npm run dist && cp ./dist/typography.css ./node_modules/sui-kss-template/src/public/styles.css && cp -r ./src/fonts ./node_modules/sui-kss-template/src/public",
+    "kss": "kss-node --source src/ --destination docs --template ./node_modules/sui-kss-template/src/ --helpers ./node_modules/sui-kss-template/src/helpers/",
+    "predocs": "npm run kss",
+    "docs": "surge -d sui-typography.surge.sh -p docs/"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "author": "SUI Engineers | @suiengineers",
+  "license": "MIT",
+  "keywords": [
+    "sui",
+    "suiengineers",
+    "css-utils",
+    "typography",
+    "styles"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SUI-Framework/SUI/tree/master/packages/typography"
+  },
+  "bugs": {
+    "url": "https://github.com/SUI-Framework/SUI/issues"
+  },
+  "homepage": "https://github.com/SUI-Framework/SUI/tree/master/packages/typography#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.1.2",
+    "concurrently": "1.0.0",
+    "kss": "^2.1.1",
+    "live-server": "0.8.2",
+    "node-sass": "^3.1.2",
+    "nodemon": "1.8.1",
+    "postcss-cli": "^2.3.2",
+    "resolve": "^1.1.6",
+    "sui-kss-template": "latest",
+    "sui-pre-commit-rules": "latest",
+    "surge": "^0.17.7"
+  }
+}
