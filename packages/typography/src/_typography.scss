@@ -1,0 +1,35 @@
+/*------------------------------------*\
+  #TYPOGRAPHY
+\*------------------------------------*/
+
+/*
+Typography
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Markup:
+<h1>abcABC0123456789</h1>
+<p>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</p>
+
+Styleguide Typography-1
+*/
+
+$path-fonts: "fonts/" !default;
+
+@each $font in Lato-Regular,
+               Lato-Bold,
+               Lato-Bold-Italic,
+               Lato-Italic {
+  @font-face {
+    font-family: $font;
+    font-style: normal;
+    font-weight: normal;
+
+    src: url('#{$path-fonts}#{$font}.eot');
+    src: url('#{$path-fonts}#{$font}.eot?#iefix') format('embedded-opentype'),
+    url('#{$path-fonts}#{$font}.woff2') format('woff2'),
+    url('#{$path-fonts}#{$font}.woff') format('woff'),
+    url('#{$path-fonts}#{$font}.ttf') format('truetype'),
+    url('#{$path-fonts}#{$font}.svg#latoregular') format('svg');
+  }
+}
