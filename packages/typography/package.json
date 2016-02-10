@@ -17,7 +17,7 @@
     "prekss": "npm run dist && cp ./dist/typography.css ./node_modules/sui-kss-template/src/public/styles.css && cp -r ./src/fonts ./node_modules/sui-kss-template/src/public",
     "kss": "kss-node --source src/ --destination docs --template ./node_modules/sui-kss-template/src/ --helpers ./node_modules/sui-kss-template/src/helpers/",
     "predocs": "npm run kss",
-    "docs": "gh-pages -d docs"
+    "docs": "surge -d sui-typography.surge.sh -p docs/"
   },
   "pre-commit": [
     "lint"
@@ -38,7 +38,7 @@
   "bugs": {
     "url": "https://github.com/SUI-Framework/SUI/issues"
   },
-  "homepage": "https://github.com/SUI-Framework/SUI#readme",
+  "homepage": "https://github.com/SUI-Framework/SUI/tree/master/packages/typography#readme",
   "devDependencies": {
     "autoprefixer": "^6.1.2",
     "concurrently": "1.0.0",
