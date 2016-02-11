@@ -1,0 +1,22 @@
+/*
+Paragraphs
+
+Use tag `<p>` for a basic paragraph. Don't use `<span>` or `<div>` as a text tag, it's not semantic.
+
+Markup:
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+Styleguide Paragraphs-1
+*/
+
+p {
+  font-size: $fz-base;
+  line-height: $lh-base-body;
+  margin-bottom: $m-base;
+  word-wrap: break-word;
+
+  &:last-child,
+  &:only-child {
+    margin-bottom: 0;
+  }
+}
