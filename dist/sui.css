@@ -1,0 +1,42 @@
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+/*------------------------------------*  #TYPOGRAPHY
+\*------------------------------------*/
+/*
+Typography
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Markup:
+<h1>abcABC0123456789</h1>
+<p>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</p>
+
+Styleguide Typography-1
+*/
+@font-face {
+  font-family: 'latoregular';
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/lato-regular-webfont.eot");
+  src: url("fonts/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/lato-regular-webfont.woff2") format("woff2"), url("fonts/lato-regular-webfont.woff") format("woff"), url("fonts/lato-regular-webfont.ttf") format("truetype"), url("fonts/lato-regular-webfont.svg#latoregular") format("svg"); }
+
+@font-face {
+  font-family: 'latobold';
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/lato-bold-webfont.eot");
+  src: url("fonts/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/lato-bold-webfont.woff2") format("woff2"), url("fonts/lato-bold-webfont.woff") format("woff"), url("fonts/lato-bold-webfont.ttf") format("truetype"), url("fonts/lato-bold-webfont.svg#latobold") format("svg"); }
+
+@font-face {
+  font-family: 'latobold_italic';
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/lato-bolditalic-webfont.eot");
+  src: url("fonts/lato-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/lato-bolditalic-webfont.woff2") format("woff2"), url("fonts/lato-bolditalic-webfont.woff") format("woff"), url("fonts/lato-bolditalic-webfont.ttf") format("truetype"), url("fonts/lato-bolditalic-webfont.svg#latobold_italic") format("svg"); }
+
+@font-face {
+  font-family: 'latoitalic';
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/lato-italic-webfont.eot");
+  src: url("fonts/lato-italic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/lato-italic-webfont.woff2") format("woff2"), url("fonts/lato-italic-webfont.woff") format("woff"), url("fonts/lato-italic-webfont.ttf") format("truetype"), url("fonts/lato-italic-webfont.svg#latoitalic") format("svg"); }
