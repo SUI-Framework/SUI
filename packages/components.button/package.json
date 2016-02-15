@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "npm run lint:sass",
     "lint:sass": "scss-lint src/",
-    "dist": "node-sass --output-style compressed src/_button.scss dist/button.css",
+    "dist": "node-sass --output-style compressed src/_button.scss dist/button.css --importer ./scripts/importer.js",
     "postdist": "npm run postdist:postcss",
     "postdist:postcss": "postcss --use autoprefixer dist/button.css -d dist/",
     "server": "live-server --open=docs/ --ignore=src/",
@@ -15,6 +15,7 @@
     "dev:sass": "nodemon --watch src/ -e scss --exec npm run dist",
     "prekss": "npm run dist && cp ./dist/button.css ./node_modules/sui-kss-template/src/public/styles.css",
     "kss": "kss-node --source src/ --destination docs --template ./node_modules/sui-kss-template/src/ --helpers ./node_modules/sui-kss-template/src/helpers/",
+    "postkss": "replace '@@' ' ' ./docs/*",
     "predocs": "npm run kss",
     "docs": "surge -d sui-button.surge.sh -p docs/"
   },
@@ -46,6 +47,7 @@
     "node-sass": "^3.1.2",
     "nodemon": "1.8.1",
     "postcss-cli": "^2.3.2",
+    "replace": "^0.3.0",
     "resolve": "^1.1.6",
     "sui-kss-template": "latest",
     "sui-pre-commit-rules": "latest",
