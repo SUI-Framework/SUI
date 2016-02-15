@@ -1,0 +1,128 @@
+/*
+Fonts
+
+These classes affect how text appears on a page.
+
+Styleguide Fonts-1
+*/
+
+/*
+Text size
+
+Use class `.Text--base` to force body copy size or `.Text--small`, `.Text--xsmall`, `.Text--medium`, `.Text--large`, `.Text--xlarge`,`.Text--xxlarge` to modify the text size.
+
+Markup:
+<small class="Text--xsmall">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+<p class="Text--small">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<h2 class="Text--base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+<p class="Text--medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="Text--large">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="Text--xlarge">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="Text--xxlarge">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+Styleguide Fonts-1.1
+*/
+
+@mixin textxxlarge {
+  font-size: $fz-xxlarge;
+  line-height: $lh-base-headings;
+
+  @include mediaquery($mq-tablet) {
+    font-size: $fz-xxlarge-desktop;
+    line-height: $lh-base-headings;
+  }
+}
+
+@mixin textxlarge {
+  font-size: $fz-xlarge;
+  line-height: $lh-base-headings;
+
+  @include mediaquery($mq-tablet) {
+    font-size: $fz-xlarge-desktop;
+    line-height: $lh-base-headings;
+  }
+}
+
+@mixin textlarge {
+  font-size: $fz-large;
+  line-height: $lh-base-headings;
+
+  @include mediaquery($mq-tablet) {
+    font-size: $fz-large-desktop;
+    line-height: $lh-base-headings;
+  }
+}
+
+@mixin textmedium {
+  font-size: $fz-medium;
+  line-height: $lh-base-headings;
+
+  @include mediaquery($mq-tablet) {
+    font-size: $fz-medium-desktop;
+    line-height: $lh-base-headings;
+  }
+}
+
+@mixin textbase {
+  font-size: $fz-base;
+  line-height: $lh-base-body;
+}
+
+@mixin textsmall {
+  font-size: $fz-small;
+  line-height: $lh-base-body;
+}
+
+@mixin textxsmall {
+  font-size: $fz-xsmall;
+  line-height: $lh-base-body;
+}
+
+.Text--xxlarge {
+  @include textxxlarge;
+}
+
+.Text--xlarge {
+  @include textxlarge;
+}
+
+.Text--large {
+  @include textxlarge;
+}
+
+.Text--medium {
+  @include textmedium;
+}
+
+.Text--base {
+  @include textbase;
+}
+
+.Text--small {
+  @include textsmall;
+}
+
+.Text--xsmall {
+  @include textxsmall;
+}
+
+/*
+Text variants
+
+Use class `.Text--bold` to bold the content. Use only on the following tags: `<p>`, `<li>`, `<span>`, `<dt>` or `<dd>`.
+Use class `.Text--light` to to change from bold to light content.
+
+Markup:
+<p class="Text--bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<h2>Lorem ipsum dolor sit amet, <span class="Text--light">consectetur adipiscing elit</span>.</h2>
+
+Styleguide Fonts-1.2
+*/
+
+.Text--bold {
+  font-family: $ff-base-bold;
+}
+
+.Text--light {
+  font-family: $ff-base;
+}

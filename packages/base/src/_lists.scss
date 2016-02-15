@@ -1,0 +1,166 @@
+/*
+Lists
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Styleguide Lists-1
+*/
+
+/*
+List
+
+Use class `.List` for a basic list without decoration.
+
+Markup:
+<!-- Ordered list -->
+<ul class="List">
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Curabitur viverra ante enim</li>
+</ul>
+@@
+<!-- Definition list -->
+<dl class="List">
+  <dt>Lorem ipsum:</dt>
+  <dd>dolor sit amet</dd>
+  <dt>Lorem ipsum:</dt>
+  <dd>dolor sit amet</dd>
+</dl>
+
+
+Styleguide Lists-1.1
+*/
+
+.List {
+  > li,
+  > dt {
+    margin-bottom: $m-base;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media print {
+      font-size: ($fz-base / $conv-px-pt);
+      line-height: ($lh-base-body / $conv-px-pt);
+    }
+  }
+
+  > dt {
+    color: $c-text-variant;
+    font-family: $ff-base-bold;
+    margin-bottom: 0;
+  }
+
+  > dd {
+    @media print {
+      font-size: ($fz-base / $conv-px-pt);
+      line-height: ($lh-base-body / $conv-px-pt);
+    }
+  }
+
+  dd + dt {
+    margin-top: $m-medium;
+  }
+}
+
+/*
+List inline
+
+Use class `.List--inline` to generate a list inline without gutter between list items.
+
+Markup:
+<ul class="List List--inline">
+  <li>Lorem ipsum 1</li>
+  <li>Lorem ipsum 2</li>
+  <li>Lorem ipsum 3</li>
+</ul>
+
+Styleguide Lists-1.2
+*/
+
+.List--inline {
+  li {
+    display: inline-block;
+    margin-bottom: 0;
+
+    &:not(:last-child) {
+      margin-right: $m-medium;
+    }
+  }
+}
+
+/*
+Numbered list
+
+Use class `.List` and `.List--ordered` to generate a numbered list.
+
+Markup:
+<ol class="List List--ordered">
+  <li>Lorem ipsum</li>
+  <li>Lorem ipsum</li>
+  <li>Lorem ipsum</li>
+</ol>
+
+Styleguide Lists-1.3
+*/
+
+.List--ordered {
+  > li {
+    counter-increment: step-counter;
+    overflow: hidden;
+
+    &::before {
+      content: counter(step-counter, decimal-leading-zero) '.';
+      float: left;
+      font-family: $ff-base-bold;
+      min-width: 35px;
+      padding-top: 2px;
+    }
+  }
+}
+
+/*
+Lists with bullets
+
+Use class `.List` and `.List--bullet` to add bullets to the list.
+
+Markup:
+<ul class="List List--bullet">
+  <li>Lorem ipsum</li>
+  <li>Lorem ipsum</li>
+  <li>Lorem ipsum</li>
+</ul>
+
+Styleguide Lists-1.4
+*/
+
+.List--bullet {
+  > li {
+    position: relative;
+  }
+
+  > li,
+  > dt,
+  > dd {
+    padding-left: $p-base;
+  }
+
+  > li::before,
+  > dt::before {
+    background-color: $c-text;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 5px;
+    left: 0;
+    list-style-position: inside;
+    position: absolute;
+    top: 6px;
+    width: 5px;
+  }
+
+  @media print {
+    margin: 0;
+  }
+}
