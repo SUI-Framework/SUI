@@ -1,0 +1,75 @@
+/*
+Headings
+
+Use tag `<h1>`, `<h2>`, (...),`<h4>` for semantic headers.
+Also it is possible to use an extra class `.Heading--mega` to change the level appearance.
+
+Markup:
+<h1>Heading level 1</h1>
+<h2>Heading level 2</h2>
+<h3>Heading level 3</h3>
+<h4>Heading level 4</h4>
+@@
+<h1 class="Heading--mega">Heading mega</h1>
+
+
+Styleguide Headings-1
+*/
+
+h1,
+h2,
+h3,
+h4,
+.Heading--mega {
+  font-family: $ff-base-heading;
+}
+
+h1 {
+  font-size: $fz-xxlarge;
+  line-height: $lh-base-headings;
+
+  @include mediaquery($mq-tablet) {
+    font-size: $fz-xxlarge-desktop;
+    line-height: $lh-base-headings;
+  }
+}
+
+h2 {
+  font-size: $fz-xlarge;
+  line-height: $lh-base-headings;
+
+  @include mediaquery($mq-tablet) {
+    font-size: $fz-xlarge-desktop;
+    line-height: $lh-base-headings;
+  }
+}
+
+h3 {
+  font-size: $fz-large;
+  line-height: $lh-base-headings;
+
+  @include mediaquery($mq-tablet) {
+    font-size: $fz-large-desktop;
+    line-height: $lh-base-headings;
+  }
+}
+
+h4 {
+  font-size: $fz-medium;
+  line-height: $lh-base-headings;
+
+  @include mediaquery($mq-tablet) {
+    font-size: $fz-medium-desktop;
+    line-height: $lh-base-headings;
+  }
+}
+
+.Heading--mega {
+  font-size: $fz-xxxlarge;
+  line-height: $lh-base-headings;
+
+  @include mediaquery($mq-tablet) {
+    font-size: $fz-xxxlarge-desktop;
+    line-height: $lh-base-headings;
+  }
+}
