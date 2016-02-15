@@ -1,5 +1,35 @@
 /*------------------------------------*    $MIXINS
 \*------------------------------------*/
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+/*
+  ToDo: Review universal selector use
+*/
+*,
+*::before,
+*::after,
+input[type='search'] {
+  box-sizing: inherit; }
+
+/*
+Paragraphs
+
+Use tag `<p>` for a basic paragraph. Don't use `<span>` or `<div>` as a text tag, it's not semantic.
+
+Markup:
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+Styleguide Paragraphs-1
+*/
+p {
+  font-size: 16px;
+  line-height: 1.25;
+  margin-bottom: 10px;
+  word-wrap: break-word; }
+  p:last-child, p:only-child {
+    margin-bottom: 0; }
+
+/* ------ */
 /*------------------------------------*  #TYPOGRAPHY
 \*------------------------------------*/
 /*
@@ -14,29 +44,29 @@ Markup:
 Styleguide Typography-1
 */
 @font-face {
-  font-family: 'latoregular';
+  font-family: Lato-Regular;
   font-style: normal;
   font-weight: normal;
-  src: url("fonts/lato-regular-webfont.eot");
-  src: url("fonts/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/lato-regular-webfont.woff2") format("woff2"), url("fonts/lato-regular-webfont.woff") format("woff"), url("fonts/lato-regular-webfont.ttf") format("truetype"), url("fonts/lato-regular-webfont.svg#latoregular") format("svg"); }
+  src: url("fonts/Lato-Regular.eot");
+  src: url("fonts/Lato-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Lato-Regular.woff2") format("woff2"), url("fonts/Lato-Regular.woff") format("woff"), url("fonts/Lato-Regular.ttf") format("truetype"), url("fonts/Lato-Regular.svg#latoregular") format("svg"); }
 
 @font-face {
-  font-family: 'latobold';
+  font-family: Lato-Bold;
   font-style: normal;
   font-weight: normal;
-  src: url("fonts/lato-bold-webfont.eot");
-  src: url("fonts/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/lato-bold-webfont.woff2") format("woff2"), url("fonts/lato-bold-webfont.woff") format("woff"), url("fonts/lato-bold-webfont.ttf") format("truetype"), url("fonts/lato-bold-webfont.svg#latobold") format("svg"); }
+  src: url("fonts/Lato-Bold.eot");
+  src: url("fonts/Lato-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Lato-Bold.woff2") format("woff2"), url("fonts/Lato-Bold.woff") format("woff"), url("fonts/Lato-Bold.ttf") format("truetype"), url("fonts/Lato-Bold.svg#latoregular") format("svg"); }
 
 @font-face {
-  font-family: 'latobold_italic';
+  font-family: Lato-Bold-Italic;
   font-style: normal;
   font-weight: normal;
-  src: url("fonts/lato-bolditalic-webfont.eot");
-  src: url("fonts/lato-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/lato-bolditalic-webfont.woff2") format("woff2"), url("fonts/lato-bolditalic-webfont.woff") format("woff"), url("fonts/lato-bolditalic-webfont.ttf") format("truetype"), url("fonts/lato-bolditalic-webfont.svg#latobold_italic") format("svg"); }
+  src: url("fonts/Lato-Bold-Italic.eot");
+  src: url("fonts/Lato-Bold-Italic.eot?#iefix") format("embedded-opentype"), url("fonts/Lato-Bold-Italic.woff2") format("woff2"), url("fonts/Lato-Bold-Italic.woff") format("woff"), url("fonts/Lato-Bold-Italic.ttf") format("truetype"), url("fonts/Lato-Bold-Italic.svg#latoregular") format("svg"); }
 
 @font-face {
-  font-family: 'latoitalic';
+  font-family: Lato-Italic;
   font-style: normal;
   font-weight: normal;
-  src: url("fonts/lato-italic-webfont.eot");
-  src: url("fonts/lato-italic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/lato-italic-webfont.woff2") format("woff2"), url("fonts/lato-italic-webfont.woff") format("woff"), url("fonts/lato-italic-webfont.ttf") format("truetype"), url("fonts/lato-italic-webfont.svg#latoitalic") format("svg"); }
+  src: url("fonts/Lato-Italic.eot");
+  src: url("fonts/Lato-Italic.eot?#iefix") format("embedded-opentype"), url("fonts/Lato-Italic.woff2") format("woff2"), url("fonts/Lato-Italic.woff") format("woff"), url("fonts/Lato-Italic.ttf") format("truetype"), url("fonts/Lato-Italic.svg#latoregular") format("svg"); }
