@@ -1,6 +1,6 @@
 {
   "name": "sui-base",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "SUI Framework base styles",
   "main": "./src/_base.scss",
   "scripts": {
