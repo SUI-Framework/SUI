@@ -26,6 +26,12 @@ $c-text-variant:            #999999 !default;
 $c-contrast:                #ffffff !default;
 $c-dark-soft:               #cccccc !default;
 $c-dark-light:              #f2f2f2 !default;
+$c-error:                   #bf2102 !default;
+$c-success:                 #00a550 !default;
+$c-warning:                 #e1a900 !default;
+$c-dark-mid:                #484f53 !default;
+$c-highlight:               #000000 !default;
+
 
 // Font families
 // -----------------------------------------------------------------------------
@@ -71,8 +77,11 @@ $b-radius-base:             0 !default;
 $m-base:                    10px !default;
 $m-medium:                  20px !default;
 
+// Conversors
+// -----------------------------------------------------------------------------
+$conv-px-pt:                        1.3333;
+
 // Mediaqueries
 // -----------------------------------------------------------------------------
-$mq-mobile:                 480px !default;
-$mq-tablet:                 768px !default;
-$mq-desktop:                1024px !default;
+$mq-tablet:                         480px !default;
+$mq-desktop:                        768px !default;
