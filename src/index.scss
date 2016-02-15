@@ -4,3 +4,7 @@ $is-theme: true;
 // Dependencies from other packages --------------------------------------------
 @import '~sui-settings/src/settings';
 @import '~sui-typography/src/typography';
+
+// Components
+// -----------------------------------------------------------------------------
+@import '~sui-components-button/src/button';
