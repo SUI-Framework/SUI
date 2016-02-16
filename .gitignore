@@ -35,7 +35,6 @@ node_modules
 
 # SUI files ignore
 docs
-dist
 .editorconfig
 .eslintrc
 .sass-lint.yml
