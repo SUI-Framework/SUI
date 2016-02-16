@@ -1,0 +1,588 @@
+// Dependencies from other packages --------------------------------------------
+@import '~sui-settings/src/settings';
+
+@if $is-theme == false {
+  @import '~sui-typography/src/typography';
+}
+
+/*
+Form
+
+This section contains all the elements that we can use to build a form.
+
+Styleguide Forms-1
+*/
+
+/*
+Basic field
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Markup:
+<form action="#" method="post">
+  <fieldset>
+    <legend>Lorem ipsum</legend>
+    <ul>
+      <li class="FormGroup">
+        <label for="name">Basic field <span>(opcional)</span></label>
+        <input type="text" id="name">
+        <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
+      </li>
+      <li class="FormGroup is-error">
+        <label for="name">Basic field with error</label>
+        <input type="text" id="name">
+        <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
+        <p class="FormGroup-info is-error">Lorem ipsum dolor sit amet.</p>
+      </li>
+  </fieldset>
+</form>
+
+Styleguide Forms-1.1
+*/
+
+fieldset {
+  + fieldset {
+    margin-top: calc(#{$m-medium} * 2);
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  > button {
+    margin-top: $m-medium;
+  }
+}
+
+legend {
+  display: none;
+}
+
+// reset default validation on ff
+:invalid {
+  box-shadow: none;
+}
+
+::placeholder {
+  font-size: $fz-small;
+  text-overflow: ellipsis;
+  color: $c-text;
+}
+
+@mixin field {
+  color: $c-text;
+  display: block;
+  height: 44px;
+  padding: 4px 10px;
+  font-size: $fz-base;
+  line-height: $lh-base-body;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $c-dark-soft;
+
+  &:focus {
+    border-color: $c-primary;
+    outline: none;
+  }
+}
+
+input,
+textarea {
+  @include field;
+  width: 100%;
+  margin: 0;
+
+  @include mediaquery($mq-tablet) {
+    width: 330px;
+  }
+}
+
+.FormGroup {
+  margin-bottom: $m-medium;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.is-error {
+    label {
+      color: $c-error;
+    }
+
+    input,
+    textarea,
+    select {
+      border-color: $c-error;
+    }
+  }
+
+  .FormGroup-info.is-error {
+    color: $c-error;
+  }
+
+  &.is-success {
+    label {
+      color: $c-success;
+    }
+
+    input,
+    textarea,
+    select {
+      border-color: $c-success;
+    }
+
+    input {
+      background-color: lighten($c-success, 65%);
+    }
+  }
+
+  [disabled="disabled"],
+  &.is-disabled {
+    cursor: default;
+    border-color: $c-dark-light;
+
+    label,
+    .FormGroup-info,
+    .FormGroup-textareaCounter,
+    input,
+    textarea,
+    select,
+    [disabled],
+    [placeholder] {
+      color: $c-dark-light;
+    }
+
+    input,
+    textarea,
+    select {
+      border-color: $c-dark-light;
+    }
+
+    [disabled],
+    [placeholder] {
+      background: transparent;
+    }
+
+    ::placeholder {
+      color: $c-dark-light;
+    }
+  }
+}
+
+label,
+.FormGroup-label {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: calc(#{$m-medium} / 4);
+  font-size: $fz-base;
+  line-height: $lh-base-body;
+  width: auto;
+}
+
+.FormGroup-info {
+  margin-bottom: 0;
+
+  &.is-error,
+  &.is-success,
+  .FormGroup-textarea &,
+  .FormGroup-textareaCounter,
+  &:first-of-type:only-child {
+    margin-top: calc(#{$m-medium} / 4);
+  }
+}
+
+/*
+Basic Pulldown
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Markup:
+<form action="#" method="post">
+  <fieldset>
+    <legend>Lorem ipsum</legend>
+    <ul>
+      <li class="FormGroup">
+        <label for="name">Basic Pulldown</label>
+        <select data-placeholder="(Seleccionar)">
+          <option value="01">Option01</option>
+          <option value="02">Option02</option>
+          <option value="03">Option03</option>
+          <option value="04">Option04</option>
+          <option value="05">Option05</option>
+        </select>
+        <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
+      </li>
+  </fieldset>
+</form>
+
+Styleguide Forms-1.2
+*/
+
+select {
+  @include field;
+  padding: 13px 10px;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+
+textarea,
+[type="text"],
+[type="number"],
+[type="tel"],
+[type="button"],
+[type="submit"],
+select {
+  border-radius: 0;
+}
+
+[type="number"] {
+  appearance: textfield;
+}
+
+/*
+Textarea
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Markup:
+<form action="#" method="post">
+  <fieldset>
+    <legend>Lorem ipsum</legend>
+    <ul>
+      <li class="FormGroup">
+        <label for="name">Basic field <span>(opcional)</span></label>
+        <div class="FormGroup-textarea">
+          <textarea name="comment" value="">Lorem ipsum</textarea>
+          <p class="FormGroup-textareaCounter"><span>114</span>/<span>250</span></p>
+        </div>
+      </li>
+  </fieldset>
+</form>
+
+Styleguide Forms-1.3
+*/
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+  width: 100%;
+}
+
+.FormGroup-textareaCounter {
+  font-size: $fz-small;
+  margin-top: calc(#{$m-medium} / 4);
+}
+
+/*
+Basic group of fields
+
+Use class `.InputGroup`
+
+Markup:
+<form action="#" method="post">
+  <fieldset>
+    <legend>Lorem ipsum</legend>
+    <div class="InputGroup">
+      <div>
+        <input type="text" maxlength="4" name="entity" placeholder="EEEE">
+      </div>
+      <div>
+        <input type="text" maxlength="4" name="office" placeholder="OOOO">
+      </div>
+      <div>
+        <input type="text" maxlength="2" name="control" placeholder="CCCC">
+      </div>
+      <div>
+        <input type="text" maxlength="9" name="account" placeholder="AAAA">
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+Styleguide Forms-1.4
+*/
+
+.InputGroup {
+  display: table;
+  width: 100%;
+
+  > div {
+    display: table-cell;
+  }
+
+  input { // fix iOS buttons separation
+    margin: 0;
+    border-right-width: 0;
+    width: 100%;
+
+    .is-active & {
+      background-color: $c-contrast;
+      cursor: default;
+    }
+  }
+
+  div:last-child input {
+    border-right-width: 1px;
+  }
+}
+
+/*
+Basic group of fields
+
+Use class `.InputGroup--date`
+
+Markup:
+<form action="#" method="post">
+  <fieldset>
+    <legend>Lorem ipsum</legend>
+    <div class="InputGroup InputGroup--date">
+      <div>
+        <input type="number" maxlength="2" name="day" id="day" placeholder="DD">
+      </div>
+      <div>
+        <input type="number" maxlength="2" name="month" id="month" placeholder="MM">
+      </div>
+      <div>
+        <input type="number" maxlength="4" name="year" id="year" placeholder="AAAA">
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+Styleguide Forms-1.5
+*/
+
+.InputGroup--date {
+  width: auto;
+  border: 1px solid $c-dark-soft;
+
+  > div {
+    position: relative;
+
+    &::before {
+      content: '|';
+      position: absolute;
+      top: 12px;
+      left: -5px;
+      color: $c-dark-soft;
+    }
+
+    &:first-of-type::before {
+      content: '';
+    }
+
+    input {
+      width: 50px;
+      margin-left: -4px;
+      text-align: center;
+      border: 0;
+    }
+
+    &:last-child input {
+      width: 66px;
+    }
+  }
+
+  > div:first-of-type input {
+    margin-left: 0;
+  }
+
+  .is-error & {
+    border: 1px solid $c-error;
+  }
+}
+
+
+
+/*
+Checkboxes and radiobuttons
+
+Markup:
+<form action="#" method="post">
+  <fieldset>
+    <legend>Legend</legend>
+    <ul>
+      <li class="FormGroup">
+        <p class="FormGroup-label">Checkbox List</p>
+        <ul>
+          <li>
+            <input type="checkbox" id="checkbox1">
+            <label for="checkbox1">Checkbox 1</label>
+          </li>
+          <li>
+            <input type="checkbox" id="checkbox2">
+            <label for="checkbox2">Checkbox 2</label>
+          </li>
+        </ul>
+      </li>
+      <li class="FormGroup">
+        <p class="FormGroup-label">Radio button List</p>
+        <ul>
+          <li>
+            <input type="radio" id="radio1" name="radio">
+            <label for="radio1">Radio button field 1</label>
+          </li>
+          <li>
+            <input type="radio" id="radio2" name="radio">
+            <label for="radio2">Radio button field 2</label>
+          </li>
+        </ul>
+        <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
+      </li>
+    </ul>
+  </fieldset>
+</form>
+
+Styleguide Forms-1.6
+*/
+
+[type="radio"],
+[type="checkbox"] {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0;
+  margin: 3px 6px 0 0;
+  width: auto;
+  border: 0 none;
+  vertical-align: top;
+  height: auto;
+  font-size: $fz-base;
+
+  + label {
+    cursor: pointer;
+    max-width: 85%;
+  }
+
+  &:disabled {
+    color: $c-text-variant;
+  }
+}
+
+/*
+Checkboxes and radiobuttons inline
+
+Use class `.RadioGroupInline` to create a radio button's group with inline structure.
+
+Markup:
+<form action="#" method="post">
+  <fieldset>
+    <ul class="RadioGroupInline">
+      <li>
+        <input type="radio" checked="checked" id="option1" name="options"><label for="option1">Option 1</label>
+      </li>
+      <li>
+        <input type="radio" id="option2" name="options"><label for="option2">Option 2</label>
+      </li>
+    </ul>
+  </fieldset>
+</form>
+
+Styleguide Forms-1.7
+*/
+
+.RadioGroupInline {
+  @include clearfix;
+  width: 100%;
+
+  li {
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+
+    @include mediaquery($mq-tablet) {
+      padding: 6px 10px;
+      box-sizing: border-box;
+    }
+
+    + li {
+      margin-left: 10px;
+
+      @include mediaquery($mq-tablet) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  label {
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+
+    @include mediaquery($mq-tablet) {
+      margin-bottom: 0;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      left: 0;
+      height: 10px;
+    }
+
+    &::before {
+      top: -10px;
+    }
+
+    &::after {
+      top: 100%;
+    }
+  }
+}
+
+/*
+StrengthBar
+
+Use class `.StrengthBar` to create a strength bar.
+
+Markup:
+<form action="#" method="post">
+  <fieldset>
+  <ul>
+    <li class="StrengthBar is-success">
+      <label for="password">Lorem ipsum</label>
+      <input type="password" placeholder="Lorem ipsum" data-vars="" id="password" name="password" maxlength="20">
+      <a id="view" onclick="showHidePassword();return false;" href="#">View</a>
+      <dl>
+          <dt>Strenght: Normal</dt>
+          <dd class="StrengthBar-meter"><meter role="progressbar" min="0" low="2" optimum="3" high="2" max="3" value="2" name="password-strength" id="password-strength"></meter></dd>
+      </dl>
+    </li>
+  </ul>
+  </fieldset>
+</form>
+
+Styleguide Forms-1.8
+*/
+
+.StrengthBar {
+  position: relative;
+
+  a {
+    position: absolute;
+    top: 26px;
+    right: 1px;
+    font-size: $fz-small;
+    line-height: $lh-base-body;
+    padding: 15px 10px;
+  }
+
+  input,
+  textarea {
+    margin-bottom: 10px;
+  }
+
+  &-meter,
+  meter {
+    height: 7px;
+  }
+
+  meter {
+    width: 100%;
+    vertical-align: top;
+    appearance: none;
+    background: $c-dark-light;
+  }
+}
