@@ -70,6 +70,318 @@ p {
   p:last-child, p:only-child {
     margin-bottom: 0; }
 
+/*
+Lists
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Styleguide Lists-1
+*/
+/*
+List
+
+Use class `.List` for a basic list without decoration.
+
+Markup:
+<!-- Ordered list -->
+<ul class="List">
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Curabitur viverra ante enim</li>
+</ul>
+@@
+<!-- Definition list -->
+<dl class="List">
+  <dt>Lorem ipsum:</dt>
+  <dd>dolor sit amet</dd>
+  <dt>Lorem ipsum:</dt>
+  <dd>dolor sit amet</dd>
+</dl>
+
+
+Styleguide Lists-1.1
+*/
+.List > li,
+.List > dt {
+  margin-bottom: 10px; }
+  .List > li:last-child,
+  .List > dt:last-child {
+    margin-bottom: 0; }
+  @media print {
+    .List > li,
+    .List > dt {
+      font-size: 12.0003px;
+      line-height: 0.93752; } }
+
+.List > dt {
+  color: #999999;
+  font-family: "Lato-Bold", Helvetica, Arial, sans-serif;
+  margin-bottom: 0; }
+
+@media print {
+  .List > dd {
+    font-size: 12.0003px;
+    line-height: 0.93752; } }
+
+.List dd + dt {
+  margin-top: 20px; }
+
+/*
+List inline
+
+Use class `.List--inline` to generate a list inline without gutter between list items.
+
+Markup:
+<ul class="List List--inline">
+  <li>Lorem ipsum 1</li>
+  <li>Lorem ipsum 2</li>
+  <li>Lorem ipsum 3</li>
+</ul>
+
+Styleguide Lists-1.2
+*/
+.List--inline li {
+  display: inline-block;
+  margin-bottom: 0; }
+  .List--inline li:not(:last-child) {
+    margin-right: 20px; }
+
+/*
+Numbered list
+
+Use class `.List` and `.List--ordered` to generate a numbered list.
+
+Markup:
+<ol class="List List--ordered">
+  <li>Lorem ipsum</li>
+  <li>Lorem ipsum</li>
+  <li>Lorem ipsum</li>
+</ol>
+
+Styleguide Lists-1.3
+*/
+.List--ordered > li {
+  counter-increment: step-counter;
+  overflow: hidden; }
+  .List--ordered > li::before {
+    content: counter(step-counter, decimal-leading-zero) ".";
+    float: left;
+    font-family: "Lato-Bold", Helvetica, Arial, sans-serif;
+    min-width: 35px;
+    padding-top: 2px; }
+
+/*
+Lists with bullets
+
+Use class `.List` and `.List--bullet` to add bullets to the list.
+
+Markup:
+<ul class="List List--bullet">
+  <li>Lorem ipsum</li>
+  <li>Lorem ipsum</li>
+  <li>Lorem ipsum</li>
+</ul>
+
+Styleguide Lists-1.4
+*/
+.List--bullet > li {
+  position: relative; }
+
+.List--bullet > li,
+.List--bullet > dt,
+.List--bullet > dd {
+  padding-left: 10px; }
+
+.List--bullet > li::before,
+.List--bullet > dt::before {
+  background-color: #666666;
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 5px;
+  left: 0;
+  list-style-position: inside;
+  position: absolute;
+  top: 6px;
+  width: 5px; }
+
+@media print {
+  .List--bullet {
+    margin: 0; } }
+
+/*
+Headings
+
+Use tag `<h1>`, `<h2>`, (...),`<h4>` for semantic headers.
+Also it is possible to use an extra class `.Heading--mega` to change the level appearance.
+
+Markup:
+<h1>Heading level 1</h1>
+<h2>Heading level 2</h2>
+<h3>Heading level 3</h3>
+<h4>Heading level 4</h4>
+@@
+<h1 class="Heading--mega">Heading mega</h1>
+
+
+Styleguide Headings-1
+*/
+h1,
+h2,
+h3,
+h4,
+.Heading--mega {
+  font-family: "Lato-Bold", Helvetica, Arial, sans-serif; }
+
+h1 {
+  font-size: 23px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    h1 {
+      font-size: 30px;
+      line-height: 1.16; } }
+
+h2 {
+  font-size: 21px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    h2 {
+      font-size: 25px;
+      line-height: 1.16; } }
+
+h3 {
+  font-size: 20px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    h3 {
+      font-size: 18px;
+      line-height: 1.16; } }
+
+h4 {
+  font-size: 18px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    h4 {
+      font-size: 16px;
+      line-height: 1.16; } }
+
+.Heading--mega {
+  font-size: 25px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    .Heading--mega {
+      font-size: 36px;
+      line-height: 1.16; } }
+
+/*
+Fonts
+
+These classes affect how text appears on a page.
+
+Styleguide Fonts-1
+*/
+/*
+Text size
+
+Use class `.Text--base` to force body copy size or `.Text--small`, `.Text--xsmall`, `.Text--medium`, `.Text--large`, `.Text--xlarge`,`.Text--xxlarge` to modify the text size.
+
+Markup:
+<small class="Text--xsmall">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+<p class="Text--small">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<h2 class="Text--base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+<p class="Text--medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="Text--large">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="Text--xlarge">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="Text--xxlarge">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+Styleguide Fonts-1.1
+*/
+.Text--xxlarge {
+  font-size: 23px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    .Text--xxlarge {
+      font-size: 30px;
+      line-height: 1.16; } }
+
+.Text--xlarge {
+  font-size: 21px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    .Text--xlarge {
+      font-size: 25px;
+      line-height: 1.16; } }
+
+.Text--large {
+  font-size: 21px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    .Text--large {
+      font-size: 25px;
+      line-height: 1.16; } }
+
+.Text--medium {
+  font-size: 18px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    .Text--medium {
+      font-size: 16px;
+      line-height: 1.16; } }
+
+.Text--base {
+  font-size: 16px;
+  line-height: 1.25; }
+
+.Text--small {
+  font-size: 14px;
+  line-height: 1.25; }
+
+.Text--xsmall {
+  font-size: 12px;
+  line-height: 1.25; }
+
+/*
+Text variants
+
+Use class `.Text--bold` to bold the content. Use only on the following tags: `<p>`, `<li>`, `<span>`, `<dt>` or `<dd>`.
+Use class `.Text--light` to to change from bold to light content.
+
+Markup:
+<p class="Text--bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<h2>Lorem ipsum dolor sit amet, <span class="Text--light">consectetur adipiscing elit</span>.</h2>
+
+Styleguide Fonts-1.2
+*/
+.Text--bold {
+  font-family: "Lato-Bold", Helvetica, Arial, sans-serif; }
+
+.Text--light {
+  font-family: "Lato-Regular", Helvetica, Arial, sans-serif; }
+
+@-webkit-keyframes move-up {
+  0% {
+    top: 100%; }
+  100% {
+    top: 0; } }
+
+@keyframes move-up {
+  0% {
+    top: 100%; }
+  100% {
+    top: 0; } }
+
+@-webkit-keyframes move-down {
+  0% {
+    top: 0; }
+  100% {
+    top: 100%; } }
+
+@keyframes move-down {
+  0% {
+    top: 0; }
+  100% {
+    top: 100%; } }
+
 /* ------ */
 /*------------------------------------*    $MIXINS
 \*------------------------------------*/
