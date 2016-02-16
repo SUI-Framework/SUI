@@ -225,3 +225,91 @@ Styleguide Button-1.4
     background-color: #ffffff;
     color: #cccccc;
     cursor: default; }
+
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+/*
+Notifications
+
+Contextual notifications for messages.
+
+Use class `.Notification` for default notification.
+The modifier classes are `.Notification--error` for errors, `.Notification--success` for success and `.Notification--warning` for warnings.<br>
+Wrap in div with class `.Notification--toastFixed` to fix at top of the page.
+
+Markup:
+<!-- Notification -->
+<div class="Notification">
+	<p class="Notification-title">Lorem ipsum dolor sit</p>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.<!-- <a href="#" class="link-underline">Link underline</a> --></p>
+</div>
+<!-- /Notification -->
+<!-- Notification success -->
+<div class="Notification Notification--success">
+	<p class="Notification-title">Lorem ipsum dolor sit</p>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.</p>
+</div>
+<!-- /Notification success -->
+<!-- Notification warning -->
+<div class="Notification Notification--warning">
+	<p class="Notification-title">Lorem ipsum dolor sit</p>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.</p>
+</div>
+<!-- /Notification warning -->
+<!-- Notification error -->
+<div class="Notification Notification--error">
+	<p class="Notification-title">Lorem ipsum dolor sit</p>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.</p>
+</div>
+<!-- /Notification error -->
+
+Styleguide Notifications-1
+*/
+.Notification {
+  background: #484f53;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.25;
+  padding: 20px; }
+  .Notification a,
+  .Notification a:hover,
+  .Notification a:focus {
+    color: #ffffff; }
+  .Notification--toastFixed .Notification {
+    max-width: 970px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9998; }
+    @media only screen and (min-width: 480px) {
+      .Notification--toastFixed .Notification {
+        margin: 0 auto; } }
+
+.Notification--error {
+  background: #bf2102; }
+
+.Notification--success {
+  background: #00a550; }
+
+.Notification--warning {
+  background: #e1a900;
+  color: #666666; }
+  .Notification--warning a,
+  .Notification--warning a:hover,
+  .Notification--warning a:focus {
+    color: #666666; }
+  .Notification--warning .Notification-title {
+    color: #666666; }
+
+.Notification-title {
+  color: #ffffff;
+  font-family: "Lato-Bold", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.25;
+  margin-bottom: 10px; }
+
+.Notification-close {
+  color: inherit;
+  position: absolute;
+  right: 10px;
+  top: 10px; }
