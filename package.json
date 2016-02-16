@@ -24,6 +24,7 @@
   ],
   "dependencies": {
     "sui-base": "latest",
+    "sui-components-button": "latest",
     "sui-components-notifications": "latest",
     "sui-settings": "latest",
     "sui-typography": "latest"
