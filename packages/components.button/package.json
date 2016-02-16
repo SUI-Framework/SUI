@@ -1,6 +1,6 @@
 {
   "name": "sui-components-button",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "SUI Button Component",
   "main": "./src/_button.scss",
   "scripts": {
