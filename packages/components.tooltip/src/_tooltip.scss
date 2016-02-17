@@ -1,0 +1,142 @@
+// Dependencies from other packages --------------------------------------------
+@import '~sui-settings/src/settings';
+
+@if $is-theme == false {
+  @import '~sui-typography/src/typography';
+}
+
+/*
+Tooltip
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Markup:
+<div class="Tooltip">
+  <div class="Tooltip-layer is-moveUp">
+    <div class="Tooltip-content" style="width: 480px;">
+      <a title="Close" class="Tooltip-close" href="#">Close</a>
+      <p class="Tooltip-intro">Lorem ipsum</p>
+      <p class="Tooltip-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+</div>
+
+Styleguide Tooltip-1
+*/
+
+.Tooltip {
+  display: inline-block;
+
+  @include mediaquery ($mq-tablet) {
+    position: relative;
+  }
+
+  &-intro,
+  &-text {
+    color: $c-text;
+  }
+
+  &-link,
+  &-link:hover,
+  &-link:visited {
+    color: $c-primary;
+  }
+}
+
+.Tooltip-layer {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $c-contrast;
+  width: 100%;
+  z-index: $z-base;
+
+  @include mediaquery ($mq-tablet) {
+    width: auto;
+    top: 34px;
+    bottom: auto;
+    left: auto;
+    position: absolute;
+    overflow: visible;
+    background-color: transparent;
+  }
+
+  &.is-moveUp {
+    visibility: visible;
+    top: 0;
+    animation: move-up .4s;
+  }
+
+  &.is-moveDown {
+    visibility: hidden;
+    animation: move-down .6s;
+
+    @include mediaquery ($mq-tablet) {
+      visibility: visible;
+      animation: none;
+    }
+
+    a {
+      transition: none;
+    }
+  }
+}
+
+.Tooltip-content {
+  color: $c-dark-soft;
+
+  @include mediaquery ($mq-tablet) {
+    position: relative;
+    background-color: $c-contrast;
+    border: 1px solid $c-dark-soft;
+    border-radius: 4px;
+    box-shadow: 0 0 4px $c-dark-light;
+    z-index: $z-tooltip;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 40px;
+      width: 0;
+      height: 0;
+    }
+
+    &::before {
+      margin-left: -12px;
+      border-bottom: 12px solid $c-dark-soft;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+    }
+
+    &::after {
+      margin-left: -10px;
+      border-bottom: 10px solid $c-contrast;
+      border-right: 10px solid transparent;
+      border-left: 10px solid transparent;
+    }
+  }
+}
+
+.Tooltip-close {
+  display: inline-block;
+  overflow: hidden;
+  width: 0;
+  float: right;
+
+  &::before {
+    content: 'X';
+    display: block;
+    height: 14px;
+    margin-right: $p-base * 2;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    width: 14px;
+    color: $c-text;
+  }
+}
