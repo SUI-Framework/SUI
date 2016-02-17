@@ -42,7 +42,7 @@ Styleguide Forms-1.1
 
 fieldset {
   + fieldset {
-    margin-top: calc(#{$m-medium} * 2);
+    margin-top: calc(#{$gap-medium} * 2);
   }
 
   &:first-child {
@@ -50,7 +50,7 @@ fieldset {
   }
 
   > button {
-    margin-top: $m-medium;
+    margin-top: $gap-medium;
   }
 }
 
@@ -98,7 +98,7 @@ textarea {
 }
 
 .FormGroup {
-  margin-bottom: $m-medium;
+  margin-bottom: $gap-medium;
 
   &:last-child {
     margin-bottom: 0;
@@ -173,7 +173,7 @@ label,
 .FormGroup-label {
   display: inline-block;
   vertical-align: top;
-  margin-bottom: calc(#{$m-medium} / 4);
+  margin-bottom: calc(#{$gap-medium} / 4);
   font-size: $fz-base;
   line-height: $lh-base-body;
   width: auto;
@@ -187,7 +187,7 @@ label,
   .FormGroup-textarea &,
   .FormGroup-textareaCounter,
   &:first-of-type:only-child {
-    margin-top: calc(#{$m-medium} / 4);
+    margin-top: calc(#{$gap-medium} / 4);
   }
 }
 
@@ -271,7 +271,7 @@ textarea {
 
 .FormGroup-textareaCounter {
   font-size: $fz-small;
-  margin-top: calc(#{$m-medium} / 4);
+  margin-top: calc(#{$gap-medium} / 4);
 }
 
 /*

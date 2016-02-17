@@ -12,7 +12,7 @@ Styleguide Paragraphs-1
 p {
   font-size: $fz-base;
   line-height: $lh-base-body;
-  margin-bottom: $m-base;
+  margin-bottom: $gap-base;
   word-wrap: break-word;
 
   &:last-child,
