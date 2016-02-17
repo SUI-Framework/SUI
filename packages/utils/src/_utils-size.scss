@@ -1,0 +1,493 @@
+/*
+Utils size
+
+Styleguide Utils Size-1
+
+Markup:
+<div class="u-size1of12"><div class="SampleBox"></div></div>
+<div class="u-size2of12"><div class="SampleBox"></div></div>
+<div class="u-size3of12"><div class="SampleBox"></div></div>
+<div class="u-size4of12"><div class="SampleBox"></div></div>
+<div class="u-size5of12"><div class="SampleBox"></div></div>
+<div class="u-size6of12"><div class="SampleBox"></div></div>
+<div class="u-size7of12"><div class="SampleBox"></div></div>
+<div class="u-size8of12"><div class="SampleBox"></div></div>
+<div class="u-size9of12"><div class="SampleBox"></div></div>
+<div class="u-size10of12"><div class="SampleBox"></div></div>
+<div class="u-size11of12"><div class="SampleBox"></div></div>
+<div class="u-size12of12"><div class="SampleBox"></div></div>
+*/
+
+//move to Styleguide styles
+.SampleBox {
+  background-color: $c-primary;
+  border: 1px solid $c-primary-variant;
+  color: $c-contrast;
+  margin-bottom: $m-base;
+  padding: $m-medium;
+}
+
+@mixin size-basis {
+  flex-basis: auto !important; /* 1 */
+}
+
+@mixin size1of12 {
+  width: 100% * (1 / 12) !important;
+}
+
+@mixin size1of10 {
+  width: 10% !important;
+}
+
+@mixin size1of8 {
+  width: 12.5% !important;
+}
+
+@mixin size1of6 {
+  width: 100% * (1 / 6) !important;
+}
+
+@mixin size1of5 {
+  width: 20% !important;
+}
+
+@mixin size1of4 {
+  width: 25% !important;
+}
+
+@mixin size3of10 {
+  width: 30% !important;
+}
+
+@mixin size1of3 {
+  width: 100% * (1 / 3) !important;
+}
+
+@mixin size3of8 {
+  width: 37.5% !important;
+}
+
+@mixin size2of5 {
+  width: 40% !important;
+}
+
+@mixin size5of12 {
+  width: 100% * (5 / 12) !important;
+}
+
+@mixin size1of2 {
+  width: 50% !important;
+}
+
+@mixin size7of12 {
+  width: 100% * (7 / 12) !important;
+}
+
+@mixin size3of5 {
+  width: 60% !important;
+}
+
+@mixin size5of8 {
+  width: 62.5% !important;
+}
+
+@mixin size2of3 {
+  width: 100% * (2 / 3) !important;
+}
+
+@mixin size7of10 {
+  width: 70% !important;
+}
+
+@mixin size3of4 {
+  width: 75% !important;
+}
+
+@mixin size4of5 {
+  width: 80% !important;
+}
+
+@mixin size5of6 {
+  width: 100% * (5 / 6) !important;
+}
+
+@mixin size7of8 {
+  width: 87.5% !important;
+}
+
+@mixin size9of10 {
+  width: 90% !important;
+}
+
+@mixin size11of12 {
+  width: 100% * (11 / 12) !important;
+}
+
+
+[class*="u-size"] {
+  @include size-basis;
+}
+
+.u-size1of12 {
+  @include size1of12;
+}
+
+.u-size1of10 {
+  @include size1of10;
+}
+
+.u-size1of8 {
+  @include size1of8;
+}
+
+.u-size1of6,
+.u-size2of12 {
+  @include size1of6;
+}
+
+.u-size1of5,
+.u-size2of10 {
+  @include size1of5;
+}
+
+.u-size1of4,
+.u-size2of8,
+.u-size3of12 {
+  @include size1of4;
+}
+
+.u-size3of10 {
+  @include size3of10;
+}
+
+.u-size1of3,
+.u-size2of6,
+.u-size4of12 {
+  @include size1of3;
+}
+
+.u-size3of8 {
+  @include size3of8;
+}
+
+.u-size2of5 {
+  @include size2of5;
+}
+
+.u-size5of12 {
+  @include size5of12;
+}
+
+.u-size1of2,
+.u-size2of4,
+.u-size3of6,
+.u-size4of8,
+.u-size5of10,
+.u-size6of12 {
+  @include size1of2;
+}
+
+.u-size7of12 {
+  @include size7of12;
+}
+
+.u-size3of5,
+.u-size6of10 {
+  @include size3of5;
+}
+
+.u-size5of8 {
+  @include size5of8;
+}
+
+.u-size2of3,
+.u-size4of6,
+.u-size8of12 {
+  @include size2of3;
+}
+
+.u-size7of10 {
+  @include size7of10;
+}
+
+.u-size3of4,
+.u-size6of8,
+.u-size9of12 {
+  @include size3of4;
+}
+
+.u-size4of5,
+.u-size8of10 {
+  @include size4of5;
+}
+
+.u-size5of6,
+.u-size10of12 {
+  @include size5of6;
+}
+
+.u-size7of8 {
+  @include size7of8;
+}
+
+.u-size9of10 {
+  @include size9of10;
+}
+
+.u-size11of12 {
+  @include size11of12;
+}
+
+//Make an element fill the remaining space.
+.u-sizeFill {
+  flex: 1 1 0% !important; /* 1 */
+  flex-basis: 0% !important; /* 2 */
+}
+
+// An alternative method to make an element fill the remaining space.
+// Distributes space based on the initial width and height of the element
+.u-sizeFillAlt {
+  flex: 1 1 auto !important;
+  flex-basis: auto !important;
+}
+
+//Make an element the width of its parent.
+.u-sizeFull {
+  box-sizing: border-box !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+@include mediaquery($mq-tablet) {
+
+  [class*="u-md-size"] {
+    @include size-basis;
+  }
+
+  .u-md-size1of12 {
+    @include size1of12;
+  }
+
+  .u-md-size1of10 {
+    @include size1of10;
+  }
+
+  .u-md-size1of8 {
+    @include size1of8;
+  }
+
+  .u-md-size1of6,
+  .u-md-size2of12 {
+    @include size1of6;
+  }
+
+  .u-md-size1of5,
+  .u-md-size2of10 {
+    @include size1of5;
+  }
+
+  .u-md-size1of4,
+  .u-md-size2of8,
+  .u-md-size3of12 {
+    @include size1of4;
+  }
+
+  .u-md-size3of10 {
+    @include size3of10;
+  }
+
+  .u-md-size1of3,
+  .u-md-size2of6,
+  .u-md-size4of12 {
+    @include size1of3;
+  }
+
+  .u-md-size3of8 {
+    @include size3of8;
+  }
+
+  .u-md-size2of5 {
+    @include size2of5;
+  }
+
+  .u-md-size5of12 {
+    @include size5of12;
+  }
+
+  .u-md-size1of2,
+  .u-md-size2of4,
+  .u-md-size3of6,
+  .u-md-size4of8,
+  .u-md-size5of10,
+  .u-md-size6of12 {
+    @include size1of2;
+  }
+
+  .u-md-size7of12 {
+    @include size7of12;
+  }
+
+  .u-md-size3of5,
+  .u-md-size6of10 {
+    @include size3of5;
+  }
+
+  .u-md-size5of8 {
+    @include size5of8;
+  }
+
+  .u-md-size2of3,
+  .u-md-size4of6,
+  .u-md-size8of12 {
+    @include size2of3;
+  }
+
+  .u-md-size7of10 {
+    @include size7of10;
+  }
+
+  .u-md-size3of4,
+  .u-md-size6of8,
+  .u-md-size9of12 {
+    @include size3of4;
+  }
+
+  .u-md-size4of5,
+  .u-md-size8of10 {
+    @include size4of5;
+  }
+
+  .u-md-size5of6,
+  .u-md-size10of12 {
+    @include size5of6;
+  }
+
+  .u-md-size7of8 {
+    @include size7of8;
+  }
+
+  .u-md-size9of10 {
+    @include size9of10;
+  }
+
+  .u-md-size11of12 {
+    @include size11of12;
+  }
+}
+
+@include mediaquery($mq-desktop) {
+
+  [class*="u-lg-size"] {
+    @include size-basis;
+  }
+
+  .u-lg-size1of12 {
+    @include size1of12;
+  }
+
+  .u-lg-size1of10 {
+    @include size1of10;
+  }
+
+  .u-lg-size1of8 {
+    @include size1of8;
+  }
+
+  .u-lg-size1of6,
+  .u-lg-size2of12 {
+    @include size1of6;
+  }
+
+  .u-lg-size1of5,
+  .u-lg-size2of10 {
+    @include size1of5;
+  }
+
+  .u-lg-size1of4,
+  .u-lg-size2of8,
+  .u-lg-size3of12 {
+    @include size1of4;
+  }
+
+  .u-lg-size3of10 {
+    @include size3of10;
+  }
+
+  .u-lg-size1of3,
+  .u-lg-size2of6,
+  .u-lg-size4of12 {
+    @include size1of3;
+  }
+
+  .u-lg-size3of8 {
+    @include size3of8;
+  }
+
+  .u-lg-size2of5 {
+    @include size2of5;
+  }
+
+  .u-lg-size5of12 {
+    @include size5of12;
+  }
+
+  .u-lg-size1of2,
+  .u-lg-size2of4,
+  .u-lg-size3of6,
+  .u-lg-size4of8,
+  .u-lg-size5of10,
+  .u-lg-size6of12 {
+    @include size1of2;
+  }
+
+  .u-lg-size7of12 {
+    @include size7of12;
+  }
+
+  .u-lg-size3of5,
+  .u-lg-size6of10 {
+    @include size3of5;
+  }
+
+  .u-lg-size5of8 {
+    @include size5of8;
+  }
+
+  .u-lg-size2of3,
+  .u-lg-size4of6,
+  .u-lg-size8of12 {
+    @include size2of3;
+  }
+
+  .u-lg-size7of10 {
+    @include size7of10;
+  }
+
+  .u-lg-size3of4,
+  .u-lg-size6of8,
+  .u-lg-size9of12 {
+    @include size3of4;
+  }
+
+  .u-lg-size4of5,
+  .u-lg-size8of10 {
+    @include size4of5;
+  }
+
+  .u-lg-size5of6,
+  .u-lg-size10of12 {
+    @include size5of6;
+  }
+
+  .u-lg-size7of8 {
+    @include size7of8;
+  }
+
+  .u-lg-size9of10 {
+    @include size9of10;
+  }
+
+  .u-lg-size11of12 {
+    @include size11of12;
+  }
+}
