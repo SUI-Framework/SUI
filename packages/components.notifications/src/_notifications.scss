@@ -48,7 +48,7 @@ Styleguide Notifications-1
   color: $c-contrast;
   font-size: $fz-base;
   line-height: $lh-base-body;
-  padding: $p-medium;
+  padding: $gap-medium;
 
   a,
   a:hover,
@@ -97,12 +97,12 @@ Styleguide Notifications-1
   font-family: $ff-base-bold;
   font-size: $fz-large;
   line-height: $lh-base-body;
-  margin-bottom: $p-base;
+  margin-bottom: $gap-base;
 }
 
 .Notification-close {
   color: inherit;
   position: absolute;
-  right: $p-base;
-  top: $p-base;
+  right: $gap-base;
+  top: $gap-base;
 }
