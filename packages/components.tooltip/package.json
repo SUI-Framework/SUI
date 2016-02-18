@@ -1,6 +1,6 @@
 {
   "name": "sui-components-tooltip",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "SUI Tooltip Component",
   "main": "./src/_tooltip.scss",
   "scripts": {
