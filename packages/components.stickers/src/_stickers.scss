@@ -1,0 +1,41 @@
+// Dependencies from other packages --------------------------------------------
+@import '~sui-settings/src/settings';
+
+@if $is-theme == false {
+  @import '~sui-typography/src/typography';
+}
+
+
+/*
+Stickers
+
+Use class `.Sticker` to show stickers. Add class `.Sticker--marked` to highlight the sticker.
+
+Markup:
+<span class="Sticker">Lorem</span>
+<span class="Sticker Sticker--marked">Ipsum</span>
+
+Styleguide Stickers-1
+*/
+
+.Sticker {
+  position: relative;
+  top: -2px;
+  display: inline-table;
+  padding: 0 10px;
+  font-size: $fz-xsmall;
+  line-height: $lh-base-body;
+  color: $c-text;
+  background-color: $c-contrast;
+  border: 1px solid $c-text;
+  text-transform: uppercase;
+
+  @media print {
+    border: 1px solid $c-dark-soft;
+  }
+}
+
+.Sticker--marked {
+  color: $c-contrast;
+  background-color: $c-highlight;
+}

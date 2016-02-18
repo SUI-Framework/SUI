@@ -1,0 +1,66 @@
+
+// Dependencies from other packages --------------------------------------------
+@import '~sui-settings/src/settings';
+
+@if $is-theme == false {
+  @import '~sui-typography/src/typography';
+}
+
+/*
+Tabs
+
+Use class `.Tabs` to create a structure of tabs inline.
+<br>
+Use class `.Tabs-item` in descendent tag `<a>`.
+<br>
+Use class `.is-active` for active tab.
+
+Markup:
+<!-- Tabs -->
+<ul class="Tabs">
+	<li><a class="Tabs-item is-active" href="#">Tab 1</a></li>
+	<li><a href="#" class="Tabs-item">Tab 2</a></li>
+</ul>
+
+Styleguide Tabs
+*/
+
+.Tabs {
+  border-bottom: 1px solid $c-dark-soft;
+
+  > li {
+    display: inline-block;
+    padding-bottom: $gap-medium;
+
+    &:not(:last-child) {
+      margin-right: $gap-medium;
+    }
+  }
+
+  .Tabs-item {
+    color: $c-text;
+    font-family: $ff-base-bold;
+    font-size: $fz-base;
+    padding-bottom: $gap-medium;
+    text-decoration: none;
+
+    @include mediaquery($mq-desktop) {
+      font-size: $fz-medium;
+    }
+
+    &.is-active {
+      color: $c-primary;
+      position: relative;
+
+      &::after {
+        background: $c-primary;
+        bottom: 0;
+        content: '';
+        height: 4px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
+}

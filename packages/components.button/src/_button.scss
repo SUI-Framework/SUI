@@ -52,8 +52,8 @@ Styleguide Button-1.1
   line-height: $button-lh-base;
   overflow: visible;
   padding-bottom: 0;
-  padding-left: $p-base;
-  padding-right: $p-base;
+  padding-left: $gap-base;
+  padding-right: $gap-base;
   padding-top: 0;
   text-align: center;
   text-decoration: none;
@@ -135,8 +135,8 @@ Styleguide Button-1.3
   height: $button-h-medium;
   line-height: $button-lh-medium;
   padding-bottom: 0;
-  padding-left: $p-medium;
-  padding-right: $p-medium;
+  padding-left: $gap-medium;
+  padding-right: $gap-medium;
   padding-top: 0;
 
   &.is-disabled,
@@ -168,8 +168,8 @@ Styleguide Button-1.4
   height: $button-h-large;
   line-height: $button-lh-large;
   padding-bottom: 0;
-  padding-left: $p-medium;
-  padding-right: $p-medium;
+  padding-left: $gap-medium;
+  padding-right: $gap-medium;
   padding-top: 0;
 
   &.is-disabled,

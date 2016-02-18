@@ -9,8 +9,6 @@ $is-theme: false !default;
 // * c = color
 // * ff = font-family
 // * fz = font-size
-// * m = margin
-// * p = padding
 // * lh = line-height
 // * b = border
 
@@ -62,31 +60,26 @@ $fz-xxlarge-desktop:        30px !default;
 $fz-xxxlarge:               25px !default;
 $fz-xxxlarge-desktop:       36px !default;
 
-// Paddings
+// Paddings and margins
 // -----------------------------------------------------------------------------
-$p-base:                    10px !default;
-$p-medium:                  ($p-base * 2) !default;
-$p-large:                   ($p-base * 4) !default;
+$gap-base:                    10px !default;
+$gap-medium:                  ($gap-base * 2) !default;
+$gap-large:                   ($gap-base * 4) !default;
 
 // Borders
 // -----------------------------------------------------------------------------
 $b-radius-base:             0 !default;
 
-// Margings
-// -----------------------------------------------------------------------------
-$m-base:                    10px !default;
-$m-medium:                  20px !default;
-
 // Conversors
 // -----------------------------------------------------------------------------
-$conv-px-pt:                        1.3333;
+$conv-px-pt:                1.3333;
 
 // Mediaqueries
 // -----------------------------------------------------------------------------
-$mq-tablet:                         480px !default;
-$mq-desktop:                        768px !default;
+$mq-tablet:                 480px !default;
+$mq-desktop:                768px !default;
 
 // Z-indexs
 // -----------------------------------------------------------------------------
-$z-base:                                 1;
-$z-tooltip:                           8000;
+$z-base:                    1;
+$z-tooltip:                 8000;
