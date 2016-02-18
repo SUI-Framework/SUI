@@ -30,6 +30,9 @@
   },
   "homepage": "https://github.com/SUI-Framework/SUI/tree/master/packages/reset#readme",
   "devDependencies": {
+    "autoprefixer": "^6.1.2",
+    "node-sass": "^3.1.2",
+    "postcss-cli": "^2.3.2",
     "sui-pre-commit-rules": "latest"
   }
 
