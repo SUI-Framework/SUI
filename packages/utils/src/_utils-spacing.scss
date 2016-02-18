@@ -4,16 +4,16 @@ Utils Spacing
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 Markup:
-<div class="u-spacing-base sg-SampleSpacing">
+<div class="u-spacingBase sg-SampleSpacing">
   <p>Lorem ipsum dolor sit amet</p>
 </div>
-<div class="u-spacing-base sg-SampleSpacing">
+<div class="u-spacingBase sg-SampleSpacing">
   <p>Lorem ipsum dolor sit amet</p>
 </div>
-<div class="u-spacing-medium sg-SampleSpacing--medium">
+<div class="u-spacingMedium sg-SampleSpacing--medium">
   <p>Lorem ipsum dolor sit amet</p>
 </div>
-<div class="u-spacing-medium sg-SampleSpacing--medium">
+<div class="u-spacingMedium sg-SampleSpacing--medium">
   <p>Lorem ipsum dolor sit amet</p>
 </div>
 
@@ -45,25 +45,25 @@ Styleguide Utils Spacing-1
   }
 }
 
-.u-spacing-base {
+.u-spacingBase {
   @include spacing-base;
 
-  + .u-spacing-base {
+  + .u-spacingBase {
     padding-top: 0;
   }
 }
 
-.u-spacing-medium {
+.u-spacingMedium {
   @include spacing-medium;
 
-  + .u-spacing-medium,
-  > .u-spacing-base:first-child,
-  > .u-spacing-base:only-child {
+  + .u-spacingMedium,
+  > .u-spacingBase:first-child,
+  > .u-spacingBase:only-child {
     padding-top: 0;
   }
 
-  > .u-spacing-base:last-child,
-  > .u-spacing-base:only-child {
+  > .u-spacingBase:last-child,
+  > .u-spacingBase:only-child {
     padding-bottom: 0;
   }
 }
