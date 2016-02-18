@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "sui-settings": "latest",
+    "sui-reset": "latest",
     "sui-utils": "latest"
   }
 

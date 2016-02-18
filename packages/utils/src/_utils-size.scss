@@ -18,15 +18,6 @@ Markup:
 <div class="u-size12of12"><div class="SampleBox"></div></div>
 */
 
-//move to Styleguide styles
-.SampleBox {
-  background-color: $c-primary;
-  border: 1px solid $c-primary-variant;
-  color: $c-contrast;
-  margin-bottom: $gap-base;
-  padding: $gap-medium;
-}
-
 @mixin size-basis {
   flex-basis: auto !important; /* 1 */
 }
