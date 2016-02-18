@@ -15,7 +15,9 @@
     "dev:sass": "nodemon --watch src/ -e scss --exec npm run dist",
     "prekss": "npm run dist && cp ./dist/stickers.css ./node_modules/sui-kss-template/src/public/styles.css",
     "kss": "kss-node --source src/ --destination docs --template ./node_modules/sui-kss-template/src/ --helpers ./node_modules/sui-kss-template/src/helpers/",
-    "postkss": "replace '@@' ' ' ./docs/*",
+    "postkss": "npm run postkss:replace && npm run postkss:copy",
+    "postkss:replace": "replace '@@' ' ' ./docs/*",
+    "postkss:copy": "cp -R ./node_modules/sui-typography/dist/fonts docs/public/fonts",
     "predocs": "npm run kss",
     "docs": "surge -d sui-stickers.surge.sh -p docs/"
   },
