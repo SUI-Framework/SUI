@@ -31,7 +31,8 @@
     "sui-components-tooltip": "latest",
     "sui-components-stickers": "latest",
     "sui-settings": "latest",
-    "sui-typography": "latest"
+    "sui-typography": "latest",
+    "sui-utils": "latest"
   },
   "devDependencies": {
     "autoprefixer": "^6.1.2",
