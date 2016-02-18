@@ -5,7 +5,7 @@
   "main": "./src/_base.scss",
   "scripts": {
     "lint": "npm run lint:sass",
-    "lint:sass": "scss-lint src/ --exclude src/_hack.scss",
+    "lint:sass": "scss-lint src/",
     "dist": "node-sass --output-style compressed src/_base.scss dist/base.css --importer ./scripts/importer.js",
     "postdist": "npm run postdist:postcss",
     "postdist:postcss": "postcss --use autoprefixer dist/base.css -d dist/",

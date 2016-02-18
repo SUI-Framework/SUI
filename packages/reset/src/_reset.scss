@@ -141,3 +141,11 @@ html {
   font-family: sans-serif;
   text-size-adjust: 100%;
 }
+
+// Box model
+// -----------------------------------------------------------------------------*,
+*::before,
+*::after,
+input[type='search'] {
+  box-sizing: inherit;
+}
