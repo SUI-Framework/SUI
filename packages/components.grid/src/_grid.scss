@@ -1,21 +1,12 @@
 // Dependencies from other packages --------------------------------------------
 @import '~sui-settings/src/settings';
-@import 'utils-size';
+@import '~sui-utils/src/utils-size';
 
 @if $is-theme == false {
   @import '~sui-typography/src/typography';
 }
 
 // http://suitcss.github.io/components-grid/test/
-
-//move to Styleguide styles
-.SampleBox {
-  background-color: $c-primary;
-  border: 1px solid $c-primary-variant;
-  color: $c-contrast;
-  margin-bottom: $m-base;
-  padding: $m-medium;
-}
 
 /*
 Grid
@@ -104,7 +95,6 @@ Markup:
 Styleguide Grid-1
 */
 
-
 .Grid {
   display: flex; /* 1 */
   flex-flow: row wrap;
@@ -146,10 +136,10 @@ Styleguide Grid-1
 
   // with gutter
   &--withGutter {
-    margin: 0 calc(-0.5 * #{$grid-gutter});
+    margin: 0 (-0.5 * $grid-gutter);
 
     > .Grid-cell {
-      padding: 0 calc(0.5 * #{$grid-gutter});
+      padding: 0 (0.5 * $grid-gutter);
     }
   }
 }
