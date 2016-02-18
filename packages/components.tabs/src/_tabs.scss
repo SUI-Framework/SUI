@@ -30,10 +30,10 @@ Styleguide Tabs
 
   > li {
     display: inline-block;
-    padding-bottom: $p-medium;
+    padding-bottom: $gap-medium;
 
     &:not(:last-child) {
-      margin-right: $m-medium;
+      margin-right: $gap-medium;
     }
   }
 
@@ -41,7 +41,7 @@ Styleguide Tabs
     color: $c-text;
     font-family: $ff-base-bold;
     font-size: $fz-base;
-    padding-bottom: $p-medium;
+    padding-bottom: $gap-medium;
     text-decoration: none;
 
     @include mediaquery($mq-desktop) {
