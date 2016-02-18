@@ -23,8 +23,8 @@ Markup:
   background-color: $c-primary;
   border: 1px solid $c-primary-variant;
   color: $c-contrast;
-  margin-bottom: $m-base;
-  padding: $m-medium;
+  margin-bottom: $gap-base;
+  padding: $gap-medium;
 }
 
 @mixin size-basis {
