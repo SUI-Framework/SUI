@@ -1,0 +1,69 @@
+/*
+Utils Spacing
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Markup:
+<div class="u-spacing-base sg-SampleSpacing">
+  <p>Lorem ipsum dolor sit amet</p>
+</div>
+<div class="u-spacing-base sg-SampleSpacing">
+  <p>Lorem ipsum dolor sit amet</p>
+</div>
+<div class="u-spacing-medium sg-SampleSpacing--medium">
+  <p>Lorem ipsum dolor sit amet</p>
+</div>
+<div class="u-spacing-medium sg-SampleSpacing--medium">
+  <p>Lorem ipsum dolor sit amet</p>
+</div>
+
+Styleguide Utils Spacing-1
+*/
+
+@mixin spacing-base {
+  padding-top: $gap-medium;
+  padding-right: $gap-base;
+  padding-bottom: $gap-medium;
+  padding-left: $gap-base;
+
+  @include mediaquery ($mq-tablet) {
+    padding-top: $gap-medium;
+    padding-right: $gap-medium;
+    padding-bottom: $gap-medium;
+    padding-left: $gap-medium;
+  }
+}
+
+@mixin spacing-medium {
+  @include spacing-base;
+  padding-top: $gap-large;
+  padding-bottom: $gap-large;
+
+  @include mediaquery ($mq-tablet) {
+    padding-top: $gap-large;
+    padding-bottom: $gap-large;
+  }
+}
+
+.u-spacing-base {
+  @include spacing-base;
+
+  + .u-spacing-base {
+    padding-top: 0;
+  }
+}
+
+.u-spacing-medium {
+  @include spacing-medium;
+
+  + .u-spacing-medium,
+  > .u-spacing-base:first-child,
+  > .u-spacing-base:only-child {
+    padding-top: 0;
+  }
+
+  > .u-spacing-base:last-child,
+  > .u-spacing-base:only-child {
+    padding-bottom: 0;
+  }
+}
