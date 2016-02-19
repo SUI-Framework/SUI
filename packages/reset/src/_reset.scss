@@ -1,3 +1,6 @@
+// Dependencies from other packages --------------------------------------------
+@import '~sui-settings/src/settings';
+
 // # Reset
 // -----------------------------------------------------------------------------
 // This code is by Eric Meyer's
@@ -142,10 +145,14 @@ html {
   text-size-adjust: 100%;
 }
 
-// Extra for SUI framework
+// Extra and redefinition for SUI framework
 // -----------------------------------------------------------------------------*,
 *::before,
 *::after,
 input[type='search'] {
   box-sizing: inherit;
+}
+
+body {
+  font-family: $ff-base;
 }
