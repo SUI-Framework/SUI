@@ -1,5 +1,6 @@
 // Dependencies from other packages --------------------------------------------
 @import '~sui-settings/src/settings';
+@import '~sui-utils/src/utils-spacing';
 
 @if $is-theme == false {
   @import '~sui-typography/src/typography';
@@ -11,7 +12,7 @@ Tooltip
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 Markup:
-<div class="Tooltip">
+<div class="Tooltip sg-Tooltip">
   <div class="Tooltip-layer is-moveUp">
     <div class="Tooltip-content" style="width: 480px;">
       <a title="Close" class="Tooltip-close" href="#">Close</a>
@@ -85,13 +86,13 @@ Styleguide Tooltip-1
 }
 
 .Tooltip-content {
+  @include spacing-base;
   color: $c-dark-soft;
 
   @include mediaquery ($mq-tablet) {
     position: relative;
     background-color: $c-contrast;
     border: 1px solid $c-dark-soft;
-    border-radius: 4px;
     box-shadow: 0 0 4px $c-dark-light;
     z-index: $z-tooltip;
 
@@ -130,13 +131,11 @@ Styleguide Tooltip-1
   &::before {
     content: 'X';
     display: block;
-    height: 14px;
-    margin-right: $gap-base * 2;
+    margin-right: $gap-medium;
     overflow: hidden;
     position: absolute;
     right: 0;
     text-align: right;
-    width: 14px;
     color: $c-text;
   }
 }
