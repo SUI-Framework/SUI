@@ -2,6 +2,7 @@
 $is-theme: true;
 
 // Dependencies from other packages --------------------------------------------
+@import '~sui-reset/src/reset';
 @import '~sui-settings/src/settings';
 @import '~sui-typography/src/typography';
 @import '~sui-base/src/base';

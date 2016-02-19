@@ -56,6 +56,7 @@
     "surge": "^0.17.7"
   },
   "dependencies": {
+    "sui-reset": "latest",
     "sui-settings": "latest",
     "sui-typography": "latest"
   }

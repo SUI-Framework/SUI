@@ -3,6 +3,7 @@
 @import '~sui-utils/src/utils-spacing';
 
 @if $is-theme == false {
+  @import '~sui-reset/src/reset';
   @import '~sui-typography/src/typography';
 }
 
