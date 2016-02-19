@@ -5,7 +5,7 @@
   "main": "./src/_base.scss",
   "scripts": {
     "lint": "npm run lint:sass",
-    "lint:sass": "scss-lint src/ --exclude src/_hack.scss",
+    "lint:sass": "scss-lint src/",
     "dist": "node-sass --output-style compressed src/_base.scss dist/base.css --importer ./scripts/importer.js",
     "postdist": "npm run postdist:postcss",
     "postdist:postcss": "postcss --use autoprefixer dist/base.css -d dist/",
@@ -15,6 +15,9 @@
     "dev:sass": "nodemon --watch src/ -e scss --exec npm run dist",
     "prekss": "npm run dist && cp ./dist/base.css ./node_modules/sui-kss-template/src/public/styles.css",
     "kss": "kss-node --source src/ --destination docs --template ./node_modules/sui-kss-template/src/ --helpers ./node_modules/sui-kss-template/src/helpers/",
+    "postkss": "npm run postkss:replace && npm run postkss:copy",
+    "postkss:replace": "replace '@@' ' ' ./docs/*",
+    "postkss:copy": "cp -R ./node_modules/sui-typography/dist/fonts docs/public/fonts",
     "predocs": "npm run kss",
     "docs": "surge -d sui-base.surge.sh -p docs/"
   },
