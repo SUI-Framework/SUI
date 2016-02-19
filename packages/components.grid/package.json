@@ -1,22 +1,23 @@
 {
-  "name": "sui-utils",
-  "version": "2.1.1",
-  "description": "SUI Framework utilities classes",
-  "main": "./src/_utils.scss",
+  "name": "sui-components-grid",
+  "version": "1.0.0",
+  "description": "SUI Grid Component",
+  "main": "./src/_grid.scss",
   "scripts": {
     "lint": "npm run lint:sass",
-    "lint:sass": "scss-lint src/ --exclude src/_hack.scss",
-    "dist": "node-sass --output-style compressed src/_utils.scss dist/utils.css --importer ./scripts/importer.js",
+    "lint:sass": "scss-lint src/",
+    "dist": "node-sass --output-style compressed src/_grid.scss dist/grid.css --importer ./scripts/importer.js",
     "postdist": "npm run postdist:postcss",
-    "postdist:postcss": "postcss --use autoprefixer dist/utils.css -d dist/",
+    "postdist:postcss": "postcss --use autoprefixer dist/grid.css -d dist/",
     "server": "live-server --open=docs/ --ignore=src/",
     "predev": "npm run kss",
     "dev": "concurrent --kill-others \"npm run dev:sass\" \"npm run server\"",
     "dev:sass": "nodemon --watch src/ -e scss --exec npm run dist",
-    "prekss": "npm run dist && cp ./dist/utils.css ./node_modules/sui-kss-template/src/public/styles.css",
+    "prekss": "npm run dist && cp ./dist/grid.css ./node_modules/sui-kss-template/src/public/styles.css",
     "kss": "kss-node --source src/ --destination docs --template ./node_modules/sui-kss-template/src/ --helpers ./node_modules/sui-kss-template/src/helpers/",
+    "postkss": "replace '@@' ' ' ./docs/*",
     "predocs": "npm run kss",
-    "docs": "surge -d sui-utils.surge.sh -p docs/"
+    "docs": "surge -d sui-grid.surge.sh -p docs/"
   },
   "pre-commit": [
     "lint"
@@ -26,17 +27,18 @@
   "keywords": [
     "sui",
     "suiengineers",
-    "css-utils",
+    "css-component",
+    "grid",
     "style"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/SUI-Framework/SUI/tree/master/packages/utils"
+    "url": "https://github.com/SUI-Framework/SUI/tree/master/packages/components.grid"
   },
   "bugs": {
     "url": "https://github.com/SUI-Framework/SUI/issues"
   },
-  "homepage": "https://github.com/SUI-Framework/SUI/tree/master/packages/utils#readme",
+  "homepage": "https://github.com/SUI-Framework/SUI/tree/master/packages/components.grid#readme",
   "devDependencies": {
     "autoprefixer": "^6.1.2",
     "concurrently": "1.0.0",
@@ -45,12 +47,16 @@
     "node-sass": "^3.1.2",
     "nodemon": "1.8.1",
     "postcss-cli": "^2.3.2",
+    "replace": "^0.3.0",
     "resolve": "^1.1.6",
     "sui-kss-template": "latest",
     "sui-pre-commit-rules": "latest",
     "surge": "^0.17.7"
   },
   "dependencies": {
-    "sui-settings": "latest"
+    "sui-settings": "latest",
+    "sui-reset": "latest",
+    "sui-utils": "latest"
   }
+
 }

@@ -1,0 +1,146 @@
+// Dependencies from other packages --------------------------------------------
+@import '~sui-settings/src/settings';
+
+@if $is-theme == false {
+  @import '~sui-reset/src/reset';
+}
+
+@import '~sui-utils/src/utils-size';
+
+// http://suitcss.github.io/components-grid/test/
+
+/*
+Grid
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Markup:
+<!-- Grid 3 columns -->
+<div class="Grid">
+  <div class="Grid-cell u-size4of12">
+    <div class="sg-sample-box">
+      <p>1</p>
+    </div>
+  </div>
+  <div class="Grid-cell u-size4of12">
+    <div class="sg-sample-box">
+      <p>2</p>
+    </div>
+  </div>
+  <div class="Grid-cell u-size4of12">
+    <div class="sg-sample-box">
+      <p>3</p>
+    </div>
+  </div>
+</div>
+<!-- /Grid 3 columns -->
+<!-- Grid 3 columns with gutter-->
+<div class="Grid Grid--withGutter">
+  <div class="Grid-cell u-size4of12">
+    <div class="sg-sample-box">
+      <p>1</p>
+    </div>
+  </div>
+  <div class="Grid-cell u-size4of12">
+    <div class="sg-sample-box">
+      <p>2</p>
+    </div>
+  </div>
+  <div class="Grid-cell u-size4of12">
+    <div class="sg-sample-box">
+      <p>3</p>
+    </div>
+  </div>
+</div>
+<!-- /Grid 3 columns with gutter -->
+<!-- Grid columns equalHeight -->
+<div class="Grid Grid--equalHeight">
+  <div class="Grid-cell u-size4of12">
+    <div class="sg-sample-box u-sizeFill">
+      <p>1</p>
+    </div>
+  </div>
+  <div class="Grid-cell u-size8of12">
+    <div class="sg-sample-box u-sizeFill">
+      <p>2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus metus, ultrices vitae eros a, dapibus molestie tortor.</p>
+    </div>
+  </div>
+</div>
+<!-- /Grid columns equalHeight -->
+<!-- Grid columns equalHeight -->
+<div class="Grid Grid--equalHeight">
+  <div class="Grid-cell u-md-size6of12 u-lg-size8of12">
+    <div class="sg-sample-box u-sizeFill">
+      <p>1</p>
+    </div>
+  </div>
+  <div class="Grid-cell u-md-size6of12 u-lg-size4of12">
+    <div class="sg-sample-box u-sizeFill">
+      <div class="Grid">
+        <div class="Grid-cell">
+          <div class="sg-sample-box">
+            <p>1</p>
+          </div>
+        </div>
+        <div class="Grid-cell">
+          <div class="sg-sample-box">
+            <p>2</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Grid columns equalHeight -->
+
+Styleguide Grid-1
+*/
+
+.Grid {
+  display: flex; /* 1 */
+  flex-flow: row wrap;
+
+  &-cell {
+    box-sizing: border-box;
+    flex: 0 0 100%; /* 1 */
+
+    &--center {
+      margin: 0 auto;
+    }
+  }
+
+  &--alignCenter {
+    justify-content: center;
+  }
+
+  &--alignRight {
+    justify-content: flex-end;
+  }
+
+  &--alignMiddle {
+    align-items: center;
+  }
+
+  &--alignBottom {
+    align-items: flex-end;
+  }
+
+  // allow cells to equal distribute width
+  &--fit > .Grid-cell {
+    flex: 1 1 0%; /* 1 */
+  }
+
+  // all cells match height of tallest cell in a row
+  &--equalHeight > .Grid-cell {
+    display: flex;
+  }
+
+  // with gutter
+  &--withGutter {
+    margin: 0 (-.5 * $grid-gutter);
+
+    > .Grid-cell {
+      padding: 0 (.5 * $grid-gutter);
+    }
+  }
+}
