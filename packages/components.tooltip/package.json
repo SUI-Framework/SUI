@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "sui-settings": "latest",
-    "sui-typography": "latest"
+    "sui-typography": "latest",
+    "sui-utils": "latest"
   }
-
 }
