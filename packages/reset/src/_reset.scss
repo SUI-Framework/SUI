@@ -141,3 +141,11 @@ html {
   font-family: sans-serif;
   text-size-adjust: 100%;
 }
+
+// Extra for SUI framework
+// -----------------------------------------------------------------------------*,
+*::before,
+*::after,
+input[type='search'] {
+  box-sizing: inherit;
+}

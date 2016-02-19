@@ -1,9 +1,0 @@
-/*
-  ToDo: Review universal selector use
-*/
-*,
-*::before,
-*::after,
-input[type='search'] {
-  box-sizing: inherit; // inherit value allow components to change
-}
