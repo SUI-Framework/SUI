@@ -3,11 +3,9 @@
 
 @if $is-theme == false {
   @import '~sui-reset/src/reset';
-  @import '~sui-typography/src/typography';
 }
 
 @import '~sui-utils/src/utils-size';
-
 
 // http://suitcss.github.io/components-grid/test/
 
@@ -139,10 +137,10 @@ Styleguide Grid-1
 
   // with gutter
   &--withGutter {
-    margin: 0 (-0.5 * $grid-gutter);
+    margin: 0 (-.5 * $grid-gutter);
 
     > .Grid-cell {
-      padding: 0 (0.5 * $grid-gutter);
+      padding: 0 (.5 * $grid-gutter);
     }
   }
 }
