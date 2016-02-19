@@ -1,6 +1,6 @@
 {
   "name": "sui-reset",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "SUI Reset",
   "main": "./src/_reset.scss",
   "scripts": {
