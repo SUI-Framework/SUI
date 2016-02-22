@@ -146,11 +146,17 @@ html {
 }
 
 // Extra and redefinition for SUI framework
-// -----------------------------------------------------------------------------*,
+// -----------------------------------------------------------------------------*
+
+html {
+  box-sizing: border-box;
+}
+
+*,
 *::before,
 *::after,
 input[type='search'] {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 body {
