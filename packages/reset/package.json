@@ -1,6 +1,6 @@
 {
   "name": "sui-reset",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "SUI Reset",
   "main": "./src/_reset.scss",
   "scripts": {
@@ -34,6 +34,9 @@
     "node-sass": "^3.1.2",
     "postcss-cli": "^2.3.2",
     "sui-pre-commit-rules": "latest"
+  },
+  "dependencies": {
+    "sui-settings": "latest"
   }
 
 }

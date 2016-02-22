@@ -2,6 +2,7 @@
 $is-theme: true;
 
 // Dependencies from other packages --------------------------------------------
+@import '~sui-reset/src/reset';
 @import '~sui-settings/src/settings';
 @import '~sui-typography/src/typography';
 @import '~sui-base/src/base';
@@ -10,6 +11,7 @@ $is-theme: true;
 // -----------------------------------------------------------------------------
 @import '~sui-components-button/src/button';
 @import '~sui-components-form/src/form';
+@import '~sui-components-grid/src/grid';
 @import '~sui-components-notifications/src/notifications';
 @import '~sui-components-stickers/src/stickers';
 @import '~sui-components-tabs/src/tabs';

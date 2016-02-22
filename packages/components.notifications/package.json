@@ -1,6 +1,6 @@
 {
   "name": "sui-components-notifications",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "SUI Notifications Component",
   "main": "./src/_notifications.scss",
   "scripts": {
@@ -56,6 +56,7 @@
     "surge": "^0.17.7"
   },
   "dependencies": {
+    "sui-reset": "latest",
     "sui-settings": "latest",
     "sui-typography": "latest"
   }

@@ -1,6 +1,6 @@
 {
   "name": "sui-framework",
-  "version": "0.5.1",
+  "version": "0.7.0",
   "description": "Open source Frontend Framework",
   "main": "dist/sui.css",
   "scripts": {
@@ -15,7 +15,9 @@
     "dev:sass": "nodemon --watch src/ -e scss --exec npm run dist",
     "prekss": "npm run dist && cp ./dist/sui.css ./node_modules/sui-kss-template/src/public/styles.css",
     "kss": "kss-node --source dist/ --destination docs --template ./node_modules/sui-kss-template/src/ --helpers ./node_modules/sui-kss-template/src/helpers/",
-    "postkss": "replace '@@' ' ' ./docs/*",
+    "postkss": "npm run postkss:replace && npm run postkss:copy",
+    "postkss:replace": "replace '@@' ' ' ./docs/*",
+    "postkss:copy": "cp -R ./node_modules/sui-typography/dist/fonts docs/public/fonts",
     "predocs": "npm run kss",
     "docs": "surge -d sui-framework.surge.sh -p docs/"
   },
@@ -26,10 +28,12 @@
     "sui-base": "latest",
     "sui-components-button": "latest",
     "sui-components-form": "latest",
+    "sui-components-grid": "latest",
     "sui-components-notifications": "latest",
+    "sui-components-stickers": "latest",
     "sui-components-tabs": "latest",
     "sui-components-tooltip": "latest",
-    "sui-components-stickers": "latest",
+    "sui-reset": "latest",
     "sui-settings": "latest",
     "sui-typography": "latest",
     "sui-utils": "latest"
