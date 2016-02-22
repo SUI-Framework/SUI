@@ -7,6 +7,10 @@ $is-theme: true;
 @import '~sui-typography/src/typography';
 @import '~sui-base/src/base';
 
+// Utilities
+// -----------------------------------------------------------------------------
+@import '~sui-utils/src/utils';
+
 // Components
 // -----------------------------------------------------------------------------
 @import '~sui-components-button/src/button';
@@ -16,7 +20,3 @@ $is-theme: true;
 @import '~sui-components-stickers/src/stickers';
 @import '~sui-components-tabs/src/tabs';
 @import '~sui-components-tooltip/src/tooltip';
-
-// Utilities
-// -----------------------------------------------------------------------------
-@import '~sui-utils/src/utils';

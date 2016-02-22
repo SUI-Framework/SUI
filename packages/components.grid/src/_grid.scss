@@ -3,9 +3,9 @@
 
 @if $is-theme == false {
   @import '~sui-reset/src/reset';
+  @import '~sui-utils/src/utils-size';
 }
 
-@import '~sui-utils/src/utils-size';
 
 // http://suitcss.github.io/components-grid/test/
 
