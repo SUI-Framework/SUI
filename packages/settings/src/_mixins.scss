@@ -19,25 +19,61 @@
 }
 
 
-// font-size
+// fonts
 // -----------------------------------------------------------------------------
+@mixin textxxlarge {
+  font-size: $fz-xxlarge;
+  line-height: $lh-base-headings;
 
-@mixin font-size($fz-default, $lh-default: normal) {
-  font-size: $fz-default;
-
-  @if $lh-default == normal {
-    @if $fz-default > $fz-base {
-      line-height: ceil($fz-base * $lh-base-headings) - ($fz-base - $fz-default);
-    } @else {
-      line-height: ceil($fz-base * $lh-base-body) - ($fz-base - $fz-default);
-    }
-  } @else {
-    @if (type-of($lh-default) == number or $lh-default == inherit or $lh-default == normal) {
-      line-height: $lh-default;
-    } @else {
-      @warn "D'oh! '#{$lh-default}' is not a valid value for `line-height`.";
-    }
+  @include mediaquery($mq-tablet) {
+    font-size: $fz-xxlarge-desktop;
+    line-height: $lh-base-headings;
   }
+}
+
+@mixin textxlarge {
+  font-size: $fz-xlarge;
+  line-height: $lh-base-headings;
+
+  @include mediaquery($mq-tablet) {
+    font-size: $fz-xlarge-desktop;
+    line-height: $lh-base-headings;
+  }
+}
+
+@mixin textlarge {
+  font-size: $fz-large;
+  line-height: $lh-base-headings;
+
+  @include mediaquery($mq-tablet) {
+    font-size: $fz-large-desktop;
+    line-height: $lh-base-headings;
+  }
+}
+
+@mixin textmedium {
+  font-size: $fz-medium;
+  line-height: $lh-base-headings;
+
+  @include mediaquery($mq-tablet) {
+    font-size: $fz-medium-desktop;
+    line-height: $lh-base-headings;
+  }
+}
+
+@mixin textbase {
+  font-size: $fz-base;
+  line-height: $lh-base-body;
+}
+
+@mixin textsmall {
+  font-size: $fz-small;
+  line-height: $lh-base-body;
+}
+
+@mixin textxsmall {
+  font-size: $fz-xsmall;
+  line-height: $lh-base-body;
 }
 
 // media queries
