@@ -150,7 +150,7 @@ html {
 *::before,
 *::after,
 input[type='search'] {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 body {
