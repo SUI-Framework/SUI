@@ -23,61 +23,6 @@ Markup:
 Styleguide Fonts-1.1
 */
 
-@mixin textxxlarge {
-  font-size: $fz-xxlarge;
-  line-height: $lh-base-headings;
-
-  @include mediaquery($mq-tablet) {
-    font-size: $fz-xxlarge-desktop;
-    line-height: $lh-base-headings;
-  }
-}
-
-@mixin textxlarge {
-  font-size: $fz-xlarge;
-  line-height: $lh-base-headings;
-
-  @include mediaquery($mq-tablet) {
-    font-size: $fz-xlarge-desktop;
-    line-height: $lh-base-headings;
-  }
-}
-
-@mixin textlarge {
-  font-size: $fz-large;
-  line-height: $lh-base-headings;
-
-  @include mediaquery($mq-tablet) {
-    font-size: $fz-large-desktop;
-    line-height: $lh-base-headings;
-  }
-}
-
-@mixin textmedium {
-  font-size: $fz-medium;
-  line-height: $lh-base-headings;
-
-  @include mediaquery($mq-tablet) {
-    font-size: $fz-medium-desktop;
-    line-height: $lh-base-headings;
-  }
-}
-
-@mixin textbase {
-  font-size: $fz-base;
-  line-height: $lh-base-body;
-}
-
-@mixin textsmall {
-  font-size: $fz-small;
-  line-height: $lh-base-body;
-}
-
-@mixin textxsmall {
-  font-size: $fz-xsmall;
-  line-height: $lh-base-body;
-}
-
 .Text--xxlarge {
   @include textxxlarge;
 }
