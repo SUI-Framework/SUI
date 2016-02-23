@@ -20,12 +20,9 @@ Styleguide Stickers-1
 */
 
 .Sticker {
-  position: relative;
-  top: -2px;
+  @include textxsmall;
   display: inline-table;
-  padding: 0 10px;
-  font-size: $fz-xsmall;
-  line-height: $lh-base-body;
+  padding: 0 $gap-base;
   color: $c-text;
   background-color: $c-contrast;
   border: 1px solid $c-text;
