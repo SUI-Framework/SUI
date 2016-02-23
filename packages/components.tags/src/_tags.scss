@@ -1,0 +1,94 @@
+// Dependencies from other packages --------------------------------------------
+@import '~sui-settings/src/settings';
+
+@if $is-theme == false {
+  @import '~sui-reset/src/reset';
+  @import '~sui-typography/src/typography';
+}
+
+/*
+Tags
+
+Use class `.Tags` to create a tags's inline list.
+
+Markup:
+<ul class="Tags">
+  <li class="Tags-item"><span class="Tags-itemLabel">Javascript</span></li>
+  <li class="Tags-item"><a href="#" class="Tags-itemLabel">CSS</a></li>
+  <li class="Tags-item"><span class="Tags-itemLabel">HTML<a class="Tags-remove" href="#" title="Remove"><span class="Tags-removeText">Remove</span></a></span></li>
+</ul>
+
+Styleguide Tags-1
+*/
+
+.Tags {
+  @include clearfix;
+  padding-right: $gap-base;
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.Tags-item {
+  float: left;
+  margin-right: $gap-base;
+  margin-bottom: $gap-base;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.Tags-itemLabel {
+  @include textsmall;
+  display: inline-table;
+  padding-top: $gap-base / 2;
+  padding-right: $gap-base;
+  padding-bottom: $gap-base / 2;
+  padding-left: $gap-base;
+  color: $c-text;
+  background-color: $c-secondary;
+
+  @media print {
+    border: 1px solid $c-dark-soft;
+  }
+
+  @at-root a#{&} {
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      color: $c-dark-soft;
+      background-color: $c-dark-light;
+    }
+
+    &:active {
+      background-color: $c-dark-mid;
+    }
+  }
+}
+
+.Tags-remove {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  color: $c-dark-soft;
+  text-decoration: none;
+  padding: 0 $gap-base;
+
+  &:hover {
+    color: $c-highlight;
+  }
+
+  &::after {
+    position: absolute;
+    content:'X';
+    top: -13px;
+    left: $gap-base;
+  }
+
+  .Tags-removeText {
+    display: none;
+  }
+}
