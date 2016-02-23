@@ -15,7 +15,7 @@ Markup:
 <ul class="Tags">
   <li class="Tags-item"><span class="Tags-itemLabel">Javascript</span></li>
   <li class="Tags-item"><a href="#" class="Tags-itemLabel">CSS</a></li>
-  <li class="Tags-item"><span class="Tags-itemLabel">HTML <a class="Tags-remove" href="#" title="Remove"><span class="Tags-removeText">Remove</span></a></span></li>
+  <li class="Tags-item"><span class="Tags-itemLabel">HTML<a class="Tags-remove" href="#" title="Remove"><span class="Tags-removeText">Remove</span></a></span></li>
 </ul>
 
 Styleguide Tags-1
@@ -70,15 +70,22 @@ Styleguide Tags-1
 }
 
 .Tags-remove {
-  //@include iconfont-Close;
+  display: inline-block;
   position: relative;
-  top: 3px;
-  padding: $gap-base 6px;
   cursor: pointer;
   color: $c-dark-soft;
+  text-decoration: none;
+  padding: 0 $gap-base;
 
   &:hover {
     color: $c-highlight;
+  }
+
+  &::after {
+    position: absolute;
+    content:'X';
+    top: -13px;
+    left: $gap-base;
   }
 
   .Tags-removeText {
