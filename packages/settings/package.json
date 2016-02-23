@@ -1,6 +1,6 @@
 {
   "name": "sui-settings",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Set the settings for SUI Framework",
   "main": "./src/_settings.scss",
   "scripts": {
