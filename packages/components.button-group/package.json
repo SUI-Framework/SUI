@@ -1,6 +1,6 @@
 {
   "name": "sui-components-button-group",
-  "version": "0.3.0",
+  "version": "0.1.0",
   "description": "SUI Tags Component",
   "main": "./src/_button-group.scss",
   "scripts": {
@@ -58,7 +58,8 @@
   "dependencies": {
     "sui-reset": "latest",
     "sui-settings": "latest",
-    "sui-typography": "latest"
+    "sui-typography": "latest",
+    "sui-components-button": "latest"
   }
 
 }
