@@ -1,0 +1,42 @@
+// Dependencies from other packages --------------------------------------------
+@import '~sui-settings/src/settings';
+
+// Main
+// -----------------------------------------------------------------------------*
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after,
+input[type='search'] {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $ff-base;
+  line-height: $lh-base-body;
+
+  @media print {
+    font-size: ($fz-base / $conv-px-pt);
+    line-height: ($lh-base-body / $conv-px-pt);
+  }
+}
+
+a,
+a:hover {
+ 	color: $c-primary;
+ 	text-decoration: none;
+}
+
+a:focus {
+	outline:none;
+}
+
+img[alt] {
+  background: none;
+  border: 0;
+  word-wrap: break-word;
+}

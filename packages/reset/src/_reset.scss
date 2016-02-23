@@ -144,21 +144,3 @@ html {
   font-family: sans-serif;
   text-size-adjust: 100%;
 }
-
-// Extra and redefinition for SUI framework
-// -----------------------------------------------------------------------------*
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after,
-input[type='search'] {
-  box-sizing: inherit;
-}
-
-body {
-  font-family: $ff-base;
-}
