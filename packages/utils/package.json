@@ -16,7 +16,8 @@
     "prekss": "npm run dist && cp ./dist/utils.css ./node_modules/sui-kss-template/src/public/styles.css",
     "kss": "kss-node --source src/ --destination docs --template ./node_modules/sui-kss-template/src/ --helpers ./node_modules/sui-kss-template/src/helpers/",
     "predocs": "npm run kss",
-    "docs": "surge -d sui-utils.surge.sh -p docs/"
+    "docs": "surge -d sui-utils.surge.sh -p docs/",
+    "phoenix": "rm -rf node_modules && npm install"
   },
   "pre-commit": [
     "lint"
