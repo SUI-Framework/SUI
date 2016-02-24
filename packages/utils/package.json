@@ -1,6 +1,6 @@
 {
   "name": "sui-utils",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "SUI Framework utilities classes",
   "main": "./src/_utils.scss",
   "scripts": {
