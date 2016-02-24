@@ -1,6 +1,6 @@
 {
   "name": "sui-components-notifications",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "SUI Notifications Component",
   "main": "./src/_notifications.scss",
   "scripts": {
