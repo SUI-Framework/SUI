@@ -17,7 +17,8 @@
     "kss": "kss-node --source src/ --destination docs --template ./node_modules/sui-kss-template/src/ --helpers ./node_modules/sui-kss-template/src/helpers/",
     "postkss": "replace '@@' ' ' ./docs/*",
     "predocs": "npm run kss",
-    "docs": "surge -d sui-grid.surge.sh -p docs/"
+    "docs": "surge -d sui-grid.surge.sh -p docs/",
+    "phoenix": "rm -rf node_modules && npm install"
   },
   "pre-commit": [
     "lint"
