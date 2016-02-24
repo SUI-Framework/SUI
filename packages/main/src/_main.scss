@@ -7,36 +7,25 @@
 html {
   box-sizing: border-box;
 }
-
+// scss-lint:disable QualifyingElement
 *,
 *::before,
 *::after,
 input[type='search'] {
   box-sizing: inherit;
 }
+// scss-lint:enable QualifyingElement
 
 body {
-  font-family: $ff-base;
-  line-height: $lh-base-body;
-
-  @media print {
-    font-size: ($fz-base / $conv-px-pt);
-    line-height: ($lh-base-body / $conv-px-pt);
-  }
+  @include textbase;
 }
 
 a,
 a:hover {
- 	color: $c-primary;
- 	text-decoration: none;
+  color: $c-primary;
+  text-decoration: none;
 }
 
 a:focus {
-	outline:none;
-}
-
-img[alt] {
-  background: none;
-  border: 0;
-  word-wrap: break-word;
+  outline: none;
 }

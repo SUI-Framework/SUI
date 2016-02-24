@@ -1,6 +1,6 @@
 {
   "name": "sui-main",
-  "version": "1.2.1",
+  "version": "0.1.0",
   "description": "SUI Main",
   "main": "./src/_main.scss",
   "scripts": {
