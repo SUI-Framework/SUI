@@ -8,7 +8,8 @@
     "lint:sass": "scss-lint src/",
     "dist": "node-sass --output-style compressed src/_main.scss dist/main.css",
     "postdist": "npm run postdist:postcss",
-    "postdist:postcss": "postcss --use autoprefixer dist/main.css -d dist/"
+    "postdist:postcss": "postcss --use autoprefixer dist/main.css -d dist/",
+    "phoenix": "rm -rf node_modules && npm install"
   },
   "pre-commit": [
     "lint"
