@@ -19,7 +19,7 @@
     "postkss:replace": "replace '@@' ' ' ./docs/*",
     "postkss:copy": "cp -R ./node_modules/sui-typography/dist/fonts docs/public/fonts",
     "predocs": "npm run kss",
-    "docs": "surge -d sui-framework.surge.sh -p docs/",
+    "docs": "gh-pages -d docs",
     "phoenix": "rm -rf node_modules && npm install"
   },
   "pre-commit": [
