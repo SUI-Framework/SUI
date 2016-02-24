@@ -1,6 +1,6 @@
 {
   "name": "sui-components-tabs",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "SUI Tabs Component",
   "main": "./src/_tabs.scss",
   "scripts": {
