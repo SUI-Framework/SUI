@@ -37,6 +37,7 @@ node_modules
 docs
 dist
 **/dist
+!/packages/typography/dist
 .editorconfig
 .eslintrc
 .sass-lint.yml
