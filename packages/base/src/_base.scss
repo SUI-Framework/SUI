@@ -2,7 +2,7 @@
 @import '~sui-settings/src/settings';
 
 @if $is-theme == false {
-  @import '~sui-reset/src/reset';
+  @import '~sui-typography/src/reset';
   @import '~sui-typography/src/typography';
 }
 
