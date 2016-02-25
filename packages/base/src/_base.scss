@@ -9,6 +9,13 @@
 @import 'lists';
 @import 'headings';
 @import 'fonts';
-@import 'animations'
+@import 'animations';
 
-/* ------ */
+body {
+  background: $bg-body;
+}
+
+.Container {
+  max-width: $w-container-base;
+  margin: 0 auto;
+}

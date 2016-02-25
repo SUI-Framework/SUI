@@ -7,10 +7,12 @@ $is-theme: false !default;
 //
 // Some of the prefixes used:
 // * b = border
+// * bg = background
 // * c = color
 // * ff = font-family
 // * fz = font-size
 // * h = height
+// * w = width
 
 
 // Brand Colors
@@ -30,6 +32,9 @@ $c-warning:                 #e1a900 !default;
 $c-dark-mid:                #484f53 !default;
 $c-highlight:               #000000 !default;
 
+// Background Colors
+// -----------------------------------------------------------------------------
+$bg-body:                   #c0c7cb !default;
 
 // Font families
 // -----------------------------------------------------------------------------
@@ -78,6 +83,11 @@ $conv-px-pt:                1.3333;
 // -----------------------------------------------------------------------------
 $mq-tablet:                 480px !default;
 $mq-desktop:                768px !default;
+
+// Width containers
+// -----------------------------------------------------------------------------
+$w-container-base:          970px; !default;
+
 
 // Z-indexs
 // -----------------------------------------------------------------------------
