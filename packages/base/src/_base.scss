@@ -10,6 +10,8 @@
 @import 'lists';
 @import 'headings';
 @import 'fonts';
-@import 'animations'
+@import 'animations';
 
-/* ------ */
+body {
+  background-color: $bg-body;
+}
