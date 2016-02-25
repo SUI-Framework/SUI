@@ -77,6 +77,10 @@ Styleguide Button-1.1
     color: $c-dark-soft;
     cursor: default;
   }
+
+  &.is-active {
+    background-color: $c-primary-variant;
+  }
 }
 
 /*
@@ -109,6 +113,10 @@ Styleguide Button-1.2
     background-color: $c-contrast;
     color: $c-dark-soft;
     cursor: default;
+  }
+
+  &.is-active {
+    background-color: $c-secondary-variant;
   }
 }
 
@@ -180,3 +188,85 @@ Styleguide Button-1.4
     cursor: default;
   }
 }
+
+/*
+Button-group
+
+Use class `.Button-group` to create a button group structure.
+@@
+Use class `.Button--primary` (or the class for an specific button) for buttons inside buttons group.
+@@
+Use class `.is-active` to highlight the selected button.
+@@
+Use class `.is-disabled` to mark a button as disabled.
+
+Markup:
+<div class="Button-group">
+  <button class="Button Button--secondary is-active" type="button">year</button>
+  <button class="Button Button--secondary" type="button">month</button>
+  <button class="Button Button--secondary is-disabled" type="button">hour</button>
+</div>
+
+Styleguide Button-1.5
+*/
+
+.Button-group {
+  display: flex;
+
+  .Button {
+    flex: 0 0 auto;
+    border-color: $c-primary-variant;
+    border-right-width: 0;
+    border-style: solid;
+
+    &:last-of-type {
+      border-right-width: 1px;
+    }
+  }
+
+  &--justified {
+    .Button {
+      flex-grow: 1;
+    }
+  }
+
+  &--centered {
+    justify-content: center;
+  }
+
+  button { // fix iOS buttons separation */
+    margin: 0;
+  }
+}
+
+/*
+Button group justified
+
+Use class `.Button-group-justified` to display `.Button-group` full width buttons.
+
+
+Markup:
+<div class="Button-group Button-group--justified">
+  <button class="Button Button--secondary" type="button">year</button>
+  <button class="Button Button--secondary" type="button">month</button>
+  <button class="Button Button--secondary" type="button">hour</button>
+</div>
+
+Styleguide Button-1.6
+*/
+
+/*
+Button group centered
+
+Use class `.Button-group--centered` to display `.Button-group` centered.
+
+
+Markup:
+<div class="Button-group Button-group--centered">
+  <button class="Button Button--secondary" type="button">year</button>
+  <button class="Button Button--secondary" type="button">month</button>
+  <button class="Button Button--secondary" type="button">hour</button>
+</div>
+
+Styleguide Button-1.7
+*/
