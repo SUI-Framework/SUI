@@ -1,0 +1,31 @@
+// Dependencies from other packages --------------------------------------------
+@import '~sui-settings/src/settings';
+
+// Main
+// -----------------------------------------------------------------------------*
+
+html {
+  box-sizing: border-box;
+}
+// scss-lint:disable QualifyingElement
+*,
+*::before,
+*::after,
+input[type='search'] {
+  box-sizing: inherit;
+}
+// scss-lint:enable QualifyingElement
+
+body {
+  @include textbase;
+}
+
+a,
+a:hover {
+  color: $c-primary;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
