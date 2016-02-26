@@ -2,7 +2,7 @@
 @import '~sui-settings/src/settings';
 
 @if $is-theme == false {
-  @import '~sui-typography/src/reset';
+  @import '~sui-reset/src/reset';
   @import '~sui-typography/src/typography';
 }
 
@@ -10,6 +10,8 @@
 @import 'lists';
 @import 'headings';
 @import 'fonts';
-@import 'animations'
+@import 'animations';
 
-/* ------ */
+body {
+  background-color: $bg-body;
+}

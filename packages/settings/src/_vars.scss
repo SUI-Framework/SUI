@@ -7,6 +7,7 @@ $is-theme: false !default;
 //
 // Some of the prefixes used:
 // * b = border
+// * bg = background;
 // * c = color
 // * ff = font-family
 // * fz = font-size
@@ -30,6 +31,9 @@ $c-warning:                 #e1a900 !default;
 $c-dark-mid:                #484f53 !default;
 $c-highlight:               #000000 !default;
 
+// Background Colors
+// -----------------------------------------------------------------------------
+$bg-body:                   #c0c7cb !default;
 
 // Font families
 // -----------------------------------------------------------------------------
