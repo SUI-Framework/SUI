@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "npm run lint:sass",
     "lint:sass": "scss-lint src/",
-    "dist": "node-sass --output-style compressed src/_reset.scss dist/reset.css --importer ./scripts/importer.js",
+    "dist": "node-sass --output-style compressed src/_reset.scss dist/reset.css",
     "postdist": "npm run postdist:postcss",
     "postdist:postcss": "postcss --use autoprefixer dist/reset.css -d dist/",
     "phoenix": "rm -rf node_modules && npm install"
@@ -35,9 +35,5 @@
     "node-sass": "^3.1.2",
     "postcss-cli": "^2.3.2",
     "sui-pre-commit-rules": "latest"
-  },
-  "dependencies": {
-    "sui-settings": "latest"
   }
-
 }
