@@ -4,6 +4,7 @@
 @if $is-theme == false {
   @import '~sui-reset/src/reset';
   @import '~sui-typography/src/typography';
+  @import '~sui-main/src/main';
   @import '~sui-utils/src/utils-spacing';
 }
 
