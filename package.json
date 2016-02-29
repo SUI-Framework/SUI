@@ -1,6 +1,6 @@
 {
   "name": "sui-framework",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Open source Frontend Framework",
   "main": "dist/sui.css",
   "scripts": {
@@ -35,6 +35,7 @@
     "sui-components-tabs": "latest",
     "sui-components-tags": "latest",
     "sui-components-tooltip": "latest",
+    "sui-main": "latest",
     "sui-reset": "latest",
     "sui-settings": "latest",
     "sui-typography": "latest",
