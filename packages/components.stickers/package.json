@@ -1,6 +1,6 @@
 {
   "name": "sui-components-stickers",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "SUI Sticker Component",
   "main": "./src/_stickers.scss",
   "scripts": {
