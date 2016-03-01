@@ -1,18 +1,19 @@
 // SUI Framework ---------------------------------------------------------------
 $is-theme: true;
 
-// #init-dependencies
+// #init-block1
 // Dependencies from other packages --------------------------------------------
 @import '~sui-reset/src/reset';
 @import '~sui-settings/src/settings';
-@import '~sui-typography/src/typography';
-@import '~sui-base/src/base';
-@import '~sui-main/src/main';
-// #end-dependencies
+// #end-block1
 
-// #init-components
+@import '~sui-typography/src/typography';
+
+// #init-block2
 // Utilities
 // -----------------------------------------------------------------------------
+@import '~sui-main/src/main';
+@import '~sui-base/src/base';
 @import '~sui-utils/src/utils';
 
 // Components
@@ -25,4 +26,4 @@ $is-theme: true;
 @import '~sui-components-tabs/src/tabs';
 @import '~sui-components-tags/src/tags';
 @import '~sui-components-tooltip/src/tooltip';
-// #end-components
+// #end-block2
