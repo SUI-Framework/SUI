@@ -48,14 +48,14 @@ Styleguide Button-1.1
   cursor: pointer;
   display: inline-block;
   font-family: $ff-base;
-  font-size: $fz-small;
+  font-size: $fz-base;
   font-weight: normal;
   height: $button-h-base;
   line-height: $button-lh-base;
   overflow: visible;
   padding-bottom: 0;
-  padding-left: $gap-base;
-  padding-right: $gap-base;
+  padding-left: $gap-medium;
+  padding-right: $gap-medium;
   padding-top: 0;
   text-align: center;
   text-decoration: none;
@@ -74,7 +74,8 @@ Styleguide Button-1.1
 
   &.is-disabled,
   &[disabled] {
-    background-color: $c-dark-light;
+    background-color: $button-bg-primary-disabled;
+    border-color: $button-b-primary-disabled;
     color: $c-dark-soft;
     cursor: default;
   }
@@ -103,15 +104,17 @@ Styleguide Button-1.2
 */
 .Button--secondary {
   background-color: $c-secondary;
-  color: $c-text-variant;
+  color: $c-text-secondary;
 
   &:hover {
     background-color: $c-secondary-variant;
+    color: $c-text-variant;
   }
 
   &.is-disabled,
   &[disabled] {
-    background-color: $c-contrast;
+    background-color: $button-bg-secondary-disabled;
+    border-color: $button-b-secondary-disabled;
     color: $c-dark-soft;
     cursor: default;
   }
@@ -120,33 +123,31 @@ Styleguide Button-1.2
     background-color: $c-secondary-variant;
   }
 }
-
-
 /*
-Button Medium
+Button Small
 
-Use class `.Button--medium` to create a button with medium size.
+Use class `.Button--small to create a button with small size.
 <br>
-`.Button--medium` for a primary action style<br>
+`.Button--small` for a primary action style<br>
 
 Markup:
 <!-- Anchors (links) -->
-<a href="#" class="Button Button--primary Button--medium">Anchor Button medium</a>
+<a href="#" class="Button Button--primary Button--small">Anchor Button medium</a>
 @@
 <!-- Buttons (actions) -->
-<button class="Button Button--primary Button--medium">Button medium</button>
-<button class="Button Button--primary Button--medium is-disabled" disabled>Button medium disabled</button>
+<button class="Button Button--primary Button--small">Button medium</button>
+<button class="Button Button--primary Button--small is-disabled" disabled>Button medium disabled</button>
 
 
 Styleguide Button-1.3
 */
-.Button--medium {
-  font-size: $fz-medium;
-  height: $button-h-medium;
-  line-height: $button-lh-medium;
+.Button--small {
+  font-size: $fz-small;
+  height: $button-h-small;
+  line-height: $button-lh-small;
   padding-bottom: 0;
-  padding-left: $gap-medium;
-  padding-right: $gap-medium;
+  padding-left: $gap-base;
+  padding-right: $gap-base;
   padding-top: 0;
 
   &.is-disabled,

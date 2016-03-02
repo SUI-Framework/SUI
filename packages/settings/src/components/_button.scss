@@ -1,9 +1,15 @@
 // components.button
 // -----------------------------------------------------------------------------
-$button-h-base:                30px !default;
-$button-h-medium:              40px !default;
-$button-h-large:               42px !default;
+$button-h-small:               30px !default;
+$button-h-base:                40px !default;
+$button-h-large:               50px !default;
 
-$button-lh-base:               28px !default;
-$button-lh-medium:             38px !default;
-$button-lh-large:              40px !default;
+$button-lh-small:              28px !default;
+$button-lh-base:               38px !default;
+$button-lh-large:              48px !default;
+
+$button-bg-primary-disabled:   $c-dark-light !default;
+$button-bg-secondary-disabled: $c-contrast !default;
+
+$button-b-primary-disabled:    transparent !default;
+$button-b-secondary-disabled:  transparent !default;
