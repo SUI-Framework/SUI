@@ -1,5 +1,3 @@
-/*------------------------------------*    $MIXINS
-\*------------------------------------*/
 html,
 body,
 div,
@@ -116,7 +114,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none; }
 
 table {
@@ -131,18 +129,6 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
           text-size-adjust: 100%; }
-
-html {
-  box-sizing: border-box; }
-
-*,
-*::before,
-*::after,
-input[type='search'] {
-  box-sizing: inherit; }
-
-body {
-  font-family: "Lato-Regular", Helvetica, Arial, sans-serif; }
 
 /*------------------------------------*    $MIXINS
 \*------------------------------------*/
@@ -186,6 +172,33 @@ Styleguide Typography-1
   font-weight: normal;
   src: url("fonts/Lato-Italic.eot");
   src: url("fonts/Lato-Italic.eot?#iefix") format("embedded-opentype"), url("fonts/Lato-Italic.woff2") format("woff2"), url("fonts/Lato-Italic.woff") format("woff"), url("fonts/Lato-Italic.ttf") format("truetype"), url("fonts/Lato-Italic.svg#latoregular") format("svg"); }
+
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+html {
+  box-sizing: border-box; }
+
+*,
+*::before,
+*::after,
+input[type='search'] {
+  box-sizing: inherit; }
+
+body {
+  font-size: 16px;
+  line-height: 1.25; }
+  @media print {
+    body {
+      font-size: 12.0003px;
+      line-height: 0.93752; } }
+
+a,
+a:hover {
+  color: #999999;
+  text-decoration: none; }
+
+a:focus {
+  outline: none; }
 
 /*------------------------------------*    $MIXINS
 \*------------------------------------*/
@@ -468,6 +481,10 @@ Styleguide Fonts-1.1
 .Text--base {
   font-size: 16px;
   line-height: 1.25; }
+  @media print {
+    .Text--base {
+      font-size: 12.0003px;
+      line-height: 0.93752; } }
 
 .Text--small {
   font-size: 14px;
@@ -519,7 +536,9 @@ Styleguide Fonts-1.2
   100% {
     top: 100%; } }
 
-/* ------ */
+body {
+  background-color: #c0c7cb; }
+
 /*------------------------------------*    $MIXINS
 \*------------------------------------*/
 /*
@@ -929,6 +948,8 @@ Styleguide Button-1.1
     background-color: #f2f2f2;
     color: #cccccc;
     cursor: default; }
+  .Button--primary.is-active {
+    background-color: #666666; }
 
 /*
 Button Secondary
@@ -956,6 +977,8 @@ Styleguide Button-1.2
     background-color: #ffffff;
     color: #cccccc;
     cursor: default; }
+  .Button--secondary.is-active {
+    background-color: #cccccc; }
 
 /*
 Button Medium
@@ -1017,6 +1040,84 @@ Styleguide Button-1.4
     color: #cccccc;
     cursor: default; }
 
+/*
+Button-group
+
+Use class `.Button-group` to create a button group structure.
+@@
+Use class `.Button--primary` (or the class for an specific button) for buttons inside buttons group.
+@@
+Use class `.is-active` to highlight the selected button.
+@@
+Use class `.is-disabled` to mark a button as disabled.
+
+Markup:
+<div class="Button-group">
+  <button class="Button Button--secondary is-active" type="button">year</button>
+  <button class="Button Button--secondary" type="button">month</button>
+  <button class="Button Button--secondary is-disabled" type="button">hour</button>
+</div>
+
+Styleguide Button-1.5
+*/
+.Button-group {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  .Button-group .Button {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    border-color: #666666;
+    border-right-width: 0;
+    border-style: solid; }
+    .Button-group .Button:last-of-type {
+      border-right-width: 1px; }
+  .Button-group--justified .Button {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+  .Button-group--centered {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .Button-group button {
+    margin: 0; }
+
+/*
+Button group justified
+
+Use class `.Button-group-justified` to display `.Button-group` full width buttons.
+
+
+Markup:
+<div class="Button-group Button-group--justified">
+  <button class="Button Button--secondary" type="button">year</button>
+  <button class="Button Button--secondary" type="button">month</button>
+  <button class="Button Button--secondary" type="button">hour</button>
+</div>
+
+Styleguide Button-1.6
+*/
+/*
+Button group centered
+
+Use class `.Button-group--centered` to display `.Button-group` centered.
+
+
+Markup:
+<div class="Button-group Button-group--centered">
+  <button class="Button Button--secondary" type="button">year</button>
+  <button class="Button Button--secondary" type="button">month</button>
+  <button class="Button Button--secondary" type="button">hour</button>
+</div>
+
+Styleguide Button-1.7
+*/
 /*------------------------------------*    $MIXINS
 \*------------------------------------*/
 /*
@@ -1538,285 +1639,6 @@ Styleguide Forms-1.8
 /*------------------------------------*    $MIXINS
 \*------------------------------------*/
 /*
-Utils size
-
-Styleguide Utils Size-1
-
-Markup:
-<div class="u-size1of12"><div class="sg-sample-box"></div></div>
-<div class="u-size2of12"><div class="sg-sample-box"></div></div>
-<div class="u-size3of12"><div class="sg-sample-box"></div></div>
-<div class="u-size4of12"><div class="sg-sample-box"></div></div>
-<div class="u-size5of12"><div class="sg-sample-box"></div></div>
-<div class="u-size6of12"><div class="sg-sample-box"></div></div>
-<div class="u-size7of12"><div class="sg-sample-box"></div></div>
-<div class="u-size8of12"><div class="sg-sample-box"></div></div>
-<div class="u-size9of12"><div class="sg-sample-box"></div></div>
-<div class="u-size10of12"><div class="sg-sample-box"></div></div>
-<div class="u-size11of12"><div class="sg-sample-box"></div></div>
-<div class="u-size12of12"><div class="sg-sample-box"></div></div>
-*/
-[class*="u-size"] {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  /* 1 */ }
-
-.u-size1of12 {
-  width: 8.33333% !important; }
-
-.u-size1of10 {
-  width: 10% !important; }
-
-.u-size1of8 {
-  width: 12.5% !important; }
-
-.u-size1of6,
-.u-size2of12 {
-  width: 16.66667% !important; }
-
-.u-size1of5,
-.u-size2of10 {
-  width: 20% !important; }
-
-.u-size1of4,
-.u-size2of8,
-.u-size3of12 {
-  width: 25% !important; }
-
-.u-size3of10 {
-  width: 30% !important; }
-
-.u-size1of3,
-.u-size2of6,
-.u-size4of12 {
-  width: 33.33333% !important; }
-
-.u-size3of8 {
-  width: 37.5% !important; }
-
-.u-size2of5 {
-  width: 40% !important; }
-
-.u-size5of12 {
-  width: 41.66667% !important; }
-
-.u-size1of2,
-.u-size2of4,
-.u-size3of6,
-.u-size4of8,
-.u-size5of10,
-.u-size6of12 {
-  width: 50% !important; }
-
-.u-size7of12 {
-  width: 58.33333% !important; }
-
-.u-size3of5,
-.u-size6of10 {
-  width: 60% !important; }
-
-.u-size5of8 {
-  width: 62.5% !important; }
-
-.u-size2of3,
-.u-size4of6,
-.u-size8of12 {
-  width: 66.66667% !important; }
-
-.u-size7of10 {
-  width: 70% !important; }
-
-.u-size3of4,
-.u-size6of8,
-.u-size9of12 {
-  width: 75% !important; }
-
-.u-size4of5,
-.u-size8of10 {
-  width: 80% !important; }
-
-.u-size5of6,
-.u-size10of12 {
-  width: 83.33333% !important; }
-
-.u-size7of8 {
-  width: 87.5% !important; }
-
-.u-size9of10 {
-  width: 90% !important; }
-
-.u-size11of12 {
-  width: 91.66667% !important; }
-
-.u-sizeFill {
-  -webkit-box-flex: 1 !important;
-  -webkit-flex: 1 1 0% !important;
-      -ms-flex: 1 1 0% !important;
-          flex: 1 1 0% !important;
-  /* 1 */
-  -webkit-flex-basis: 0% !important;
-      -ms-flex-preferred-size: 0% !important;
-          flex-basis: 0% !important;
-  /* 2 */ }
-
-.u-sizeFillAlt {
-  -webkit-box-flex: 1 !important;
-  -webkit-flex: 1 1 auto !important;
-      -ms-flex: 1 1 auto !important;
-          flex: 1 1 auto !important;
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important; }
-
-.u-sizeFull {
-  box-sizing: border-box !important;
-  display: block !important;
-  width: 100% !important; }
-
-@media only screen and (min-width: 480px) {
-  [class*="u-md-size"] {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    /* 1 */ }
-  .u-md-size1of12 {
-    width: 8.33333% !important; }
-  .u-md-size1of10 {
-    width: 10% !important; }
-  .u-md-size1of8 {
-    width: 12.5% !important; }
-  .u-md-size1of6,
-  .u-md-size2of12 {
-    width: 16.66667% !important; }
-  .u-md-size1of5,
-  .u-md-size2of10 {
-    width: 20% !important; }
-  .u-md-size1of4,
-  .u-md-size2of8,
-  .u-md-size3of12 {
-    width: 25% !important; }
-  .u-md-size3of10 {
-    width: 30% !important; }
-  .u-md-size1of3,
-  .u-md-size2of6,
-  .u-md-size4of12 {
-    width: 33.33333% !important; }
-  .u-md-size3of8 {
-    width: 37.5% !important; }
-  .u-md-size2of5 {
-    width: 40% !important; }
-  .u-md-size5of12 {
-    width: 41.66667% !important; }
-  .u-md-size1of2,
-  .u-md-size2of4,
-  .u-md-size3of6,
-  .u-md-size4of8,
-  .u-md-size5of10,
-  .u-md-size6of12 {
-    width: 50% !important; }
-  .u-md-size7of12 {
-    width: 58.33333% !important; }
-  .u-md-size3of5,
-  .u-md-size6of10 {
-    width: 60% !important; }
-  .u-md-size5of8 {
-    width: 62.5% !important; }
-  .u-md-size2of3,
-  .u-md-size4of6,
-  .u-md-size8of12 {
-    width: 66.66667% !important; }
-  .u-md-size7of10 {
-    width: 70% !important; }
-  .u-md-size3of4,
-  .u-md-size6of8,
-  .u-md-size9of12 {
-    width: 75% !important; }
-  .u-md-size4of5,
-  .u-md-size8of10 {
-    width: 80% !important; }
-  .u-md-size5of6,
-  .u-md-size10of12 {
-    width: 83.33333% !important; }
-  .u-md-size7of8 {
-    width: 87.5% !important; }
-  .u-md-size9of10 {
-    width: 90% !important; }
-  .u-md-size11of12 {
-    width: 91.66667% !important; } }
-
-@media only screen and (min-width: 768px) {
-  [class*="u-lg-size"] {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    /* 1 */ }
-  .u-lg-size1of12 {
-    width: 8.33333% !important; }
-  .u-lg-size1of10 {
-    width: 10% !important; }
-  .u-lg-size1of8 {
-    width: 12.5% !important; }
-  .u-lg-size1of6,
-  .u-lg-size2of12 {
-    width: 16.66667% !important; }
-  .u-lg-size1of5,
-  .u-lg-size2of10 {
-    width: 20% !important; }
-  .u-lg-size1of4,
-  .u-lg-size2of8,
-  .u-lg-size3of12 {
-    width: 25% !important; }
-  .u-lg-size3of10 {
-    width: 30% !important; }
-  .u-lg-size1of3,
-  .u-lg-size2of6,
-  .u-lg-size4of12 {
-    width: 33.33333% !important; }
-  .u-lg-size3of8 {
-    width: 37.5% !important; }
-  .u-lg-size2of5 {
-    width: 40% !important; }
-  .u-lg-size5of12 {
-    width: 41.66667% !important; }
-  .u-lg-size1of2,
-  .u-lg-size2of4,
-  .u-lg-size3of6,
-  .u-lg-size4of8,
-  .u-lg-size5of10,
-  .u-lg-size6of12 {
-    width: 50% !important; }
-  .u-lg-size7of12 {
-    width: 58.33333% !important; }
-  .u-lg-size3of5,
-  .u-lg-size6of10 {
-    width: 60% !important; }
-  .u-lg-size5of8 {
-    width: 62.5% !important; }
-  .u-lg-size2of3,
-  .u-lg-size4of6,
-  .u-lg-size8of12 {
-    width: 66.66667% !important; }
-  .u-lg-size7of10 {
-    width: 70% !important; }
-  .u-lg-size3of4,
-  .u-lg-size6of8,
-  .u-lg-size9of12 {
-    width: 75% !important; }
-  .u-lg-size4of5,
-  .u-lg-size8of10 {
-    width: 80% !important; }
-  .u-lg-size5of6,
-  .u-lg-size10of12 {
-    width: 83.33333% !important; }
-  .u-lg-size7of8 {
-    width: 87.5% !important; }
-  .u-lg-size9of10 {
-    width: 90% !important; }
-  .u-lg-size11of12 {
-    width: 91.66667% !important; } }
-
-/*
 Grid
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
@@ -2127,65 +1949,76 @@ Styleguide Tabs
 /*------------------------------------*    $MIXINS
 \*------------------------------------*/
 /*
-Utils Spacing
+Tags
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Use class `.Tags` to create a tags's inline list.
 
 Markup:
-<div class="u-spacingBase sg-SampleSpacing">
-  <p>Lorem ipsum dolor sit amet</p>
-</div>
-<div class="u-spacingBase sg-SampleSpacing">
-  <p>Lorem ipsum dolor sit amet</p>
-</div>
-<div class="u-spacingMedium sg-SampleSpacing--medium">
-  <p>Lorem ipsum dolor sit amet</p>
-</div>
-<div class="u-spacingMedium sg-SampleSpacing--medium">
-  <p>Lorem ipsum dolor sit amet</p>
-</div>
+<ul class="Tags">
+  <li class="Tags-item"><span class="Tags-itemLabel">Javascript</span></li>
+  <li class="Tags-item"><a href="#" class="Tags-itemLabel">CSS</a></li>
+  <li class="Tags-item"><span class="Tags-itemLabel">HTML<a class="Tags-remove" href="#" title="Remove"><span class="Tags-removeText">Remove</span></a></span></li>
+</ul>
 
-Styleguide Utils Spacing-1
+Styleguide Tags-1
 */
-.u-spacingBase {
-  padding-top: 20px;
-  padding-right: 10px;
-  padding-bottom: 20px;
-  padding-left: 10px; }
-  @media only screen and (min-width: 480px) {
-    .u-spacingBase {
-      padding-top: 20px;
-      padding-right: 20px;
-      padding-bottom: 20px;
-      padding-left: 20px; } }
-  .u-spacingBase + .u-spacingBase {
-    padding-top: 0; }
+.Tags {
+  padding-right: 10px; }
+  .Tags::after {
+    clear: both;
+    content: ' ';
+    display: table; }
+  .Tags:last-child {
+    padding-right: 0; }
 
-.u-spacingMedium {
-  padding-top: 20px;
+.Tags-item {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px; }
+  .Tags-item:last-child {
+    margin-bottom: 0; }
+
+.Tags-itemLabel {
+  font-size: 14px;
+  line-height: 1.25;
+  display: inline-table;
+  padding-top: 5px;
   padding-right: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   padding-left: 10px;
-  padding-top: 40px;
-  padding-bottom: 40px; }
-  @media only screen and (min-width: 480px) {
-    .u-spacingMedium {
-      padding-top: 20px;
-      padding-right: 20px;
-      padding-bottom: 20px;
-      padding-left: 20px; } }
-  @media only screen and (min-width: 480px) {
-    .u-spacingMedium {
-      padding-top: 40px;
-      padding-bottom: 40px; } }
-  .u-spacingMedium + .u-spacingMedium,
-  .u-spacingMedium > .u-spacingBase:first-child,
-  .u-spacingMedium > .u-spacingBase:only-child {
-    padding-top: 0; }
-  .u-spacingMedium > .u-spacingBase:last-child,
-  .u-spacingMedium > .u-spacingBase:only-child {
-    padding-bottom: 0; }
+  color: #666666;
+  background-color: #e6e6e6; }
+  @media print {
+    .Tags-itemLabel {
+      border: 1px solid #cccccc; } }
+  a.Tags-itemLabel {
+    cursor: pointer;
+    text-decoration: none; }
+    a.Tags-itemLabel:hover {
+      color: #cccccc;
+      background-color: #f2f2f2; }
+    a.Tags-itemLabel:active {
+      background-color: #484f53; }
 
+.Tags-remove {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  color: #cccccc;
+  text-decoration: none;
+  padding: 0 10px; }
+  .Tags-remove:hover {
+    color: #000000; }
+  .Tags-remove::after {
+    position: absolute;
+    content: 'X';
+    top: -13px;
+    left: 10px; }
+  .Tags-remove .Tags-removeText {
+    display: none; }
+
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
 /*
 Tooltip
 
