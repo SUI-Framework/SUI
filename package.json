@@ -1,6 +1,6 @@
 {
   "name": "sui-framework",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "Open source Frontend Framework",
   "main": "dist/sui.css",
   "scripts": {
@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "sui-base": "^2.5.0",
-    "sui-components-button": "^2.4.0",
+    "sui-components-button": "^3.0.0",
     "sui-components-form": "^3.2.0",
     "sui-components-grid": "^1.2.0",
     "sui-components-notifications": "^2.3.0",
