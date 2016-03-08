@@ -940,9 +940,10 @@ Styleguide Button-1.1
   width: auto; }
 
 .Button--primary {
-  background-color: #999999;
-  color: #ffffff; }
+  color: #ffffff;
+  background-color: #999999; }
   .Button--primary:hover {
+    color: #ffffff;
     background-color: #666666; }
   .Button--primary.is-disabled, .Button--primary[disabled] {
     background-color: #f2f2f2;
@@ -1048,20 +1049,44 @@ Button-group
 
 Use class `.Button-group` to create a button group structure.
 @@
-Use class `.Button--primary` (or the class for an specific button) for buttons inside buttons group.
-@@
+Use class `.Button--secondary` (or the class for an specific button) for buttons inside buttons group.
+
+Markup:
+<div class="Button-group">
+  <button class="Button Button--secondary" type="button">year</button>
+  <button class="Button Button--secondary" type="button">month</button>
+  <button class="Button Button--secondary" type="button">hour</button>
+</div>
+
+Styleguide Button-1.5
+*/
+/*
+Button-group active
+
 Use class `.is-active` to highlight the selected button.
-@@
-Use class `.is-disabled` to mark a button as disabled.
 
 Markup:
 <div class="Button-group">
   <button class="Button Button--secondary is-active" type="button">year</button>
   <button class="Button Button--secondary" type="button">month</button>
+  <button class="Button Button--secondary" type="button">hour</button>
+</div>
+
+Styleguide Button-1.6
+*/
+/*
+Button-group disabled
+
+Use class `.is-disabled` to mark a button as disabled.
+
+Markup:
+<div class="Button-group">
+  <button class="Button Button--secondary is-disabled" type="button">year</button>
+  <button class="Button Button--secondary is-disabled" type="button">month</button>
   <button class="Button Button--secondary is-disabled" type="button">hour</button>
 </div>
 
-Styleguide Button-1.5
+Styleguide Button-1.7
 */
 .Button-group {
   display: -webkit-box;
@@ -1073,11 +1098,33 @@ Styleguide Button-1.5
     -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
-    border-color: #666666;
-    border-right-width: 0;
-    border-style: solid; }
+    padding-left: 0;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-radius: 0; }
+    .Button-group .Button:first-of-type {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0; }
+      .Button-group .Button:first-of-type.is-disabled {
+        border-left-color: transparent; }
     .Button-group .Button:last-of-type {
-      border-right-width: 1px; }
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0; }
+      .Button-group .Button:last-of-type.is-disabled {
+        border-right-color: transparent; }
+    .Button-group .Button::before {
+      content: " ";
+      display: inline-block;
+      float: left;
+      height: 100%;
+      margin-top: 0;
+      padding-left: 20px;
+      border-left-color: #cccccc;
+      border-left-width: 1px;
+      border-left-style: solid; }
+    .Button-group .Button.is-active + .Button::before,
+    .Button-group .Button:hover + .Button:not(.is-disabled)::before, .Button-group .Button:first-of-type::before {
+      border-left-color: transparent; }
   .Button-group--justified .Button {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
@@ -1104,7 +1151,7 @@ Markup:
   <button class="Button Button--secondary" type="button">hour</button>
 </div>
 
-Styleguide Button-1.6
+Styleguide Button-1.8
 */
 /*
 Button group centered
@@ -1119,7 +1166,7 @@ Markup:
   <button class="Button Button--secondary" type="button">hour</button>
 </div>
 
-Styleguide Button-1.7
+Styleguide Button-1.9
 */
 /*------------------------------------*    $MIXINS
 \*------------------------------------*/
