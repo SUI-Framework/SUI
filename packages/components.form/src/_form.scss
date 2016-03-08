@@ -166,13 +166,13 @@ textarea {
   font-size: $fz-small;
   margin-top: $gap-medium / 4;
 
-    &.is-error {
-      color: $c-error;
-    }
+  &.is-error {
+    color: $c-error;
+  }
 
-    &.is-success {
-      color: $c-success;
-    }
+  &.is-success {
+    color: $c-success;
+  }
 }
 
 .FormGroup {
