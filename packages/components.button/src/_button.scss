@@ -65,10 +65,11 @@ Styleguide Button-1.1
 }
 
 .Button--primary {
-  background-color: $c-primary;
   color: $c-contrast;
+  background-color: $c-primary;
 
   &:hover {
+    color: $c-contrast;
     background-color: $c-primary-variant;
   }
 
@@ -196,20 +197,46 @@ Button-group
 
 Use class `.Button-group` to create a button group structure.
 @@
-Use class `.Button--primary` (or the class for an specific button) for buttons inside buttons group.
-@@
+Use class `.Button--secondary` (or the class for an specific button) for buttons inside buttons group.
+
+Markup:
+<div class="Button-group">
+  <button class="Button Button--secondary" type="button">year</button>
+  <button class="Button Button--secondary" type="button">month</button>
+  <button class="Button Button--secondary" type="button">hour</button>
+</div>
+
+Styleguide Button-1.5
+*/
+
+/*
+Button-group active
+
 Use class `.is-active` to highlight the selected button.
-@@
-Use class `.is-disabled` to mark a button as disabled.
 
 Markup:
 <div class="Button-group">
   <button class="Button Button--secondary is-active" type="button">year</button>
   <button class="Button Button--secondary" type="button">month</button>
+  <button class="Button Button--secondary" type="button">hour</button>
+</div>
+
+Styleguide Button-1.6
+*/
+
+/*
+Button-group disabled
+
+Use class `.is-disabled` to mark a button as disabled.
+
+Markup:
+<div class="Button-group">
+  <button class="Button Button--secondary is-disabled" type="button">year</button>
+  <button class="Button Button--secondary is-disabled" type="button">month</button>
   <button class="Button Button--secondary is-disabled" type="button">hour</button>
 </div>
 
-Styleguide Button-1.5
+Styleguide Button-1.7
 */
 
 .Button-group {
@@ -217,12 +244,47 @@ Styleguide Button-1.5
 
   .Button {
     flex: 0 0 auto;
-    border-color: $c-primary-variant;
-    border-right-width: 0;
-    border-style: solid;
+    padding-left: 0;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-radius: 0;
+
+    &:first-of-type {
+      border-top-left-radius: $b-radius-base;
+      border-bottom-left-radius: $b-radius-base;
+
+      &.is-disabled {
+        border-left-color: $button-b-secondary-disabled;
+      }
+    }
 
     &:last-of-type {
-      border-right-width: 1px;
+      border-top-right-radius: $b-radius-base;
+      border-bottom-right-radius: $b-radius-base;
+
+      &.is-disabled {
+        border-right-color: $button-b-secondary-disabled;
+      }
+    }
+
+    &::before {
+      content: " ";
+      display: inline-block;
+      float: left;
+      height: $button-h-divider;
+      margin-top: $button-mt-divider;
+      padding-left: $gap-medium;
+      border-left-color: $c-secondary-variant;
+      border-left-width: 1px;
+      border-left-style: solid;
+    }
+
+    &.is-active + .Button,
+    &:hover + .Button:not(.is-disabled),
+    &:first-of-type {
+      &::before {
+        border-left-color: transparent;
+      }
     }
   }
 
@@ -254,7 +316,7 @@ Markup:
   <button class="Button Button--secondary" type="button">hour</button>
 </div>
 
-Styleguide Button-1.6
+Styleguide Button-1.8
 */
 
 /*
@@ -270,5 +332,5 @@ Markup:
   <button class="Button Button--secondary" type="button">hour</button>
 </div>
 
-Styleguide Button-1.7
+Styleguide Button-1.9
 */
