@@ -116,10 +116,6 @@ textarea {
     }
   }
 
-  .FormGroup-info.is-error {
-    color: $c-error;
-  }
-
   &.is-success {
     label {
       color: $c-success;
@@ -180,7 +176,12 @@ label,
 }
 
 .FormGroup-info {
+  font-size: $fz-small;
   margin-bottom: 0;
+
+  &.is-error {
+    color: $c-error;
+  }
 
   &.is-error,
   &.is-success,
@@ -264,6 +265,7 @@ Styleguide Forms-1.3
 */
 
 textarea {
+  font-family: $ff-base;
   min-height: $textarea-h-base;
   resize: $textarea-resize;
   width: 100%;
@@ -392,8 +394,6 @@ Styleguide Forms-1.5
     border: 1px solid $c-error;
   }
 }
-
-
 
 /*
 Checkboxes and radiobuttons
