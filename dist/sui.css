@@ -1271,9 +1271,6 @@ textarea {
 .FormGroup.is-error select {
   border-color: #bf2102; }
 
-.FormGroup .FormGroup-info.is-error {
-  color: #bf2102; }
-
 .FormGroup.is-success label {
   color: #00a550; }
 
@@ -1333,7 +1330,10 @@ label,
   width: auto; }
 
 .FormGroup-info {
+  font-size: 14px;
   margin-bottom: 0; }
+  .FormGroup-info.is-error {
+    color: #bf2102; }
   .FormGroup-info.is-error, .FormGroup-info.is-success,
   .FormGroup-textarea .FormGroup-info,
   .FormGroup-info .FormGroup-textareaCounter, .FormGroup-info:first-of-type:only-child {
@@ -1420,6 +1420,7 @@ Markup:
 Styleguide Forms-1.3
 */
 textarea {
+  font-family: "Lato-Regular", Helvetica, Arial, sans-serif;
   min-height: 150px;
   resize: vertical;
   width: 100%; }
