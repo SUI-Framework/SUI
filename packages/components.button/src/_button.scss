@@ -121,6 +121,7 @@ Styleguide Button-1.2
   }
 
   &.is-active {
+    color: $c-text-variant;
     background-color: $c-secondary-variant;
   }
 }
@@ -245,8 +246,8 @@ Styleguide Button-1.7
   .Button {
     flex: 0 0 auto;
     padding-left: 0;
-    border-left-color: transparent;
-    border-right-color: transparent;
+    border-left-width: 0;
+    border-right-width: 0;
     border-radius: 0;
 
     &:first-of-type {
@@ -255,6 +256,7 @@ Styleguide Button-1.7
 
       &.is-disabled {
         border-left-color: $button-b-secondary-disabled;
+        border-left-width: $button-b-w-secondary-disabled;
       }
     }
 
@@ -264,11 +266,12 @@ Styleguide Button-1.7
 
       &.is-disabled {
         border-right-color: $button-b-secondary-disabled;
+        border-right-width: $button-b-w-secondary-disabled;
       }
     }
 
     &::before {
-      content: " ";
+      content: '';
       display: inline-block;
       float: left;
       height: $button-h-divider;

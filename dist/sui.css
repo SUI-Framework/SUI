@@ -1177,44 +1177,6 @@ This section contains all the elements that we can use to build a form.
 
 Styleguide Forms-1
 */
-/*
-Basic field
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-Markup:
-<form action="#" method="post">
-  <fieldset>
-    <legend>Lorem ipsum</legend>
-    <ul>
-      <li class="FormGroup">
-        <label for="name">Basic field <span>(opcional)</span></label>
-        <input type="text" id="name">
-        <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
-      </li>
-      <li class="FormGroup is-error">
-        <label for="name">Basic field with error</label>
-        <input type="text" id="name">
-        <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
-        <p class="FormGroup-info is-error">Lorem ipsum dolor sit amet.</p>
-      </li>
-  </fieldset>
-</form>
-
-Styleguide Forms-1.1
-*/
-fieldset + fieldset {
-  margin-top: 40px; }
-
-fieldset:first-child {
-  margin-top: 0; }
-
-fieldset > button {
-  margin-top: 20px; }
-
-legend {
-  display: none; }
-
 :invalid {
   box-shadow: none; }
 
@@ -1238,6 +1200,70 @@ legend {
   font-size: 14px;
   text-overflow: ellipsis; }
 
+fieldset + fieldset {
+  margin-top: 40px; }
+
+fieldset:first-child {
+  margin-top: 0; }
+
+fieldset > button {
+  margin-top: 20px; }
+
+legend {
+  display: none; }
+
+textarea,
+[type="text"],
+[type="number"],
+[type="tel"],
+[type="button"],
+[type="submit"],
+select {
+  border-radius: 0; }
+
+[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield; }
+
+label,
+.FormGroup-label {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.25;
+  margin-bottom: 5px;
+  vertical-align: top;
+  width: auto; }
+
+/*
+Basic field
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Markup:
+<form action="#" method="post">
+  <fieldset>
+    <legend>Lorem ipsum</legend>
+    <ul>
+      <li class="FormGroup">
+        <label for="name" placeholder="placeholder...">Basic field <span>(opcional)</span></label>
+        <input type="text" id="name">
+        <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
+      </li>
+      <li class="FormGroup is-success">
+        <label for="name">Basic field with success</label>
+        <input type="text" id="name">
+      </li>
+      <li class="FormGroup is-error">
+        <label for="name">Basic field with error</label>
+        <input type="text" id="name">
+        <p class="FormGroup-info is-error">Lorem ipsum dolor sit amet.</p>
+      </li>
+  </fieldset>
+</form>
+
+Styleguide Forms-1.1
+*/
 input,
 textarea {
   border-color: #cccccc;
@@ -1259,6 +1285,45 @@ textarea {
     input,
     textarea {
       width: 330px; } }
+
+/*
+Textarea
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Markup:
+<form action="#" method="post">
+  <fieldset>
+    <legend>Lorem ipsum</legend>
+    <ul>
+      <li class="FormGroup">
+        <label for="name">Basic field <span>(opcional)</span></label>
+        <div class="FormGroup-textarea">
+          <textarea name="comment" value="">Lorem ipsum</textarea>
+          <p class="FormGroup-textareaCounter"><span>114</span>/<span>250</span></p>
+        </div>
+      </li>
+  </fieldset>
+</form>
+
+Styleguide Forms-1.2
+*/
+textarea {
+  font-family: "Lato-Regular", Helvetica, Arial, sans-serif;
+  min-height: 150px;
+  resize: vertical; }
+
+.FormGroup-textareaCounter,
+.FormGroup-info {
+  color: #999999;
+  font-size: 14px;
+  margin-top: 5px; }
+  .FormGroup-textareaCounter.is-error,
+  .FormGroup-info.is-error {
+    color: #bf2102; }
+  .FormGroup-textareaCounter.is-success,
+  .FormGroup-info.is-success {
+    color: #00a550; }
 
 .FormGroup:not(:last-child) {
   margin-bottom: 20px; }
@@ -1284,7 +1349,7 @@ textarea {
 
 .FormGroup [disabled="disabled"], .FormGroup.is-disabled {
   cursor: default;
-  border-color: #f2f2f2; }
+  border-color: #cccccc; }
   .FormGroup [disabled="disabled"] label,
   .FormGroup [disabled="disabled"] .FormGroup-info,
   .FormGroup [disabled="disabled"] .FormGroup-textareaCounter,
@@ -1320,25 +1385,6 @@ textarea {
   .FormGroup [disabled="disabled"] ::placeholder, .FormGroup.is-disabled ::placeholder {
     color: #f2f2f2; }
 
-label,
-.FormGroup-label {
-  display: inline-block;
-  font-size: 16px;
-  line-height: 1.25;
-  margin-bottom: 5px;
-  vertical-align: top;
-  width: auto; }
-
-.FormGroup-info {
-  font-size: 14px;
-  margin-bottom: 0; }
-  .FormGroup-info.is-error {
-    color: #bf2102; }
-  .FormGroup-info.is-error, .FormGroup-info.is-success,
-  .FormGroup-textarea .FormGroup-info,
-  .FormGroup-info .FormGroup-textareaCounter, .FormGroup-info:first-of-type:only-child {
-    margin-top: 5px; }
-
 /*
 Basic Pulldown
 
@@ -1363,7 +1409,7 @@ Markup:
   </fieldset>
 </form>
 
-Styleguide Forms-1.2
+Styleguide Forms-1.3
 */
 select {
   border-color: #cccccc;
@@ -1382,52 +1428,6 @@ select {
   select:focus {
     border-color: #999999;
     outline: none; }
-
-textarea,
-[type="text"],
-[type="number"],
-[type="tel"],
-[type="button"],
-[type="submit"],
-select {
-  border-radius: 0; }
-
-[type="number"] {
-  -webkit-appearance: textfield;
-     -moz-appearance: textfield;
-          appearance: textfield; }
-
-/*
-Textarea
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-Markup:
-<form action="#" method="post">
-  <fieldset>
-    <legend>Lorem ipsum</legend>
-    <ul>
-      <li class="FormGroup">
-        <label for="name">Basic field <span>(opcional)</span></label>
-        <div class="FormGroup-textarea">
-          <textarea name="comment" value="">Lorem ipsum</textarea>
-          <p class="FormGroup-textareaCounter"><span>114</span>/<span>250</span></p>
-        </div>
-      </li>
-  </fieldset>
-</form>
-
-Styleguide Forms-1.3
-*/
-textarea {
-  font-family: "Lato-Regular", Helvetica, Arial, sans-serif;
-  min-height: 150px;
-  resize: vertical;
-  width: 100%; }
-
-.FormGroup-textareaCounter {
-  font-size: 14px;
-  margin-top: 5px; }
 
 /*
 Basic group of fields
