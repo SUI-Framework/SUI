@@ -186,7 +186,8 @@ input[type='search'] {
 
 body {
   font-size: 16px;
-  line-height: 1.25; }
+  line-height: 1.25;
+  font-family: "Lato-Regular", Helvetica, Arial, sans-serif; }
   @media print {
     body {
       font-size: 12.0003px;
@@ -982,6 +983,7 @@ Styleguide Button-1.2
     color: #cccccc;
     cursor: default; }
   .Button--secondary.is-active {
+    color: #999999;
     background-color: #cccccc; }
 
 /*
@@ -1099,21 +1101,23 @@ Styleguide Button-1.7
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
     padding-left: 0;
-    border-left-color: transparent;
-    border-right-color: transparent;
+    border-left-width: 0;
+    border-right-width: 0;
     border-radius: 0; }
     .Button-group .Button:first-of-type {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0; }
       .Button-group .Button:first-of-type.is-disabled {
-        border-left-color: transparent; }
+        border-left-color: transparent;
+        border-left-width: 0; }
     .Button-group .Button:last-of-type {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0; }
       .Button-group .Button:last-of-type.is-disabled {
-        border-right-color: transparent; }
+        border-right-color: transparent;
+        border-right-width: 0; }
     .Button-group .Button::before {
-      content: " ";
+      content: '';
       display: inline-block;
       float: left;
       height: 100%;
