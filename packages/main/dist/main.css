@@ -1,1 +1,1 @@
-html{box-sizing:border-box}*,*::before,*::after,input[type='search']{box-sizing:inherit}body{font-size:16px;line-height:1.25}@media print{body{font-size:12.0003px;line-height:0.93752}}a,a:hover{color:#999;text-decoration:none}a:focus{outline:none}
+html{box-sizing:border-box}*,*::before,*::after,input[type='search']{box-sizing:inherit}body{font-size:16px;line-height:1.25;font-family:"Lato-Regular",Helvetica,Arial,sans-serif}@media print{body{font-size:12.0003px;line-height:0.93752}}a,a:hover{color:#999;text-decoration:none}a:focus{outline:none}

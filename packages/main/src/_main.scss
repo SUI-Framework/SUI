@@ -18,6 +18,7 @@ input[type='search'] {
 
 body {
   @include textbase;
+  font-family: $ff-base;
 }
 
 a,
