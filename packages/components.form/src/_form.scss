@@ -89,10 +89,13 @@ Markup:
         <input type="text" id="name">
         <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
       </li>
+      <li class="FormGroup is-success">
+        <label for="name">Basic field with success</label>
+        <input type="text" id="name">
+      </li>
       <li class="FormGroup is-error">
         <label for="name">Basic field with error</label>
         <input type="text" id="name">
-        <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
         <p class="FormGroup-info is-error">Lorem ipsum dolor sit amet.</p>
       </li>
   </fieldset>
