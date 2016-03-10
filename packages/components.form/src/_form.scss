@@ -398,6 +398,8 @@ Styleguide Forms-1.5
   }
 }
 
+// Checkboxes and radiobuttons
+// -----------------------------------------------------------------------------
 /*
 Checkboxes and radiobuttons
 
@@ -409,11 +411,11 @@ Markup:
       <li class="FormGroup">
         <p class="FormGroup-label">Checkbox List</p>
         <ul>
-          <li>
+          <li class="FormGroup-check">
             <input type="checkbox" id="checkbox1">
             <label for="checkbox1">Checkbox 1</label>
           </li>
-          <li>
+          <li class="FormGroup-check is-error">
             <input type="checkbox" id="checkbox2">
             <label for="checkbox2">Checkbox 2</label>
           </li>
@@ -422,11 +424,11 @@ Markup:
       <li class="FormGroup">
         <p class="FormGroup-label">Radio button List</p>
         <ul>
-          <li>
+          <li class="FormGroup-radio">
             <input type="radio" id="radio1" name="radio">
             <label for="radio1">Radio button field 1</label>
           </li>
-          <li>
+          <li class="FormGroup-radio is-error">
             <input type="radio" id="radio2" name="radio">
             <label for="radio2">Radio button field 2</label>
           </li>
@@ -454,11 +456,20 @@ Styleguide Forms-1.6
 
   + label {
     cursor: pointer;
-    max-width: 85%;
   }
 
   &:disabled {
     color: $c-text-variant;
+  }
+}
+
+.FormGroup-radio,
+.FormGroup-check {
+  display: flex;
+  align-items: flex-start;
+
+  &.is-error {
+    color: $c-error;
   }
 }
 
