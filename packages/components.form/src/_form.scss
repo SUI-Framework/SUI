@@ -468,6 +468,10 @@ Styleguide Forms-1.6
   display: flex;
   align-items: flex-start;
 
+  input {
+    flex-shrink: 0;
+  }
+
   &.is-error {
     color: $c-error;
   }
