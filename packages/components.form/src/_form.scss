@@ -510,51 +510,46 @@ StrengthBar
 Use class `.StrengthBar` to create a strength bar.
 
 Markup:
-<form action="#" method="post">
-  <fieldset>
-  <ul>
-    <li class="StrengthBar is-success">
-      <label for="password">Lorem ipsum</label>
-      <input type="password" placeholder="Lorem ipsum" data-vars="" id="password" name="password" maxlength="20">
-      <a id="view" onclick="showHidePassword();return false;" href="#">View</a>
-      <dl>
-          <dt>Strenght: Normal</dt>
-          <dd class="StrengthBar-meter"><meter role="progressbar" min="0" low="2" optimum="3" high="2" max="3" value="2" name="password-strength" id="password-strength"></meter></dd>
-      </dl>
-    </li>
-  </ul>
-  </fieldset>
-</form>
+<dl class="StrengthBar">
+    <dt>Lorem ipsum</dt>
+    <dd>
+      <meter max="3" min="0" value="2" high="2" low="2" optimum="3"></meter>
+    </dd>
+</dl>
 
 Styleguide Forms-1.7
 */
 
 .StrengthBar {
-  position: relative;
-
-  a {
-    position: absolute;
-    top: 26px;
-    right: 1px;
-    font-size: $fz-small;
-    line-height: $lh-base-body;
-    padding: 15px 10px;
-  }
-
-  input,
-  textarea {
-    margin-bottom: 10px;
-  }
-
-  &-meter,
-  meter {
-    height: 7px;
-  }
-
   meter {
     width: 100%;
+    height: 7px;
     vertical-align: top;
     appearance: none;
     background: $c-dark-light;
+
+    /* WebKit */
+    &::-webkit-meter-bar {
+      background: $c-dark-soft;
+    }
+
+    &::-webkit-meter-optimum-value,
+    &::-webkit-meter-suboptimum-value {
+      background: $c-success;
+    }
+
+    &::-webkit-meter-even-less-good-value {
+      background: $c-error;
+    }
+
+    /* Firefox */
+    &:-moz-meter-optimum::-moz-meter-bar,
+    &:-moz-meter-sub-optimum::-moz-meter-bar {
+      background: $c-success;
+    }
+
+    &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+      background: $c-error;
+    }
   }
 }

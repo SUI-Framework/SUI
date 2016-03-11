@@ -1,6 +1,6 @@
 {
   "name": "sui-components-form",
-  "version": "3.3.1",
+  "version": "3.5.1",
   "description": "SUI Form Component",
   "main": "./src/_form.scss",
   "scripts": {
