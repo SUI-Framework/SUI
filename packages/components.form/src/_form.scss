@@ -56,7 +56,12 @@ select {
 }
 
 [type="number"] {
-  appearance: textfield;
+  -moz-appearance: textfield;
+
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+	}
 }
 
 // Label
