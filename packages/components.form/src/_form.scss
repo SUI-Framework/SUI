@@ -475,21 +475,29 @@ Styleguide Forms-1.6
   &.is-error {
     color: $c-error;
   }
+
+  &--inline {
+    float: left;
+    white-space: nowrap;
+    margin-right: $gap-medium;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
 /*
 Checkboxes and radiobuttons inline
 
-Use class `.RadioGroupInline` to create a radio button's group with inline structure.
-
 Markup:
 <form action="#" method="post">
   <fieldset>
-    <ul class="RadioGroupInline">
-      <li>
+    <ul>
+      <li class="FormGroup-radio--inline">
         <input type="radio" checked="checked" id="option1" name="options"><label for="option1">Option 1</label>
       </li>
-      <li>
+      <li class="FormGroup-radio--inline">
         <input type="radio" id="option2" name="options"><label for="option2">Option 2</label>
       </li>
     </ul>
@@ -498,57 +506,6 @@ Markup:
 
 Styleguide Forms-1.7
 */
-
-.RadioGroupInline {
-  @include clearfix;
-  width: 100%;
-
-  li {
-    float: left;
-    white-space: nowrap;
-    overflow: hidden;
-
-    @include mediaquery($mq-tablet) {
-      padding: $radio-inline-m-base;
-      box-sizing: border-box;
-    }
-
-    + li {
-      margin-left: $gap-base;
-
-      @include mediaquery($mq-tablet) {
-        margin-left: 0;
-      }
-    }
-  }
-
-  label {
-    position: relative;
-    width: 100%;
-    margin-bottom: $gap-base / 2;
-
-    @include mediaquery($mq-tablet) {
-      margin-bottom: 0;
-    }
-
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      left: 0;
-      height: 10px;
-    }
-
-    &::before {
-      top: -10px;
-    }
-
-    &::after {
-      top: 100%;
-    }
-  }
-}
 
 /*
 StrengthBar
