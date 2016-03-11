@@ -22,8 +22,8 @@ Styleguide Forms-1
 }
 
 ::placeholder {
-  color: $c-text;
-  font-size: $fz-small;
+  color: $c-text-secondary;
+  font-size: $fz-base;
   text-overflow: ellipsis;
 }
 
@@ -57,6 +57,11 @@ select {
 
 [type="number"] {
   appearance: textfield;
+
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+	}
 }
 
 // Label
@@ -85,8 +90,8 @@ Markup:
     <legend>Lorem ipsum</legend>
     <ul>
       <li class="FormGroup">
-        <label for="name" placeholder="placeholder...">Basic field <span>(opcional)</span></label>
-        <input type="text" id="name">
+        <label for="name">Basic field <span>(opcional)</span></label>
+        <input type="text" id="name" placeholder="placeholder...">
         <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
       </li>
       <li class="FormGroup is-success">
@@ -279,34 +284,8 @@ select {
   cursor: pointer;
 }
 
-/*
-Basic group of fields
-
-Use class `.InputGroup`
-
-Markup:
-<form action="#" method="post">
-  <fieldset>
-    <legend>Lorem ipsum</legend>
-    <div class="InputGroup">
-      <div>
-        <input type="text" maxlength="4" name="entity" placeholder="EEEE">
-      </div>
-      <div>
-        <input type="text" maxlength="4" name="office" placeholder="OOOO">
-      </div>
-      <div>
-        <input type="text" maxlength="2" name="control" placeholder="CCCC">
-      </div>
-      <div>
-        <input type="text" maxlength="9" name="account" placeholder="AAAA">
-      </div>
-    </div>
-  </fieldset>
-</form>
-
-Styleguide Forms-1.4
-*/
+// Input Group
+// -----------------------------------------------------------------------------
 
 .InputGroup {
   display: table;
@@ -341,21 +320,40 @@ Markup:
 <form action="#" method="post">
   <fieldset>
     <legend>Lorem ipsum</legend>
-    <div class="InputGroup InputGroup--date">
-      <div>
-        <input type="number" maxlength="2" name="day" id="day" placeholder="DD">
-      </div>
-      <div>
-        <input type="number" maxlength="2" name="month" id="month" placeholder="MM">
-      </div>
-      <div>
-        <input type="number" maxlength="4" name="year" id="year" placeholder="AAAA">
-      </div>
-    </div>
+    <ul>
+      <li class="FormGroup">
+        <label for="day">Input group date</label>
+        <div class="InputGroup InputGroup--date">
+          <div>
+            <input type="number" maxlength="2" name="day" id="day" placeholder="DD">
+          </div>
+          <div>
+            <input type="number" maxlength="2" name="month" id="month" placeholder="MM">
+          </div>
+          <div>
+            <input type="number" maxlength="4" name="year" id="year" placeholder="AAAA">
+          </div>
+        </div>
+      </li>
+      <li class="FormGroup is-error">
+        <label for="day">Input group date</label>
+        <div class="InputGroup InputGroup--date">
+          <div>
+            <input type="number" maxlength="2" name="day" id="day" placeholder="DD">
+          </div>
+          <div>
+            <input type="number" maxlength="2" name="month" id="month" placeholder="MM">
+          </div>
+          <div>
+            <input type="number" maxlength="4" name="year" id="year" placeholder="AAAA">
+          </div>
+        </div>
+      </li>
+    </ul>
   </fieldset>
 </form>
 
-Styleguide Forms-1.5
+Styleguide Forms-1.4
 */
 
 .InputGroup--date {
@@ -371,6 +369,10 @@ Styleguide Forms-1.5
       top: 12px;
       left: -5px;
       color: $c-dark-soft;
+
+      .is-disabled & {
+        color: $c-text-secondary;
+      }
     }
 
     &:first-of-type::before {
@@ -439,7 +441,7 @@ Markup:
   </fieldset>
 </form>
 
-Styleguide Forms-1.6
+Styleguide Forms-1.5
 */
 
 [type="radio"],
@@ -504,7 +506,7 @@ Markup:
   </fieldset>
 </form>
 
-Styleguide Forms-1.7
+Styleguide Forms-1.6
 */
 
 /*
@@ -520,7 +522,7 @@ Markup:
     </dd>
 </dl>
 
-Styleguide Forms-1.8
+Styleguide Forms-1.7
 */
 
 .StrengthBar {
