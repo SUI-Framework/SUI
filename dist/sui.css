@@ -949,7 +949,7 @@ Styleguide Button-1.1
   .Button--primary.is-disabled, .Button--primary[disabled] {
     background-color: #f2f2f2;
     border-color: transparent;
-    color: #cccccc;
+    color: rgba(153, 153, 153, 0.5);
     cursor: default; }
   .Button--primary.is-active {
     background-color: #666666; }
@@ -1185,23 +1185,23 @@ Styleguide Forms-1
   box-shadow: none; }
 
 ::-webkit-input-placeholder {
-  color: #666666;
-  font-size: 14px;
+  color: #999999;
+  font-size: 16px;
   text-overflow: ellipsis; }
 
 ::-moz-placeholder {
-  color: #666666;
-  font-size: 14px;
+  color: #999999;
+  font-size: 16px;
   text-overflow: ellipsis; }
 
 :-ms-input-placeholder {
-  color: #666666;
-  font-size: 14px;
+  color: #999999;
+  font-size: 16px;
   text-overflow: ellipsis; }
 
 ::placeholder {
-  color: #666666;
-  font-size: 14px;
+  color: #999999;
+  font-size: 16px;
   text-overflow: ellipsis; }
 
 fieldset + fieldset {
@@ -1229,6 +1229,9 @@ select {
   -webkit-appearance: textfield;
      -moz-appearance: textfield;
           appearance: textfield; }
+  [type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
 
 label,
 .FormGroup-label {
@@ -1250,8 +1253,8 @@ Markup:
     <legend>Lorem ipsum</legend>
     <ul>
       <li class="FormGroup">
-        <label for="name" placeholder="placeholder...">Basic field <span>(opcional)</span></label>
-        <input type="text" id="name">
+        <label for="name">Basic field <span>(opcional)</span></label>
+        <input type="text" id="name" placeholder="placeholder...">
         <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
       </li>
       <li class="FormGroup is-success">
@@ -1262,6 +1265,10 @@ Markup:
         <label for="name">Basic field with error</label>
         <input type="text" id="name">
         <p class="FormGroup-info is-error">Lorem ipsum dolor sit amet.</p>
+      </li>
+      <li class="FormGroup is-disabled">
+        <label for="name">Basic field disabled</label>
+        <input type="text" id="name" disabled>
       </li>
   </fieldset>
 </form>
@@ -1301,9 +1308,23 @@ Markup:
     <legend>Lorem ipsum</legend>
     <ul>
       <li class="FormGroup">
-        <label for="name">Basic field <span>(opcional)</span></label>
+        <label for="name">Basic textarea <span>(opcional)</span></label>
         <div class="FormGroup-textarea">
           <textarea name="comment" value="">Lorem ipsum</textarea>
+          <p class="FormGroup-textareaCounter"><span>114</span>/<span>250</span></p>
+        </div>
+      </li>
+      <li class="FormGroup is-error">
+        <label for="name">Basic textarea<span>(opcional)</span></label>
+        <div class="FormGroup-textarea">
+          <textarea name="comment" value="">Lorem ipsum</textarea>
+          <p class="FormGroup-textareaCounter"><span>114</span>/<span>250</span></p>
+        </div>
+      </li>
+      <li class="FormGroup is-disabled">
+        <label for="name">Basic textarea disabled<span>(opcional)</span></label>
+        <div class="FormGroup-textarea">
+          <textarea name="comment" value="" disabled>Lorem ipsum</textarea>
           <p class="FormGroup-textareaCounter"><span>114</span>/<span>250</span></p>
         </div>
       </li>
@@ -1329,66 +1350,6 @@ textarea {
   .FormGroup-info.is-success {
     color: #00a550; }
 
-.FormGroup:not(:last-child) {
-  margin-bottom: 20px; }
-
-.FormGroup.is-error label {
-  color: #bf2102; }
-
-.FormGroup.is-error input,
-.FormGroup.is-error textarea,
-.FormGroup.is-error select {
-  border-color: #bf2102; }
-
-.FormGroup.is-success label {
-  color: #00a550; }
-
-.FormGroup.is-success input,
-.FormGroup.is-success textarea,
-.FormGroup.is-success select {
-  border-color: #00a550; }
-
-.FormGroup.is-success input {
-  background-color: #f2fff8; }
-
-.FormGroup [disabled="disabled"], .FormGroup.is-disabled {
-  cursor: default;
-  border-color: #cccccc; }
-  .FormGroup [disabled="disabled"] label,
-  .FormGroup [disabled="disabled"] .FormGroup-info,
-  .FormGroup [disabled="disabled"] .FormGroup-textareaCounter,
-  .FormGroup [disabled="disabled"] input,
-  .FormGroup [disabled="disabled"] textarea,
-  .FormGroup [disabled="disabled"] select,
-  .FormGroup [disabled="disabled"] [disabled],
-  .FormGroup [disabled="disabled"] [placeholder], .FormGroup.is-disabled label,
-  .FormGroup.is-disabled .FormGroup-info,
-  .FormGroup.is-disabled .FormGroup-textareaCounter,
-  .FormGroup.is-disabled input,
-  .FormGroup.is-disabled textarea,
-  .FormGroup.is-disabled select,
-  .FormGroup.is-disabled [disabled],
-  .FormGroup.is-disabled [placeholder] {
-    color: #f2f2f2; }
-  .FormGroup [disabled="disabled"] input,
-  .FormGroup [disabled="disabled"] textarea,
-  .FormGroup [disabled="disabled"] select, .FormGroup.is-disabled input,
-  .FormGroup.is-disabled textarea,
-  .FormGroup.is-disabled select {
-    border-color: #f2f2f2; }
-  .FormGroup [disabled="disabled"] [disabled],
-  .FormGroup [disabled="disabled"] [placeholder], .FormGroup.is-disabled [disabled],
-  .FormGroup.is-disabled [placeholder] {
-    background: transparent; }
-  .FormGroup [disabled="disabled"] ::-webkit-input-placeholder, .FormGroup.is-disabled ::-webkit-input-placeholder {
-    color: #f2f2f2; }
-  .FormGroup [disabled="disabled"] ::-moz-placeholder, .FormGroup.is-disabled ::-moz-placeholder {
-    color: #f2f2f2; }
-  .FormGroup [disabled="disabled"] :-ms-input-placeholder, .FormGroup.is-disabled :-ms-input-placeholder {
-    color: #f2f2f2; }
-  .FormGroup [disabled="disabled"] ::placeholder, .FormGroup.is-disabled ::placeholder {
-    color: #f2f2f2; }
-
 /*
 Basic Pulldown
 
@@ -1402,6 +1363,28 @@ Markup:
       <li class="FormGroup">
         <label for="name">Basic Pulldown</label>
         <select data-placeholder="(Seleccionar)">
+          <option value="01">Option01</option>
+          <option value="02">Option02</option>
+          <option value="03">Option03</option>
+          <option value="04">Option04</option>
+          <option value="05">Option05</option>
+        </select>
+        <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
+      </li>
+      <li class="FormGroup is-error">
+        <label for="name">Basic Pulldown</label>
+        <select data-placeholder="(Seleccionar)">
+          <option value="01">Option01</option>
+          <option value="02">Option02</option>
+          <option value="03">Option03</option>
+          <option value="04">Option04</option>
+          <option value="05">Option05</option>
+        </select>
+        <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
+      </li>
+      <li class="FormGroup is-disabled">
+        <label for="name">Basic Pulldown disabled</label>
+        <select disabled data-placeholder="(Seleccionar)">
           <option value="01">Option01</option>
           <option value="02">Option02</option>
           <option value="03">Option03</option>
@@ -1433,34 +1416,6 @@ select {
     border-color: #999999;
     outline: none; }
 
-/*
-Basic group of fields
-
-Use class `.InputGroup`
-
-Markup:
-<form action="#" method="post">
-  <fieldset>
-    <legend>Lorem ipsum</legend>
-    <div class="InputGroup">
-      <div>
-        <input type="text" maxlength="4" name="entity" placeholder="EEEE">
-      </div>
-      <div>
-        <input type="text" maxlength="4" name="office" placeholder="OOOO">
-      </div>
-      <div>
-        <input type="text" maxlength="2" name="control" placeholder="CCCC">
-      </div>
-      <div>
-        <input type="text" maxlength="9" name="account" placeholder="AAAA">
-      </div>
-    </div>
-  </fieldset>
-</form>
-
-Styleguide Forms-1.4
-*/
 .InputGroup {
   display: table;
   width: 100%; }
@@ -1485,21 +1440,54 @@ Markup:
 <form action="#" method="post">
   <fieldset>
     <legend>Lorem ipsum</legend>
-    <div class="InputGroup InputGroup--date">
-      <div>
-        <input type="number" maxlength="2" name="day" id="day" placeholder="DD">
-      </div>
-      <div>
-        <input type="number" maxlength="2" name="month" id="month" placeholder="MM">
-      </div>
-      <div>
-        <input type="number" maxlength="4" name="year" id="year" placeholder="AAAA">
-      </div>
-    </div>
+    <ul>
+      <li class="FormGroup">
+        <label for="day">Input group date</label>
+        <div class="InputGroup InputGroup--date">
+          <div>
+            <input type="number" maxlength="2" name="day" id="day" placeholder="DD">
+          </div>
+          <div>
+            <input type="number" maxlength="2" name="month" id="month" placeholder="MM">
+          </div>
+          <div>
+            <input type="number" maxlength="4" name="year" id="year" placeholder="AAAA">
+          </div>
+        </div>
+      </li>
+      <li class="FormGroup is-error">
+        <label for="day">Input group date</label>
+        <div class="InputGroup InputGroup--date">
+          <div>
+            <input type="number" maxlength="2" name="day" id="day" placeholder="DD">
+          </div>
+          <div>
+            <input type="number" maxlength="2" name="month" id="month" placeholder="MM">
+          </div>
+          <div>
+            <input type="number" maxlength="4" name="year" id="year" placeholder="AAAA">
+          </div>
+        </div>
+      </li>
+      <li class="FormGroup is-disabled">
+        <label for="day">Input group date disabled</label>
+        <div class="InputGroup InputGroup--date">
+          <div>
+            <input type="number" maxlength="2" name="day" id="day" placeholder="DD" disabled>
+          </div>
+          <div>
+            <input type="number" maxlength="2" name="month" id="month" placeholder="MM" disabled>
+          </div>
+          <div>
+            <input type="number" maxlength="4" name="year" id="year" placeholder="AAAA" disabled>
+          </div>
+        </div>
+      </li>
+    </ul>
   </fieldset>
 </form>
 
-Styleguide Forms-1.5
+Styleguide Forms-1.4
 */
 .InputGroup--date {
   width: auto;
@@ -1512,6 +1500,8 @@ Styleguide Forms-1.5
       top: 12px;
       left: -5px;
       color: #cccccc; }
+      .is-disabled .InputGroup--date > div::before {
+        color: rgba(153, 153, 153, 0.5); }
     .InputGroup--date > div:first-of-type::before {
       content: ''; }
     .InputGroup--date > div input {
@@ -1537,26 +1527,34 @@ Markup:
       <li class="FormGroup">
         <p class="FormGroup-label">Checkbox List</p>
         <ul>
-          <li>
+          <li class="FormGroup-check">
             <input type="checkbox" id="checkbox1">
             <label for="checkbox1">Checkbox 1</label>
           </li>
-          <li>
+          <li class="FormGroup-check is-error">
             <input type="checkbox" id="checkbox2">
             <label for="checkbox2">Checkbox 2</label>
+          </li>
+          <li class="FormGroup-check is-disabled">
+            <input type="checkbox" id="checkbox3" disabled>
+            <label for="checkbox3">Checkbox 2</label>
           </li>
         </ul>
       </li>
       <li class="FormGroup">
         <p class="FormGroup-label">Radio button List</p>
         <ul>
-          <li>
+          <li class="FormGroup-radio">
             <input type="radio" id="radio1" name="radio">
             <label for="radio1">Radio button field 1</label>
           </li>
-          <li>
+          <li class="FormGroup-radio is-error">
             <input type="radio" id="radio2" name="radio">
             <label for="radio2">Radio button field 2</label>
+          </li>
+          <li class="FormGroup-radio is-disabled">
+            <input type="radio" id="radio3" name="radio" disabled>
+            <label for="radio3">Radio button field 2</label>
           </li>
         </ul>
         <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
@@ -1565,7 +1563,7 @@ Markup:
   </fieldset>
 </form>
 
-Styleguide Forms-1.6
+Styleguide Forms-1.5
 */
 [type="radio"],
 [type="checkbox"] {
@@ -1580,116 +1578,140 @@ Styleguide Forms-1.6
   font-size: 16px; }
   [type="radio"] + label,
   [type="checkbox"] + label {
-    cursor: pointer;
-    max-width: 85%; }
-  [type="radio"]:disabled,
-  [type="checkbox"]:disabled {
-    color: #999999; }
+    cursor: pointer; }
+
+.FormGroup-radio,
+.FormGroup-check {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+  .FormGroup-radio input,
+  .FormGroup-check input {
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0; }
+  .FormGroup-radio.is-error,
+  .FormGroup-check.is-error {
+    color: #bf2102; }
+  .FormGroup-radio.is-disabled input,
+  .FormGroup-check.is-disabled input {
+    opacity: .6; }
+    .FormGroup-radio.is-disabled input + label,
+    .FormGroup-check.is-disabled input + label {
+      color: rgba(153, 153, 153, 0.5);
+      cursor: default; }
+  .FormGroup-radio--inline,
+  .FormGroup-check--inline {
+    float: left;
+    white-space: nowrap;
+    margin-right: 20px; }
+    .FormGroup-radio--inline:last-child,
+    .FormGroup-check--inline:last-child {
+      margin-right: 0; }
 
 /*
 Checkboxes and radiobuttons inline
 
-Use class `.RadioGroupInline` to create a radio button's group with inline structure.
-
 Markup:
 <form action="#" method="post">
   <fieldset>
-    <ul class="RadioGroupInline">
-      <li>
+    <ul>
+      <li class="FormGroup-radio--inline">
         <input type="radio" checked="checked" id="option1" name="options"><label for="option1">Option 1</label>
       </li>
-      <li>
+      <li class="FormGroup-radio--inline">
         <input type="radio" id="option2" name="options"><label for="option2">Option 2</label>
       </li>
     </ul>
   </fieldset>
 </form>
 
-Styleguide Forms-1.7
+Styleguide Forms-1.6
 */
-.RadioGroupInline {
-  width: 100%; }
-  .RadioGroupInline::after {
-    clear: both;
-    content: ' ';
-    display: table; }
-  .RadioGroupInline li {
-    float: left;
-    white-space: nowrap;
-    overflow: hidden; }
-    @media only screen and (min-width: 480px) {
-      .RadioGroupInline li {
-        padding: 6px 10px;
-        box-sizing: border-box; } }
-    .RadioGroupInline li + li {
-      margin-left: 10px; }
-      @media only screen and (min-width: 480px) {
-        .RadioGroupInline li + li {
-          margin-left: 0; } }
-  .RadioGroupInline label {
-    position: relative;
-    width: 100%;
-    margin-bottom: 5px; }
-    @media only screen and (min-width: 480px) {
-      .RadioGroupInline label {
-        margin-bottom: 0; } }
-    .RadioGroupInline label::before, .RadioGroupInline label::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      left: 0;
-      height: 10px; }
-    .RadioGroupInline label::before {
-      top: -10px; }
-    .RadioGroupInline label::after {
-      top: 100%; }
-
 /*
 StrengthBar
 
 Use class `.StrengthBar` to create a strength bar.
 
 Markup:
-<form action="#" method="post">
-  <fieldset>
-  <ul>
-    <li class="StrengthBar is-success">
-      <label for="password">Lorem ipsum</label>
-      <input type="password" placeholder="Lorem ipsum" data-vars="" id="password" name="password" maxlength="20">
-      <a id="view" onclick="showHidePassword();return false;" href="#">View</a>
-      <dl>
-          <dt>Strenght: Normal</dt>
-          <dd class="StrengthBar-meter"><meter role="progressbar" min="0" low="2" optimum="3" high="2" max="3" value="2" name="password-strength" id="password-strength"></meter></dd>
-      </dl>
-    </li>
-  </ul>
-  </fieldset>
-</form>
+<dl class="StrengthBar">
+    <dt>Lorem ipsum</dt>
+    <dd>
+      <meter max="3" min="0" value="2" high="2" low="2" optimum="3"></meter>
+    </dd>
+</dl>
 
-Styleguide Forms-1.8
+Styleguide Forms-1.7
 */
-.StrengthBar {
-  position: relative; }
-  .StrengthBar a {
-    position: absolute;
-    top: 26px;
-    right: 1px;
-    font-size: 14px;
-    line-height: 1.25;
-    padding: 15px 10px; }
-  .StrengthBar input,
-  .StrengthBar textarea {
-    margin-bottom: 10px; }
-  .StrengthBar-meter,
-  .StrengthBar meter {
-    height: 7px; }
-  .StrengthBar meter {
-    width: 100%;
-    vertical-align: top;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-    background: #f2f2f2; }
+.StrengthBar meter {
+  width: 100%;
+  height: 7px;
+  vertical-align: top;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #f2f2f2;
+  /* WebKit */
+  /* Firefox */ }
+  .StrengthBar meter::-webkit-meter-bar {
+    background: #cccccc; }
+  .StrengthBar meter::-webkit-meter-optimum-value, .StrengthBar meter::-webkit-meter-suboptimum-value {
+    background: #00a550; }
+  .StrengthBar meter::-webkit-meter-even-less-good-value {
+    background: #bf2102; }
+  .StrengthBar meter:-moz-meter-optimum::-moz-meter-bar, .StrengthBar meter:-moz-meter-sub-optimum::-moz-meter-bar {
+    background: #00a550; }
+  .StrengthBar meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    background: #bf2102; }
+
+.FormGroup {
+  margin-bottom: 20px; }
+  .FormGroup.is-error label {
+    color: #bf2102; }
+  .FormGroup.is-error input,
+  .FormGroup.is-error textarea,
+  .FormGroup.is-error select {
+    border-color: #bf2102; }
+  .FormGroup.is-success label {
+    color: #00a550; }
+  .FormGroup.is-success input,
+  .FormGroup.is-success textarea,
+  .FormGroup.is-success select {
+    border-color: #00a550; }
+  .FormGroup.is-success input {
+    background-color: #f2fff8; }
+  .FormGroup.is-disabled label,
+  .FormGroup.is-disabled .FormGroup-info,
+  .FormGroup.is-disabled .FormGroup-textareaCounter,
+  .FormGroup.is-disabled input,
+  .FormGroup.is-disabled textarea,
+  .FormGroup.is-disabled select,
+  .FormGroup.is-disabled [disabled],
+  .FormGroup.is-disabled [placeholder] {
+    color: rgba(153, 153, 153, 0.5);
+    cursor: default; }
+  .FormGroup.is-disabled input,
+  .FormGroup.is-disabled textarea,
+  .FormGroup.is-disabled select {
+    border-color: rgba(153, 153, 153, 0.5); }
+  .FormGroup.is-disabled [disabled],
+  .FormGroup.is-disabled [placeholder] {
+    background: transparent; }
+  .FormGroup.is-disabled ::-webkit-input-placeholder {
+    color: rgba(153, 153, 153, 0.5); }
+  .FormGroup.is-disabled ::-moz-placeholder {
+    color: rgba(153, 153, 153, 0.5); }
+  .FormGroup.is-disabled :-ms-input-placeholder {
+    color: rgba(153, 153, 153, 0.5); }
+  .FormGroup.is-disabled ::placeholder {
+    color: rgba(153, 153, 153, 0.5); }
+  .FormGroup:last-child {
+    margin-bottom: 0; }
 
 /*------------------------------------*    $MIXINS
 \*------------------------------------*/
