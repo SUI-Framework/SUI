@@ -213,7 +213,7 @@ Markup:
     <ul>
       <li class="FormGroup">
         <label for="name">Basic Pulldown</label>
-        <select data-placeholder="(Seleccionar)">
+        <select>
           <option value="01">Option01</option>
           <option value="02">Option02</option>
           <option value="03">Option03</option>
@@ -224,7 +224,7 @@ Markup:
       </li>
       <li class="FormGroup is-error">
         <label for="name">Basic Pulldown</label>
-        <select data-placeholder="(Seleccionar)">
+        <select>
           <option value="01">Option01</option>
           <option value="02">Option02</option>
           <option value="03">Option03</option>
@@ -235,7 +235,7 @@ Markup:
       </li>
       <li class="FormGroup is-disabled">
         <label for="name">Basic Pulldown disabled</label>
-        <select disabled data-placeholder="(Seleccionar)">
+        <select>
           <option value="01">Option01</option>
           <option value="02">Option02</option>
           <option value="03">Option03</option>
@@ -252,10 +252,14 @@ Styleguide Forms-1.3
 
 select {
   @include field;
-  padding: $select-p-base;
-  width: 100%;
-  background: transparent;
+  appearance: none;
+  background-color: transparent;
+  background-image: url(#{$path-bg-images}#{$select-bg-arrow});
+  background-position: right center;
+  background-repeat: no-repeat;
   cursor: pointer;
+  padding: $select-p-base;
+  width: $field-w-base;
 }
 
 // Input Group
