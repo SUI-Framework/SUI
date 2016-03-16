@@ -323,6 +323,7 @@ $CONTENT
   padding: 10px;
   border: 1px solid #D4D4D4;
   line-height: 1.4;
+  overflow: scroll;
 }
 
 .sg-content pre:hover {
