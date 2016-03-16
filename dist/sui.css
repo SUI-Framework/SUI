@@ -1362,7 +1362,7 @@ Markup:
     <ul>
       <li class="FormGroup">
         <label for="name">Basic Pulldown</label>
-        <select data-placeholder="(Seleccionar)">
+        <select>
           <option value="01">Option01</option>
           <option value="02">Option02</option>
           <option value="03">Option03</option>
@@ -1373,7 +1373,7 @@ Markup:
       </li>
       <li class="FormGroup is-error">
         <label for="name">Basic Pulldown</label>
-        <select data-placeholder="(Seleccionar)">
+        <select>
           <option value="01">Option01</option>
           <option value="02">Option02</option>
           <option value="03">Option03</option>
@@ -1384,7 +1384,7 @@ Markup:
       </li>
       <li class="FormGroup is-disabled">
         <label for="name">Basic Pulldown disabled</label>
-        <select disabled data-placeholder="(Seleccionar)">
+        <select>
           <option value="01">Option01</option>
           <option value="02">Option02</option>
           <option value="03">Option03</option>
@@ -1408,10 +1408,16 @@ select {
   height: 44px;
   line-height: 1.25;
   padding: 4px 10px;
-  padding: 13px 10px;
-  width: 100%;
-  background: transparent;
-  cursor: pointer; }
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  background-image: url(images/backgrounds/bg-select-arrow.png);
+  background-position: right center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  padding: 0 10px;
+  width: 330px; }
   select:focus {
     border-color: #999999;
     outline: none; }

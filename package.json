@@ -17,7 +17,7 @@
     "kss": "kss-node --source dist/ --destination docs --template ./node_modules/sui-kss-template/src/ --helpers ./node_modules/sui-kss-template/src/helpers/",
     "postkss": "npm run postkss:replace && npm run postkss:copy",
     "postkss:replace": "replace '@@' ' ' ./docs/*",
-    "postkss:copy": "cp -R ./node_modules/sui-typography/dist/fonts docs/public/fonts",
+    "postkss:copy": "cp -R ./node_modules/sui-typography/dist/fonts docs/public/fonts && cp -R ./node_modules/sui-main/dist/images docs/public/images",
     "predocs": "npm run kss",
     "docs": "gh-pages -d docs",
     "phoenix": "rm -rf node_modules && npm install"
