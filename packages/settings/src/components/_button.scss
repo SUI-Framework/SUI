@@ -11,35 +11,35 @@ $button-lh-base:               38px !default;
 $button-bg-primary:            $c-primary !default;
 $button-c-primary:             $c-contrast !default;
 
-  //primary:hover
-  $button-bg-primary-hover:        $c-primary-variant !default;
-  $button-c-primary-hover:         $c-contrast !default;
+//primary:hover
+$button-bg-primary-hover:        $c-primary-variant !default;
+$button-c-primary-hover:         $c-contrast !default;
 
-  //primary disabled
-  $button-bg-primary-disabled:     $c-dark-light !default;
-  $button-b-primary-disabled:      transparent !default;
-  $button-c-primary-disabled:      $c-disabled !default;
+//primary disabled
+$button-bg-primary-disabled:     $c-dark-light !default;
+$button-b-primary-disabled:      transparent !default;
+$button-c-primary-disabled:      $c-disabled !default;
 
-  //primary active
-  $button-bg-primary-active:       $c-primary-variant !default;
-  $button-c-primary-active:        $c-contrast !default;
+//primary active
+$button-bg-primary-active:       $c-primary-variant !default;
+$button-c-primary-active:        $c-contrast !default;
 
 //secondary
 $button-bg-secondary:            $c-secondary !default;
 $button-c-secondary:             $c-text-secondary !default;
 
-  //secondary:hover
-  $button-bg-secondary-hover:      $c-secondary-variant !default;
-  $button-c-secondary-hover:       $c-text-variant !default;
+//secondary:hover
+$button-bg-secondary-hover:      $c-secondary-variant !default;
+$button-c-secondary-hover:       $c-text-variant !default;
 
-  //secondary disabled
-  $button-bg-secondary-disabled:   $c-contrast !default;
-  $button-b-secondary-disabled:    transparent !default;
-  $button-c-secondary-disabled:    $c-dark-soft !default;
+//secondary disabled
+$button-bg-secondary-disabled:   $c-contrast !default;
+$button-b-secondary-disabled:    transparent !default;
+$button-c-secondary-disabled:    $c-dark-soft !default;
 
-  //secondary active
-  $button-bg-secondary-active:     $c-secondary-variant !default;
-  $button-c-secondary-active:      $c-text-variant !default;
+//secondary active
+$button-bg-secondary-active:     $c-secondary-variant !default;
+$button-c-secondary-active:      $c-text-variant !default;
 
 //button small
 $button-h-small:                 30px !default;
