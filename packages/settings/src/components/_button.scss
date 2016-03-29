@@ -1,20 +1,57 @@
 // components.button
 // -----------------------------------------------------------------------------
-$button-h-small:               30px !default;
+
+//base
+$button-bg-base:               $c-dark-soft !default;
+$button-c-base:                $c-contrast !default;
 $button-h-base:                40px !default;
-$button-h-large:               50px !default;
-
-$button-lh-small:              28px !default;
 $button-lh-base:               38px !default;
-$button-lh-large:              48px !default;
 
-$button-bg-primary-disabled:   $c-dark-light !default;
-$button-bg-secondary-disabled: $c-contrast !default;
+//primary
+$button-bg-primary:            $c-primary !default;
+$button-c-primary:             $c-contrast !default;
 
-$button-b-primary-disabled:    transparent !default;
-$button-b-secondary-disabled:  transparent !default;
+//primary:hover
+$button-bg-primary-hover:        $c-primary-variant !default;
+$button-c-primary-hover:         $c-contrast !default;
 
-$button-h-divider:             100% !default;
-$button-mt-divider:            0 !default;
+//primary disabled
+$button-bg-primary-disabled:     $c-dark-light !default;
+$button-b-primary-disabled:      transparent !default;
+$button-c-primary-disabled:      $c-disabled !default;
 
-$button-bw-secondary-disabled: 0 !default;
+//primary active
+$button-bg-primary-active:       $c-primary-variant !default;
+$button-c-primary-active:        $c-contrast !default;
+
+//secondary
+$button-bg-secondary:            $c-secondary !default;
+$button-c-secondary:             $c-text-secondary !default;
+
+//secondary:hover
+$button-bg-secondary-hover:      $c-secondary-variant !default;
+$button-c-secondary-hover:       $c-text-variant !default;
+
+//secondary disabled
+$button-bg-secondary-disabled:   $c-contrast !default;
+$button-b-secondary-disabled:    transparent !default;
+$button-c-secondary-disabled:    $c-dark-soft !default;
+
+//secondary active
+$button-bg-secondary-active:     $c-secondary-variant !default;
+$button-c-secondary-active:      $c-text-variant !default;
+
+//button small
+$button-h-small:                 30px !default;
+$button-lh-small:                28px !default;
+
+//button large
+$button-h-large:                 50px !default;
+$button-lh-large:                48px !default;
+
+//button group
+$button-bw-secondary-disabled:   0 !default;
+$button-c-group-disabled:        $c-disabled;
+$button-b-divider:               $c-secondary-variant !default;
+$button-h-divider:               100% !default;
+$button-mt-divider:              0 !default;
