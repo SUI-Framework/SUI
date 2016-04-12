@@ -1,6 +1,6 @@
 {
   "name": "sui-components-grid",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "SUI Grid Component",
   "main": "./src/_grid.scss",
   "scripts": {
