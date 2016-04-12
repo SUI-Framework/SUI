@@ -1,0 +1,2219 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+textarea {
+  resize: none; }
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%; }
+
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+/*------------------------------------*  #TYPOGRAPHY
+\*------------------------------------*/
+/*
+Typography
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Markup:
+<h1>abcABC0123456789</h1>
+<p>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</p>
+
+Styleguide Typography-1
+*/
+@font-face {
+  font-family: Lato-Regular;
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Lato-Regular.eot");
+  src: url("fonts/Lato-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Lato-Regular.woff2") format("woff2"), url("fonts/Lato-Regular.woff") format("woff"), url("fonts/Lato-Regular.ttf") format("truetype"), url("fonts/Lato-Regular.svg#latoregular") format("svg"); }
+
+@font-face {
+  font-family: Lato-Bold;
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Lato-Bold.eot");
+  src: url("fonts/Lato-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Lato-Bold.woff2") format("woff2"), url("fonts/Lato-Bold.woff") format("woff"), url("fonts/Lato-Bold.ttf") format("truetype"), url("fonts/Lato-Bold.svg#latoregular") format("svg"); }
+
+@font-face {
+  font-family: Lato-Bold-Italic;
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Lato-Bold-Italic.eot");
+  src: url("fonts/Lato-Bold-Italic.eot?#iefix") format("embedded-opentype"), url("fonts/Lato-Bold-Italic.woff2") format("woff2"), url("fonts/Lato-Bold-Italic.woff") format("woff"), url("fonts/Lato-Bold-Italic.ttf") format("truetype"), url("fonts/Lato-Bold-Italic.svg#latoregular") format("svg"); }
+
+@font-face {
+  font-family: Lato-Italic;
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Lato-Italic.eot");
+  src: url("fonts/Lato-Italic.eot?#iefix") format("embedded-opentype"), url("fonts/Lato-Italic.woff2") format("woff2"), url("fonts/Lato-Italic.woff") format("woff"), url("fonts/Lato-Italic.ttf") format("truetype"), url("fonts/Lato-Italic.svg#latoregular") format("svg"); }
+
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+html {
+  box-sizing: border-box; }
+
+*,
+*::before,
+*::after,
+input[type='search'] {
+  box-sizing: inherit; }
+
+body {
+  font-size: 16px;
+  line-height: 1.25;
+  font-family: "Lato-Regular", Helvetica, Arial, sans-serif; }
+  @media print {
+    body {
+      font-size: 12.0003px;
+      line-height: 0.93752; } }
+
+a,
+a:hover {
+  color: #999999;
+  text-decoration: none; }
+
+a:focus {
+  outline: none; }
+
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+/*
+Paragraphs
+
+Use tag `<p>` for a basic paragraph. Don't use `<span>` or `<div>` as a text tag, it's not semantic.
+
+Markup:
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+Styleguide Paragraphs-1
+*/
+p {
+  font-size: 16px;
+  line-height: 1.25;
+  margin-bottom: 10px;
+  word-wrap: break-word; }
+  p:last-child, p:only-child {
+    margin-bottom: 0; }
+
+/*
+Lists
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Styleguide Lists-1
+*/
+/*
+List
+
+Use class `.List` for a basic list without decoration.
+
+Markup:
+<!-- Ordered list -->
+<ul class="List">
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Curabitur viverra ante enim</li>
+</ul>
+@@
+<!-- Definition list -->
+<dl class="List">
+  <dt>Lorem ipsum:</dt>
+  <dd>dolor sit amet</dd>
+  <dt>Lorem ipsum:</dt>
+  <dd>dolor sit amet</dd>
+</dl>
+
+
+Styleguide Lists-1.1
+*/
+.List > li,
+.List > dt {
+  margin-bottom: 10px; }
+  .List > li:last-child,
+  .List > dt:last-child {
+    margin-bottom: 0; }
+  @media print {
+    .List > li,
+    .List > dt {
+      font-size: 12.0003px;
+      line-height: 0.93752; } }
+
+.List > dt {
+  color: #999999;
+  font-family: "Lato-Bold", Helvetica, Arial, sans-serif;
+  margin-bottom: 0; }
+
+@media print {
+  .List > dd {
+    font-size: 12.0003px;
+    line-height: 0.93752; } }
+
+.List dd + dt {
+  margin-top: 20px; }
+
+/*
+List inline
+
+Use class `.List--inline` to generate a list inline without gutter between list items.
+
+Markup:
+<ul class="List List--inline">
+  <li>Lorem ipsum 1</li>
+  <li>Lorem ipsum 2</li>
+  <li>Lorem ipsum 3</li>
+</ul>
+
+Styleguide Lists-1.2
+*/
+.List--inline li {
+  display: inline-block;
+  margin-bottom: 0; }
+  .List--inline li:not(:last-child) {
+    margin-right: 20px; }
+
+/*
+Numbered list
+
+Use class `.List` and `.List--ordered` to generate a numbered list.
+
+Markup:
+<ol class="List List--ordered">
+  <li>Lorem ipsum</li>
+  <li>Lorem ipsum</li>
+  <li>Lorem ipsum</li>
+</ol>
+
+Styleguide Lists-1.3
+*/
+.List--ordered > li {
+  counter-increment: step-counter;
+  overflow: hidden; }
+  .List--ordered > li::before {
+    content: counter(step-counter, decimal-leading-zero) ".";
+    float: left;
+    font-family: "Lato-Bold", Helvetica, Arial, sans-serif;
+    min-width: 35px;
+    padding-top: 2px; }
+
+/*
+Lists with bullets
+
+Use class `.List` and `.List--bullet` to add bullets to the list.
+
+Markup:
+<ul class="List List--bullet">
+  <li>Lorem ipsum</li>
+  <li>Lorem ipsum</li>
+  <li>Lorem ipsum</li>
+</ul>
+
+Styleguide Lists-1.4
+*/
+.List--bullet > li {
+  position: relative; }
+
+.List--bullet > li,
+.List--bullet > dt,
+.List--bullet > dd {
+  padding-left: 10px; }
+
+.List--bullet > li::before,
+.List--bullet > dt::before {
+  background-color: #666666;
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 5px;
+  left: 0;
+  list-style-position: inside;
+  position: absolute;
+  top: 6px;
+  width: 5px; }
+
+@media print {
+  .List--bullet {
+    margin: 0; } }
+
+/*
+Headings
+
+Use tag `<h1>`, `<h2>`, (...),`<h4>` for semantic headers.
+Also it is possible to use an extra class `.Heading--mega` to change the level appearance.
+
+Markup:
+<h1>Heading level 1</h1>
+<h2>Heading level 2</h2>
+<h3>Heading level 3</h3>
+<h4>Heading level 4</h4>
+@@
+<h1 class="Heading--mega">Heading mega</h1>
+
+
+Styleguide Headings-1
+*/
+h1,
+h2,
+h3,
+h4,
+.Heading--mega {
+  font-family: "Lato-Bold", Helvetica, Arial, sans-serif; }
+
+h1 {
+  font-size: 23px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    h1 {
+      font-size: 30px;
+      line-height: 1.16; } }
+
+h2 {
+  font-size: 21px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    h2 {
+      font-size: 25px;
+      line-height: 1.16; } }
+
+h3 {
+  font-size: 20px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    h3 {
+      font-size: 18px;
+      line-height: 1.16; } }
+
+h4 {
+  font-size: 18px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    h4 {
+      font-size: 16px;
+      line-height: 1.16; } }
+
+.Heading--mega {
+  font-size: 25px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    .Heading--mega {
+      font-size: 36px;
+      line-height: 1.16; } }
+
+/*
+Fonts
+
+These classes affect how text appears on a page.
+
+Styleguide Fonts-1
+*/
+/*
+Text size
+
+Use class `.Text--base` to force body copy size or `.Text--small`, `.Text--xsmall`, `.Text--medium`, `.Text--large`, `.Text--xlarge`,`.Text--xxlarge` to modify the text size.
+
+Markup:
+<small class="Text--xsmall">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+<p class="Text--small">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<h2 class="Text--base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+<p class="Text--medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="Text--large">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="Text--xlarge">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="Text--xxlarge">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+Styleguide Fonts-1.1
+*/
+.Text--xxlarge {
+  font-size: 23px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    .Text--xxlarge {
+      font-size: 30px;
+      line-height: 1.16; } }
+
+.Text--xlarge {
+  font-size: 21px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    .Text--xlarge {
+      font-size: 25px;
+      line-height: 1.16; } }
+
+.Text--large {
+  font-size: 21px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    .Text--large {
+      font-size: 25px;
+      line-height: 1.16; } }
+
+.Text--medium {
+  font-size: 18px;
+  line-height: 1.16; }
+  @media only screen and (min-width: 480px) {
+    .Text--medium {
+      font-size: 16px;
+      line-height: 1.16; } }
+
+.Text--base {
+  font-size: 16px;
+  line-height: 1.25; }
+  @media print {
+    .Text--base {
+      font-size: 12.0003px;
+      line-height: 0.93752; } }
+
+.Text--small {
+  font-size: 14px;
+  line-height: 1.25; }
+
+.Text--xsmall {
+  font-size: 12px;
+  line-height: 1.25; }
+
+/*
+Text variants
+
+Use class `.Text--bold` to bold the content. Use only on the following tags: `<p>`, `<li>`, `<span>`, `<dt>` or `<dd>`.
+Use class `.Text--light` to to change from bold to light content.
+
+Markup:
+<p class="Text--bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<h2>Lorem ipsum dolor sit amet, <span class="Text--light">consectetur adipiscing elit</span>.</h2>
+
+Styleguide Fonts-1.2
+*/
+.Text--bold {
+  font-family: "Lato-Bold", Helvetica, Arial, sans-serif; }
+
+.Text--light {
+  font-family: "Lato-Regular", Helvetica, Arial, sans-serif; }
+
+@-webkit-keyframes move-up {
+  0% {
+    top: 100%; }
+  100% {
+    top: 0; } }
+
+@keyframes move-up {
+  0% {
+    top: 100%; }
+  100% {
+    top: 0; } }
+
+@-webkit-keyframes move-down {
+  0% {
+    top: 0; }
+  100% {
+    top: 100%; } }
+
+@keyframes move-down {
+  0% {
+    top: 0; }
+  100% {
+    top: 100%; } }
+
+body {
+  background-color: #c0c7cb; }
+
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+/*
+Utils size
+
+Styleguide Utils Size-1
+
+Markup:
+<div class="u-size1of12"><div class="sg-sample-box"></div></div>
+<div class="u-size2of12"><div class="sg-sample-box"></div></div>
+<div class="u-size3of12"><div class="sg-sample-box"></div></div>
+<div class="u-size4of12"><div class="sg-sample-box"></div></div>
+<div class="u-size5of12"><div class="sg-sample-box"></div></div>
+<div class="u-size6of12"><div class="sg-sample-box"></div></div>
+<div class="u-size7of12"><div class="sg-sample-box"></div></div>
+<div class="u-size8of12"><div class="sg-sample-box"></div></div>
+<div class="u-size9of12"><div class="sg-sample-box"></div></div>
+<div class="u-size10of12"><div class="sg-sample-box"></div></div>
+<div class="u-size11of12"><div class="sg-sample-box"></div></div>
+<div class="u-size12of12"><div class="sg-sample-box"></div></div>
+*/
+[class*="u-size"] {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
+  /* 1 */ }
+
+.u-size1of12 {
+  width: 8.33333% !important; }
+
+.u-size1of10 {
+  width: 10% !important; }
+
+.u-size1of8 {
+  width: 12.5% !important; }
+
+.u-size1of6,
+.u-size2of12 {
+  width: 16.66667% !important; }
+
+.u-size1of5,
+.u-size2of10 {
+  width: 20% !important; }
+
+.u-size1of4,
+.u-size2of8,
+.u-size3of12 {
+  width: 25% !important; }
+
+.u-size3of10 {
+  width: 30% !important; }
+
+.u-size1of3,
+.u-size2of6,
+.u-size4of12 {
+  width: 33.33333% !important; }
+
+.u-size3of8 {
+  width: 37.5% !important; }
+
+.u-size2of5 {
+  width: 40% !important; }
+
+.u-size5of12 {
+  width: 41.66667% !important; }
+
+.u-size1of2,
+.u-size2of4,
+.u-size3of6,
+.u-size4of8,
+.u-size5of10,
+.u-size6of12 {
+  width: 50% !important; }
+
+.u-size7of12 {
+  width: 58.33333% !important; }
+
+.u-size3of5,
+.u-size6of10 {
+  width: 60% !important; }
+
+.u-size5of8 {
+  width: 62.5% !important; }
+
+.u-size2of3,
+.u-size4of6,
+.u-size8of12 {
+  width: 66.66667% !important; }
+
+.u-size7of10 {
+  width: 70% !important; }
+
+.u-size3of4,
+.u-size6of8,
+.u-size9of12 {
+  width: 75% !important; }
+
+.u-size4of5,
+.u-size8of10 {
+  width: 80% !important; }
+
+.u-size5of6,
+.u-size10of12 {
+  width: 83.33333% !important; }
+
+.u-size7of8 {
+  width: 87.5% !important; }
+
+.u-size9of10 {
+  width: 90% !important; }
+
+.u-size11of12 {
+  width: 91.66667% !important; }
+
+.u-sizeFill {
+  -webkit-box-flex: 1 !important;
+  -webkit-flex: 1 1 0% !important;
+      -ms-flex: 1 1 0% !important;
+          flex: 1 1 0% !important;
+  /* 1 */
+  -webkit-flex-basis: 0% !important;
+      -ms-flex-preferred-size: 0% !important;
+          flex-basis: 0% !important;
+  /* 2 */ }
+
+.u-sizeFillAlt {
+  -webkit-box-flex: 1 !important;
+  -webkit-flex: 1 1 auto !important;
+      -ms-flex: 1 1 auto !important;
+          flex: 1 1 auto !important;
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important; }
+
+.u-sizeFull {
+  box-sizing: border-box !important;
+  display: block !important;
+  width: 100% !important; }
+
+@media only screen and (min-width: 480px) {
+  [class*="u-md-size"] {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
+    /* 1 */ }
+  .u-md-size1of12 {
+    width: 8.33333% !important; }
+  .u-md-size1of10 {
+    width: 10% !important; }
+  .u-md-size1of8 {
+    width: 12.5% !important; }
+  .u-md-size1of6,
+  .u-md-size2of12 {
+    width: 16.66667% !important; }
+  .u-md-size1of5,
+  .u-md-size2of10 {
+    width: 20% !important; }
+  .u-md-size1of4,
+  .u-md-size2of8,
+  .u-md-size3of12 {
+    width: 25% !important; }
+  .u-md-size3of10 {
+    width: 30% !important; }
+  .u-md-size1of3,
+  .u-md-size2of6,
+  .u-md-size4of12 {
+    width: 33.33333% !important; }
+  .u-md-size3of8 {
+    width: 37.5% !important; }
+  .u-md-size2of5 {
+    width: 40% !important; }
+  .u-md-size5of12 {
+    width: 41.66667% !important; }
+  .u-md-size1of2,
+  .u-md-size2of4,
+  .u-md-size3of6,
+  .u-md-size4of8,
+  .u-md-size5of10,
+  .u-md-size6of12 {
+    width: 50% !important; }
+  .u-md-size7of12 {
+    width: 58.33333% !important; }
+  .u-md-size3of5,
+  .u-md-size6of10 {
+    width: 60% !important; }
+  .u-md-size5of8 {
+    width: 62.5% !important; }
+  .u-md-size2of3,
+  .u-md-size4of6,
+  .u-md-size8of12 {
+    width: 66.66667% !important; }
+  .u-md-size7of10 {
+    width: 70% !important; }
+  .u-md-size3of4,
+  .u-md-size6of8,
+  .u-md-size9of12 {
+    width: 75% !important; }
+  .u-md-size4of5,
+  .u-md-size8of10 {
+    width: 80% !important; }
+  .u-md-size5of6,
+  .u-md-size10of12 {
+    width: 83.33333% !important; }
+  .u-md-size7of8 {
+    width: 87.5% !important; }
+  .u-md-size9of10 {
+    width: 90% !important; }
+  .u-md-size11of12 {
+    width: 91.66667% !important; } }
+
+@media only screen and (min-width: 768px) {
+  [class*="u-lg-size"] {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
+    /* 1 */ }
+  .u-lg-size1of12 {
+    width: 8.33333% !important; }
+  .u-lg-size1of10 {
+    width: 10% !important; }
+  .u-lg-size1of8 {
+    width: 12.5% !important; }
+  .u-lg-size1of6,
+  .u-lg-size2of12 {
+    width: 16.66667% !important; }
+  .u-lg-size1of5,
+  .u-lg-size2of10 {
+    width: 20% !important; }
+  .u-lg-size1of4,
+  .u-lg-size2of8,
+  .u-lg-size3of12 {
+    width: 25% !important; }
+  .u-lg-size3of10 {
+    width: 30% !important; }
+  .u-lg-size1of3,
+  .u-lg-size2of6,
+  .u-lg-size4of12 {
+    width: 33.33333% !important; }
+  .u-lg-size3of8 {
+    width: 37.5% !important; }
+  .u-lg-size2of5 {
+    width: 40% !important; }
+  .u-lg-size5of12 {
+    width: 41.66667% !important; }
+  .u-lg-size1of2,
+  .u-lg-size2of4,
+  .u-lg-size3of6,
+  .u-lg-size4of8,
+  .u-lg-size5of10,
+  .u-lg-size6of12 {
+    width: 50% !important; }
+  .u-lg-size7of12 {
+    width: 58.33333% !important; }
+  .u-lg-size3of5,
+  .u-lg-size6of10 {
+    width: 60% !important; }
+  .u-lg-size5of8 {
+    width: 62.5% !important; }
+  .u-lg-size2of3,
+  .u-lg-size4of6,
+  .u-lg-size8of12 {
+    width: 66.66667% !important; }
+  .u-lg-size7of10 {
+    width: 70% !important; }
+  .u-lg-size3of4,
+  .u-lg-size6of8,
+  .u-lg-size9of12 {
+    width: 75% !important; }
+  .u-lg-size4of5,
+  .u-lg-size8of10 {
+    width: 80% !important; }
+  .u-lg-size5of6,
+  .u-lg-size10of12 {
+    width: 83.33333% !important; }
+  .u-lg-size7of8 {
+    width: 87.5% !important; }
+  .u-lg-size9of10 {
+    width: 90% !important; }
+  .u-lg-size11of12 {
+    width: 91.66667% !important; } }
+
+/*
+Utils Spacing
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Markup:
+<div class="u-spacingBase sg-SampleSpacing">
+  <p>Lorem ipsum dolor sit amet</p>
+</div>
+<div class="u-spacingBase sg-SampleSpacing">
+  <p>Lorem ipsum dolor sit amet</p>
+</div>
+<div class="u-spacingMedium sg-SampleSpacing--medium">
+  <p>Lorem ipsum dolor sit amet</p>
+</div>
+<div class="u-spacingMedium sg-SampleSpacing--medium">
+  <p>Lorem ipsum dolor sit amet</p>
+</div>
+
+Styleguide Utils Spacing-1
+*/
+.u-spacingBase {
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px; }
+  @media only screen and (min-width: 480px) {
+    .u-spacingBase {
+      padding-top: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px; } }
+  .u-spacingBase + .u-spacingBase {
+    padding-top: 0; }
+
+.u-spacingMedium {
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  @media only screen and (min-width: 480px) {
+    .u-spacingMedium {
+      padding-top: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px; } }
+  @media only screen and (min-width: 480px) {
+    .u-spacingMedium {
+      padding-top: 40px;
+      padding-bottom: 40px; } }
+  .u-spacingMedium + .u-spacingMedium,
+  .u-spacingMedium > .u-spacingBase:first-child,
+  .u-spacingMedium > .u-spacingBase:only-child {
+    padding-top: 0; }
+  .u-spacingMedium > .u-spacingBase:last-child,
+  .u-spacingMedium > .u-spacingBase:only-child {
+    padding-bottom: 0; }
+
+/* ------ */
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+/*
+Button
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Styleguide Button-1
+*/
+/*
+Button Primary
+
+Use class `.Button--primary` to create a button using `<a>` (outside forms) or `<button>` (only inside forms).
+<br>
+Also add one of the following classes to give it format:
+<br>
+`.Button--primary` for a primary action style<br>
+
+Markup:
+<!-- Anchors (links) -->
+<a href="#" class="Button Button--primary">Anchor Button primary default</a>
+@@
+<!-- Buttons (actions) -->
+<button class="Button Button--primary">Button primary default</button>
+<button class="Button Button--primary is-disabled" disabled>Button primary default disabled</button>
+
+
+Styleguide Button-1.1
+*/
+.Button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #cccccc;
+  border-color: transparent;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Lato-Regular", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  height: 40px;
+  line-height: 38px;
+  overflow: visible;
+  padding-bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: auto; }
+
+.Button--primary {
+  color: #ffffff;
+  background-color: #999999; }
+  .Button--primary:hover {
+    color: #ffffff;
+    background-color: #666666; }
+  .Button--primary.is-disabled, .Button--primary[disabled] {
+    background-color: #f2f2f2;
+    border-color: transparent;
+    color: rgba(153, 153, 153, 0.5);
+    cursor: default; }
+  .Button--primary.is-active {
+    background-color: #666666; }
+
+/*
+Button Secondary
+
+Use class `.Button--secondary` to create a button using `<a>` (outside forms) or `<button>` (only inside forms).
+<br>
+
+Markup:
+<!-- Anchors (links) -->
+<a href="#" class="Button Button--secondary">Anchor Button secondary</a>
+@@
+<!-- Buttons (actions) -->
+<button class="Button Button--secondary">Button secondary</button>
+<button class="Button Button--secondary is-disabled" disabled>Button secondary disabled</button>
+
+
+Styleguide Button-1.2
+*/
+.Button--secondary {
+  background-color: #e6e6e6;
+  color: #999999; }
+  .Button--secondary:hover {
+    background-color: #cccccc;
+    color: #999999; }
+  .Button--secondary.is-disabled, .Button--secondary[disabled] {
+    background-color: #ffffff;
+    border-color: transparent;
+    color: #cccccc;
+    cursor: default; }
+  .Button--secondary.is-active {
+    color: #999999;
+    background-color: #cccccc; }
+
+/*
+Button Small
+
+Use class `.Button--small to create a button with small size.
+<br>
+`.Button--small` for a primary action style<br>
+
+Markup:
+<!-- Anchors (links) -->
+<a href="#" class="Button Button--primary Button--small">Anchor Button medium</a>
+@@
+<!-- Buttons (actions) -->
+<button class="Button Button--primary Button--small">Button medium</button>
+<button class="Button Button--primary Button--small is-disabled" disabled>Button medium disabled</button>
+
+
+Styleguide Button-1.3
+*/
+.Button--small {
+  font-size: 14px;
+  height: 30px;
+  line-height: 28px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 0; }
+  .Button--small.is-disabled, .Button--small[disabled] {
+    background-color: #ffffff;
+    color: #cccccc;
+    cursor: default; }
+
+/*
+Button Large
+
+Use class `.Button--large` to create a button with large size.
+
+Markup:
+<!-- Anchors (links) -->
+<a href="#" class="Button Button--primary Button--large">Anchor Button large</a>
+@@
+<!-- Buttons (actions) -->
+<button class="Button Button--primary Button--large">Button primary default</button>
+<button class="Button Button--primary Button--large is-disabled" disabled>Button large disabled</button>
+
+
+Styleguide Button-1.4
+*/
+.Button--large {
+  font-size: 20px;
+  height: 50px;
+  line-height: 48px;
+  padding-bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0; }
+  .Button--large.is-disabled, .Button--large[disabled] {
+    background-color: #ffffff;
+    color: #cccccc;
+    cursor: default; }
+
+/*
+Button-group
+
+Use class `.Button-group` to create a button group structure.
+@@
+Use class `.Button--secondary` (or the class for an specific button) for buttons inside buttons group.
+
+Markup:
+<div class="Button-group">
+  <button class="Button Button--secondary" type="button">year</button>
+  <button class="Button Button--secondary" type="button">month</button>
+  <button class="Button Button--secondary" type="button">hour</button>
+</div>
+
+Styleguide Button-1.5
+*/
+/*
+Button-group active
+
+Use class `.is-active` to highlight the selected button.
+
+Markup:
+<div class="Button-group">
+  <button class="Button Button--secondary is-active" type="button">year</button>
+  <button class="Button Button--secondary" type="button">month</button>
+  <button class="Button Button--secondary" type="button">hour</button>
+</div>
+
+Styleguide Button-1.6
+*/
+/*
+Button-group disabled
+
+Use class `.is-disabled` to mark a button as disabled.
+
+Markup:
+<div class="Button-group">
+  <button class="Button Button--secondary is-disabled" type="button">year</button>
+  <button class="Button Button--secondary is-disabled" type="button">month</button>
+  <button class="Button Button--secondary is-disabled" type="button">hour</button>
+</div>
+
+Styleguide Button-1.7
+*/
+.Button-group {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  .Button-group .Button {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    padding-left: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-radius: 0; }
+    .Button-group .Button:first-of-type {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0; }
+      .Button-group .Button:first-of-type.is-disabled {
+        border-left-color: transparent;
+        border-left-width: 0; }
+    .Button-group .Button:last-of-type {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0; }
+      .Button-group .Button:last-of-type.is-disabled {
+        border-right-color: transparent;
+        border-right-width: 0; }
+    .Button-group .Button::before {
+      content: '';
+      display: inline-block;
+      float: left;
+      height: 100%;
+      margin-top: 0;
+      padding-left: 20px;
+      border-left-color: #cccccc;
+      border-left-width: 1px;
+      border-left-style: solid; }
+    .Button-group .Button.is-active + .Button::before,
+    .Button-group .Button:hover + .Button:not(.is-disabled)::before, .Button-group .Button:first-of-type::before {
+      border-left-color: transparent; }
+  .Button-group--justified .Button {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+  .Button-group--centered {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .Button-group button {
+    margin: 0; }
+
+/*
+Button group justified
+
+Use class `.Button-group-justified` to display `.Button-group` full width buttons.
+
+
+Markup:
+<div class="Button-group Button-group--justified">
+  <button class="Button Button--secondary" type="button">year</button>
+  <button class="Button Button--secondary" type="button">month</button>
+  <button class="Button Button--secondary" type="button">hour</button>
+</div>
+
+Styleguide Button-1.8
+*/
+/*
+Button group centered
+
+Use class `.Button-group--centered` to display `.Button-group` centered.
+
+
+Markup:
+<div class="Button-group Button-group--centered">
+  <button class="Button Button--secondary" type="button">year</button>
+  <button class="Button Button--secondary" type="button">month</button>
+  <button class="Button Button--secondary" type="button">hour</button>
+</div>
+
+Styleguide Button-1.9
+*/
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+/*
+Form
+
+This section contains all the elements that we can use to build a form.
+
+Styleguide Forms-1
+*/
+:invalid {
+  box-shadow: none; }
+
+::-webkit-input-placeholder {
+  color: #999999;
+  font-size: 16px;
+  text-overflow: ellipsis; }
+
+::-moz-placeholder {
+  color: #999999;
+  font-size: 16px;
+  text-overflow: ellipsis; }
+
+:-ms-input-placeholder {
+  color: #999999;
+  font-size: 16px;
+  text-overflow: ellipsis; }
+
+::placeholder {
+  color: #999999;
+  font-size: 16px;
+  text-overflow: ellipsis; }
+
+fieldset + fieldset {
+  margin-top: 40px; }
+
+fieldset:first-child {
+  margin-top: 0; }
+
+fieldset > button {
+  margin-top: 20px; }
+
+legend {
+  display: none; }
+
+textarea,
+[type="text"],
+[type="number"],
+[type="tel"],
+[type="button"],
+[type="submit"],
+select {
+  border-radius: 0; }
+
+[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield; }
+  [type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+
+label,
+.FormGroup-label {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.25;
+  margin-bottom: 5px;
+  vertical-align: top;
+  width: auto; }
+
+/*
+Basic field
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Markup:
+<form action="#" method="post">
+  <fieldset>
+    <legend>Lorem ipsum</legend>
+    <ul>
+      <li class="FormGroup">
+        <label for="name">Basic field <span>(opcional)</span></label>
+        <input type="text" id="name" placeholder="placeholder...">
+        <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
+      </li>
+      <li class="FormGroup is-success">
+        <label for="name">Basic field with success</label>
+        <input type="text" id="name">
+      </li>
+      <li class="FormGroup is-error">
+        <label for="name">Basic field with error</label>
+        <input type="text" id="name">
+        <p class="FormGroup-info is-error">Lorem ipsum dolor sit amet.</p>
+      </li>
+      <li class="FormGroup is-disabled">
+        <label for="name">Basic field disabled</label>
+        <input type="text" id="name" disabled>
+      </li>
+  </fieldset>
+</form>
+
+Styleguide Forms-1.1
+*/
+input,
+textarea {
+  border-color: #cccccc;
+  border-style: solid;
+  border-width: 1px;
+  color: #666666;
+  display: block;
+  font-size: 16px;
+  height: 44px;
+  line-height: 1.25;
+  padding: 4px 10px;
+  width: 100%;
+  margin: 0; }
+  input:focus,
+  textarea:focus {
+    border-color: #999999;
+    outline: none; }
+  @media only screen and (min-width: 480px) {
+    input,
+    textarea {
+      width: 330px; } }
+
+/*
+Textarea
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Markup:
+<form action="#" method="post">
+  <fieldset>
+    <legend>Lorem ipsum</legend>
+    <ul>
+      <li class="FormGroup">
+        <label for="name">Basic textarea <span>(opcional)</span></label>
+        <div class="FormGroup-textarea">
+          <textarea name="comment" value="">Lorem ipsum</textarea>
+          <p class="FormGroup-textareaCounter"><span>114</span>/<span>250</span></p>
+        </div>
+      </li>
+      <li class="FormGroup is-error">
+        <label for="name">Basic textarea<span>(opcional)</span></label>
+        <div class="FormGroup-textarea">
+          <textarea name="comment" value="">Lorem ipsum</textarea>
+          <p class="FormGroup-textareaCounter"><span>114</span>/<span>250</span></p>
+        </div>
+      </li>
+      <li class="FormGroup is-disabled">
+        <label for="name">Basic textarea disabled<span>(opcional)</span></label>
+        <div class="FormGroup-textarea">
+          <textarea name="comment" value="" disabled>Lorem ipsum</textarea>
+          <p class="FormGroup-textareaCounter"><span>114</span>/<span>250</span></p>
+        </div>
+      </li>
+  </fieldset>
+</form>
+
+Styleguide Forms-1.2
+*/
+textarea {
+  font-family: "Lato-Regular", Helvetica, Arial, sans-serif;
+  min-height: 150px;
+  resize: vertical; }
+
+.FormGroup-textareaCounter,
+.FormGroup-info {
+  color: #999999;
+  font-size: 14px;
+  margin-top: 5px; }
+  .FormGroup-textareaCounter.is-error,
+  .FormGroup-info.is-error {
+    color: #bf2102; }
+  .FormGroup-textareaCounter.is-success,
+  .FormGroup-info.is-success {
+    color: #00a550; }
+
+/*
+Basic Pulldown
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Markup:
+<form action="#" method="post">
+  <fieldset>
+    <legend>Lorem ipsum</legend>
+    <ul>
+      <li class="FormGroup">
+        <label for="name">Basic Pulldown</label>
+        <select>
+          <option value="01">Option01</option>
+          <option value="02">Option02</option>
+          <option value="03">Option03</option>
+          <option value="04">Option04</option>
+          <option value="05">Option05</option>
+        </select>
+        <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
+      </li>
+      <li class="FormGroup is-error">
+        <label for="name">Basic Pulldown</label>
+        <select>
+          <option value="01">Option01</option>
+          <option value="02">Option02</option>
+          <option value="03">Option03</option>
+          <option value="04">Option04</option>
+          <option value="05">Option05</option>
+        </select>
+        <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
+      </li>
+      <li class="FormGroup is-disabled">
+        <label for="name">Basic Pulldown disabled</label>
+        <select>
+          <option value="01">Option01</option>
+          <option value="02">Option02</option>
+          <option value="03">Option03</option>
+          <option value="04">Option04</option>
+          <option value="05">Option05</option>
+        </select>
+        <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
+      </li>
+  </fieldset>
+</form>
+
+Styleguide Forms-1.3
+*/
+select {
+  border-color: #cccccc;
+  border-style: solid;
+  border-width: 1px;
+  color: #666666;
+  display: block;
+  font-size: 16px;
+  height: 44px;
+  line-height: 1.25;
+  padding: 4px 10px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  background-image: url(images/backgrounds/bg-select-arrow.png);
+  background-position: right center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  padding: 0 10px;
+  width: 330px; }
+  select:focus {
+    border-color: #999999;
+    outline: none; }
+
+.InputGroup {
+  display: table;
+  width: 100%; }
+  .InputGroup > div {
+    display: table-cell; }
+  .InputGroup input {
+    margin: 0;
+    border-right-width: 0;
+    width: 100%; }
+    .is-active .InputGroup input {
+      background-color: #ffffff;
+      cursor: default; }
+  .InputGroup div:last-child input {
+    border-right-width: 1px; }
+
+/*
+Input group date
+
+Use class `.InputGroup--date`
+
+Markup:
+<form action="#" method="post">
+  <fieldset>
+    <legend>Lorem ipsum</legend>
+    <ul>
+      <li class="FormGroup">
+        <label for="day">Input group date</label>
+        <div class="InputGroup InputGroup--date">
+          <div>
+            <input type="number" maxlength="2" name="day" id="day" placeholder="DD">
+          </div>
+          <div>
+            <input type="number" maxlength="2" name="month" id="month" placeholder="MM">
+          </div>
+          <div>
+            <input type="number" maxlength="4" name="year" id="year" placeholder="AAAA">
+          </div>
+        </div>
+      </li>
+      <li class="FormGroup is-error">
+        <label for="day">Input group date</label>
+        <div class="InputGroup InputGroup--date">
+          <div>
+            <input type="number" maxlength="2" name="day" id="day" placeholder="DD">
+          </div>
+          <div>
+            <input type="number" maxlength="2" name="month" id="month" placeholder="MM">
+          </div>
+          <div>
+            <input type="number" maxlength="4" name="year" id="year" placeholder="AAAA">
+          </div>
+        </div>
+      </li>
+      <li class="FormGroup is-disabled">
+        <label for="day">Input group date disabled</label>
+        <div class="InputGroup InputGroup--date">
+          <div>
+            <input type="number" maxlength="2" name="day" id="day" placeholder="DD" disabled>
+          </div>
+          <div>
+            <input type="number" maxlength="2" name="month" id="month" placeholder="MM" disabled>
+          </div>
+          <div>
+            <input type="number" maxlength="4" name="year" id="year" placeholder="AAAA" disabled>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </fieldset>
+</form>
+
+Styleguide Forms-1.4
+*/
+.InputGroup--date {
+  width: auto;
+  border: 1px solid #cccccc; }
+  .InputGroup--date > div {
+    position: relative; }
+    .InputGroup--date > div::before {
+      content: '|';
+      position: absolute;
+      top: 12px;
+      left: -5px;
+      color: #cccccc; }
+      .is-disabled .InputGroup--date > div::before {
+        color: rgba(153, 153, 153, 0.5); }
+    .InputGroup--date > div:first-of-type::before {
+      content: ''; }
+    .InputGroup--date > div input {
+      width: 50px;
+      margin-left: -4px;
+      text-align: center;
+      border: 0; }
+    .InputGroup--date > div:last-child input {
+      width: 66px; }
+  .InputGroup--date > div:first-of-type input {
+    margin-left: 0; }
+  .is-error .InputGroup--date {
+    border: 1px solid #bf2102; }
+
+/*
+Checkboxes and radiobuttons
+
+Markup:
+<form action="#" method="post">
+  <fieldset>
+    <legend>Legend</legend>
+    <ul>
+      <li class="FormGroup">
+        <p class="FormGroup-label">Checkbox List</p>
+        <ul>
+          <li class="FormGroup-check">
+            <input type="checkbox" id="checkbox1">
+            <label for="checkbox1">Checkbox 1</label>
+          </li>
+          <li class="FormGroup-check is-error">
+            <input type="checkbox" id="checkbox2">
+            <label for="checkbox2">Checkbox 2</label>
+          </li>
+          <li class="FormGroup-check is-disabled">
+            <input type="checkbox" id="checkbox3" disabled>
+            <label for="checkbox3">Checkbox 2</label>
+          </li>
+        </ul>
+      </li>
+      <li class="FormGroup">
+        <p class="FormGroup-label">Radio button List</p>
+        <ul>
+          <li class="FormGroup-radio">
+            <input type="radio" id="radio1" name="radio">
+            <label for="radio1">Radio button field 1</label>
+          </li>
+          <li class="FormGroup-radio is-error">
+            <input type="radio" id="radio2" name="radio">
+            <label for="radio2">Radio button field 2</label>
+          </li>
+          <li class="FormGroup-radio is-disabled">
+            <input type="radio" id="radio3" name="radio" disabled>
+            <label for="radio3">Radio button field 2</label>
+          </li>
+        </ul>
+        <p class="FormGroup-info">Lorem ipsum dolor sit amet.</p>
+      </li>
+    </ul>
+  </fieldset>
+</form>
+
+Styleguide Forms-1.5
+*/
+[type="radio"],
+[type="checkbox"] {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0;
+  margin: 3px 6px 0 0;
+  width: auto;
+  border: 0 none;
+  vertical-align: top;
+  height: auto;
+  font-size: 16px; }
+  [type="radio"] + label,
+  [type="checkbox"] + label {
+    cursor: pointer; }
+
+.FormGroup-radio,
+.FormGroup-check {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+  .FormGroup-radio input,
+  .FormGroup-check input {
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0; }
+  .FormGroup-radio.is-error,
+  .FormGroup-check.is-error {
+    color: #bf2102; }
+  .FormGroup-radio.is-disabled input,
+  .FormGroup-check.is-disabled input {
+    opacity: .6; }
+    .FormGroup-radio.is-disabled input + label,
+    .FormGroup-check.is-disabled input + label {
+      color: rgba(153, 153, 153, 0.5);
+      cursor: default; }
+  .FormGroup-radio--inline,
+  .FormGroup-check--inline {
+    float: left;
+    white-space: nowrap;
+    margin-right: 20px; }
+    .FormGroup-radio--inline:last-child,
+    .FormGroup-check--inline:last-child {
+      margin-right: 0; }
+
+/*
+Checkboxes and radiobuttons inline
+
+Markup:
+<form action="#" method="post">
+  <fieldset>
+    <ul>
+      <li class="FormGroup-radio--inline">
+        <input type="radio" checked="checked" id="option1" name="options"><label for="option1">Option 1</label>
+      </li>
+      <li class="FormGroup-radio--inline">
+        <input type="radio" id="option2" name="options"><label for="option2">Option 2</label>
+      </li>
+    </ul>
+  </fieldset>
+</form>
+
+Styleguide Forms-1.6
+*/
+/*
+StrengthBar
+
+Use class `.StrengthBar` to create a strength bar.
+
+Markup:
+<dl class="StrengthBar">
+    <dt>Lorem ipsum</dt>
+    <dd>
+      <meter max="3" min="0" value="2" high="2" low="2" optimum="3"></meter>
+    </dd>
+</dl>
+
+Styleguide Forms-1.7
+*/
+.StrengthBar meter {
+  width: 100%;
+  height: 7px;
+  vertical-align: top;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #f2f2f2;
+  /* WebKit */
+  /* Firefox */ }
+  .StrengthBar meter::-webkit-meter-bar {
+    background: #cccccc; }
+  .StrengthBar meter::-webkit-meter-optimum-value, .StrengthBar meter::-webkit-meter-suboptimum-value {
+    background: #00a550; }
+  .StrengthBar meter::-webkit-meter-even-less-good-value {
+    background: #bf2102; }
+  .StrengthBar meter:-moz-meter-optimum::-moz-meter-bar, .StrengthBar meter:-moz-meter-sub-optimum::-moz-meter-bar {
+    background: #00a550; }
+  .StrengthBar meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    background: #bf2102; }
+
+.FormGroup {
+  margin-bottom: 20px; }
+  .FormGroup.is-error label {
+    color: #bf2102; }
+  .FormGroup.is-error input,
+  .FormGroup.is-error textarea,
+  .FormGroup.is-error select {
+    border-color: #bf2102; }
+  .FormGroup.is-success label {
+    color: #00a550; }
+  .FormGroup.is-success input,
+  .FormGroup.is-success textarea,
+  .FormGroup.is-success select {
+    border-color: #00a550; }
+  .FormGroup.is-success input {
+    background-color: #f2fff8; }
+  .FormGroup.is-disabled label,
+  .FormGroup.is-disabled .FormGroup-info,
+  .FormGroup.is-disabled .FormGroup-textareaCounter,
+  .FormGroup.is-disabled input,
+  .FormGroup.is-disabled textarea,
+  .FormGroup.is-disabled select,
+  .FormGroup.is-disabled [disabled],
+  .FormGroup.is-disabled [placeholder] {
+    color: rgba(153, 153, 153, 0.5);
+    cursor: default; }
+  .FormGroup.is-disabled input,
+  .FormGroup.is-disabled textarea,
+  .FormGroup.is-disabled select {
+    border-color: rgba(153, 153, 153, 0.5); }
+  .FormGroup.is-disabled [disabled],
+  .FormGroup.is-disabled [placeholder] {
+    background: transparent; }
+  .FormGroup.is-disabled ::-webkit-input-placeholder {
+    color: rgba(153, 153, 153, 0.5); }
+  .FormGroup.is-disabled ::-moz-placeholder {
+    color: rgba(153, 153, 153, 0.5); }
+  .FormGroup.is-disabled :-ms-input-placeholder {
+    color: rgba(153, 153, 153, 0.5); }
+  .FormGroup.is-disabled ::placeholder {
+    color: rgba(153, 153, 153, 0.5); }
+  .FormGroup:last-child {
+    margin-bottom: 0; }
+
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+/*
+Grid
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Markup:
+<!-- Grid 3 columns -->
+<div class="Grid">
+  <div class="Grid-cell u-size4of12">
+    <div class="sg-sample-box">
+      <p>1</p>
+    </div>
+  </div>
+  <div class="Grid-cell u-size4of12">
+    <div class="sg-sample-box">
+      <p>2</p>
+    </div>
+  </div>
+  <div class="Grid-cell u-size4of12">
+    <div class="sg-sample-box">
+      <p>3</p>
+    </div>
+  </div>
+</div>
+<!-- /Grid 3 columns -->
+<!-- Grid 3 columns with gutter-->
+<div class="Grid Grid--withGutter">
+  <div class="Grid-cell u-size4of12">
+    <div class="sg-sample-box">
+      <p>1</p>
+    </div>
+  </div>
+  <div class="Grid-cell u-size4of12">
+    <div class="sg-sample-box">
+      <p>2</p>
+    </div>
+  </div>
+  <div class="Grid-cell u-size4of12">
+    <div class="sg-sample-box">
+      <p>3</p>
+    </div>
+  </div>
+</div>
+<!-- /Grid 3 columns with gutter -->
+<!-- Grid columns equalHeight -->
+<div class="Grid Grid--equalHeight">
+  <div class="Grid-cell u-size4of12">
+    <div class="sg-sample-box u-sizeFill">
+      <p>1</p>
+    </div>
+  </div>
+  <div class="Grid-cell u-size8of12">
+    <div class="sg-sample-box u-sizeFill">
+      <p>2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus metus, ultrices vitae eros a, dapibus molestie tortor.</p>
+    </div>
+  </div>
+</div>
+<!-- /Grid columns equalHeight -->
+<!-- Grid columns equalHeight -->
+<div class="Grid Grid--equalHeight">
+  <div class="Grid-cell u-md-size6of12 u-lg-size8of12">
+    <div class="sg-sample-box u-sizeFill">
+      <p>1</p>
+    </div>
+  </div>
+  <div class="Grid-cell u-md-size6of12 u-lg-size4of12">
+    <div class="sg-sample-box u-sizeFill">
+      <div class="Grid">
+        <div class="Grid-cell">
+          <div class="sg-sample-box">
+            <p>1</p>
+          </div>
+        </div>
+        <div class="Grid-cell">
+          <div class="sg-sample-box">
+            <p>2</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Grid columns equalHeight -->
+
+Styleguide Grid-1
+*/
+.Grid {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /* 1 */
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap; }
+  .Grid-cell {
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    /* 1 */ }
+    .Grid-cell--center {
+      margin: 0 auto; }
+  .Grid--alignCenter {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .Grid--alignRight {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+  .Grid--alignMiddle {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+                -ms-grid-row-align: center;
+            align-items: center; }
+  .Grid--alignBottom {
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+                -ms-grid-row-align: flex-end;
+            align-items: flex-end; }
+  .Grid--fit > .Grid-cell {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 0%;
+        -ms-flex: 1 1 0%;
+            flex: 1 1 0%;
+    /* 1 */ }
+  .Grid--equalHeight > .Grid-cell {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .Grid--withGutter {
+    margin: 0 -10px; }
+    .Grid--withGutter > .Grid-cell {
+      padding: 0 10px; }
+
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+/*
+Notifications
+
+Contextual notifications for messages.
+
+Use class `.Notification` for default notification.
+The modifier classes are `.Notification--error` for errors, `.Notification--success` for success and `.Notification--warning` for warnings.<br>
+Wrap in div with class `.Notification--toastFixed` to fix at top of the page.
+
+Markup:
+<!-- Notification -->
+<div class="Notification">
+	<p class="Notification-title">Lorem ipsum dolor sit</p>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.<!-- <a href="#" class="link-underline">Link underline</a> --></p>
+</div>
+<!-- /Notification -->
+<!-- Notification success -->
+<div class="Notification Notification--success">
+	<p class="Notification-title">Lorem ipsum dolor sit</p>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.</p>
+</div>
+<!-- /Notification success -->
+<!-- Notification warning -->
+<div class="Notification Notification--warning">
+	<p class="Notification-title">Lorem ipsum dolor sit</p>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.</p>
+</div>
+<!-- /Notification warning -->
+<!-- Notification error -->
+<div class="Notification Notification--error">
+	<p class="Notification-title">Lorem ipsum dolor sit</p>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.</p>
+</div>
+<!-- /Notification error -->
+
+Styleguide Notifications-1
+*/
+.Notification {
+  background: #484f53;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.25;
+  padding: 20px; }
+  .Notification a,
+  .Notification a:hover,
+  .Notification a:focus {
+    color: #ffffff; }
+  .Notification--toastFixed .Notification {
+    max-width: 970px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9998; }
+    @media only screen and (min-width: 480px) {
+      .Notification--toastFixed .Notification {
+        margin: 0 auto; } }
+
+.Notification--error {
+  background: #bf2102; }
+
+.Notification--success {
+  background: #00a550; }
+
+.Notification--warning {
+  background: #e1a900;
+  color: #666666; }
+  .Notification--warning a,
+  .Notification--warning a:hover,
+  .Notification--warning a:focus {
+    color: #666666; }
+  .Notification--warning .Notification-title {
+    color: #666666; }
+
+.Notification-title {
+  color: #ffffff;
+  font-family: "Lato-Bold", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.25;
+  margin-bottom: 10px; }
+
+.Notification-close {
+  color: inherit;
+  position: absolute;
+  right: 10px;
+  top: 10px; }
+
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+/*
+Stickers
+
+Use class `.Sticker` to show stickers. Add class `.Sticker--marked` to highlight the sticker.
+
+Markup:
+<span class="Sticker">Lorem</span>
+<span class="Sticker Sticker--marked">Ipsum</span>
+
+Styleguide Stickers-1
+*/
+.Sticker {
+  font-size: 12px;
+  line-height: 1.25;
+  display: inline-table;
+  padding: 0 10px;
+  color: #666666;
+  background-color: #ffffff;
+  border: 1px solid #666666;
+  text-transform: uppercase; }
+  @media print {
+    .Sticker {
+      border: 1px solid #cccccc; } }
+
+.Sticker--marked {
+  color: #ffffff;
+  background-color: #000000; }
+
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+/*
+Tabs
+
+Use class `.Tabs` to create a structure of tabs inline.
+<br>
+Use class `.Tabs-item` in descendent tag `<a>`.
+<br>
+Use class `.is-active` for active tab.
+
+Markup:
+<!-- Tabs -->
+<ul class="Tabs">
+	<li><a class="Tabs-item is-active" href="#">Tab 1</a></li>
+	<li><a href="#" class="Tabs-item">Tab 2</a></li>
+</ul>
+
+Styleguide Tabs
+*/
+.Tabs {
+  border-bottom: 1px solid #cccccc; }
+  .Tabs > li {
+    display: inline-block;
+    padding-bottom: 20px; }
+    .Tabs > li:not(:last-child) {
+      margin-right: 20px; }
+  .Tabs .Tabs-item {
+    color: #666666;
+    font-family: "Lato-Bold", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    padding-bottom: 20px;
+    text-decoration: none; }
+    @media only screen and (min-width: 768px) {
+      .Tabs .Tabs-item {
+        font-size: 18px; } }
+    .Tabs .Tabs-item.is-active {
+      color: #999999;
+      position: relative; }
+      .Tabs .Tabs-item.is-active::after {
+        background: #999999;
+        bottom: 0;
+        content: '';
+        height: 4px;
+        left: 0;
+        position: absolute;
+        width: 100%; }
+
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+/*
+Tags
+
+Use class `.Tags` to create a tags's inline list.
+
+Markup:
+<ul class="Tags">
+  <li class="Tags-item"><span class="Tags-itemLabel">Javascript</span></li>
+  <li class="Tags-item"><a href="#" class="Tags-itemLabel">CSS</a></li>
+  <li class="Tags-item"><span class="Tags-itemLabel">HTML<a class="Tags-remove" href="#" title="Remove"><span class="Tags-removeText">Remove</span></a></span></li>
+</ul>
+
+Styleguide Tags-1
+*/
+.Tags {
+  padding-right: 10px; }
+  .Tags::after {
+    clear: both;
+    content: ' ';
+    display: table; }
+  .Tags:last-child {
+    padding-right: 0; }
+
+.Tags-item {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px; }
+  .Tags-item:last-child {
+    margin-bottom: 0; }
+
+.Tags-itemLabel {
+  font-size: 14px;
+  line-height: 1.25;
+  display: inline-table;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  color: #666666;
+  background-color: #e6e6e6; }
+  @media print {
+    .Tags-itemLabel {
+      border: 1px solid #cccccc; } }
+  a.Tags-itemLabel {
+    cursor: pointer;
+    text-decoration: none; }
+    a.Tags-itemLabel:hover {
+      color: #cccccc;
+      background-color: #f2f2f2; }
+    a.Tags-itemLabel:active {
+      background-color: #484f53; }
+
+.Tags-remove {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  color: #cccccc;
+  text-decoration: none;
+  padding: 0 10px; }
+  .Tags-remove:hover {
+    color: #000000; }
+  .Tags-remove::after {
+    position: absolute;
+    content: 'X';
+    top: -13px;
+    left: 10px; }
+  .Tags-remove .Tags-removeText {
+    display: none; }
+
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+/*
+Tooltip
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Markup:
+<div class="Tooltip sg-Tooltip">
+  <div class="Tooltip-layer is-moveUp">
+    <div class="Tooltip-content" style="width: 480px;">
+      <a title="Close" class="Tooltip-close" href="#">Close</a>
+      <p class="Tooltip-intro">Lorem ipsum</p>
+      <p class="Tooltip-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+</div>
+
+Styleguide Tooltip-1
+*/
+.Tooltip {
+  display: inline-block; }
+  @media only screen and (min-width: 480px) {
+    .Tooltip {
+      position: relative; } }
+  .Tooltip-intro, .Tooltip-text {
+    color: #666666; }
+  .Tooltip-link, .Tooltip-link:hover, .Tooltip-link:visited {
+    color: #999999; }
+
+.Tooltip-layer {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  width: 100%;
+  z-index: 1; }
+  @media only screen and (min-width: 480px) {
+    .Tooltip-layer {
+      width: auto;
+      top: 34px;
+      bottom: auto;
+      left: auto;
+      position: absolute;
+      overflow: visible;
+      background-color: transparent; } }
+  .Tooltip-layer.is-moveUp {
+    visibility: visible;
+    top: 0;
+    -webkit-animation: move-up .4s;
+            animation: move-up .4s; }
+  .Tooltip-layer.is-moveDown {
+    visibility: hidden;
+    -webkit-animation: move-down .6s;
+            animation: move-down .6s; }
+    @media only screen and (min-width: 480px) {
+      .Tooltip-layer.is-moveDown {
+        visibility: visible;
+        -webkit-animation: none;
+                animation: none; } }
+    .Tooltip-layer.is-moveDown a {
+      -webkit-transition: none;
+      transition: none; }
+
+.Tooltip-content {
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  color: #cccccc; }
+  @media only screen and (min-width: 480px) {
+    .Tooltip-content {
+      padding-top: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px; } }
+  @media only screen and (min-width: 480px) {
+    .Tooltip-content {
+      position: relative;
+      background-color: #ffffff;
+      border: 1px solid #cccccc;
+      box-shadow: 0 0 4px #f2f2f2;
+      z-index: 8000; }
+      .Tooltip-content::before, .Tooltip-content::after {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 40px;
+        width: 0;
+        height: 0; }
+      .Tooltip-content::before {
+        margin-left: -12px;
+        border-bottom: 12px solid #cccccc;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent; }
+      .Tooltip-content::after {
+        margin-left: -10px;
+        border-bottom: 10px solid #ffffff;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent; } }
+
+.Tooltip-close {
+  display: inline-block;
+  overflow: hidden;
+  width: 0;
+  float: right; }
+  .Tooltip-close::before {
+    content: 'X';
+    display: block;
+    margin-right: 20px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    color: #666666; }
